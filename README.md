@@ -22,31 +22,26 @@ git clone https://github.com/Cellular-Imaging-Amsterdam-UMC/qp-lessons.git
 
 ## Available Lessons
 
-The repository is organized into sequential modules, each focusing on a specific QuPath feature:
+The repository is organized into daily modules:
 
-### 1. Threshold Classification
+### Day 1: Basics & Positivity
+*   **1. Threshold Classification** (`Day1/1) threshold_classification`)
+    *   **Topic**: The simplest form of segmentation.
+    *   **What you'll learn**: How to segment objects based on pixel intensity alone. Ideal for fluorescence images or high-contrast structures.
+*   **2. Positive Cell Detection** (`Day1/2) positive_cell_detection`)
+    *   **Topic**: Streamlined positivity analysis.
+    *   **What you'll learn**: A combined workflow for detecting cells and classifying them as positive or negative in a single step (commonly used for Ki67 or other biomarkers).
 
-* **Folder**: `1) threshold_classification`
-* **Topic**: The simplest form of segmentation.
-* **What you'll learn**: How to segment objects based on pixel intensity alone. Ideal for fluorescence images or high-contrast structures.
+### Day 2: Machine Learning Classification
+*   **1. Pixel Classification** (`Day2/1) pixel_classification`)
+    *   **Topic**: Machine learning for region segmentation.
+    *   **What you'll learn**: How to train a classifier to distinguish between different tissue types (e.g., Epidermis vs. Dermis) by "painting" examples.
+*   **2. Cell Classification** (`Day2/2) cell_classification`)
+    *   **Topic**: Object-based classification.
+    *   **What you'll learn**: How to detect individual cells and then train a machine learning model to sort them into categories (e.g., Normal vs. Apoptotic) based on shape and intensity features.
 
-### 2. Pixel Classification
-
-* **Folder**: `2) pixel_classification`
-* **Topic**: Machine learning for region segmentation.
-* **What you'll learn**: How to train a classifier to distinguish between different tissue types (e.g., Tumor vs. Stroma) by "painting" examples.
-
-### 3. Cell Classification
-
-* **Folder**: `3) cell_classification`
-* **Topic**: Object-based classification.
-* **What you'll learn**: How to detect individual cells and then train a machine learning model to sort them into categories (e.g., Normal vs. Apoptotic) based on shape and intensity features.
-
-### 4. Positive Cell Detection
-
-* **Folder**: `4) positive_cell_detection`
-* **Topic**: Streamlined positivity analysis.
-* **What you'll learn**: A combined workflow for detecting cells and classifying them as positive or negative in a single step (commonly used for Ki67 or other biomarkers).
+### Day 3
+*   *(Coming Soon)*
 
 ## Prerequisites
 

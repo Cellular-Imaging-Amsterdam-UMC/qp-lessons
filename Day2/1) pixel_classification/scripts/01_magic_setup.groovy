@@ -15,13 +15,13 @@ import javafx.scene.paint.Color
 
 // 1. Define the classes we want to use
 // We use getPathClass to ensure we are using the singleton instances
-def tumorClass = PathClassFactory.getPathClass("Epidermis")
-def stromaClass = PathClassFactory.getPathClass("Dermis")
+def epidermisClass = PathClassFactory.getPathClass("Epidermis")
+def dermisClass = PathClassFactory.getPathClass("Dermis")
 def whitespaceClass = PathClassFactory.getPathClass("Whitespace")
 def ignoreClass = PathClassFactory.getPathClass("Ignore*") // Useful for artifacts
 
 // 2. Create the list of classes
-def classes = [tumorClass, stromaClass, whitespaceClass, ignoreClass]
+def classes = [epidermisClass, dermisClass, whitespaceClass, ignoreClass]
 
 // 3. Set these classes to the current image
 // This populates the "Annotations" tab class list
@@ -34,8 +34,8 @@ setPathClasses(classes)
 // Ignore = Yellow (Warning)
 def pathClassTools = QuPathGUI.getInstance().getPathClassTools()
 
-pathClassTools.setPathClassColor(tumorClass, Color.rgb(255, 0, 0))      // Red
-pathClassTools.setPathClassColor(stromaClass, Color.rgb(0, 200, 0))     // Green
+pathClassTools.setPathClassColor(epidermisClass, Color.rgb(255, 0, 0))      // Red
+pathClassTools.setPathClassColor(dermisClass, Color.rgb(0, 200, 0))     // Green
 pathClassTools.setPathClassColor(whitespaceClass, Color.rgb(200, 200, 200)) // Gray
 pathClassTools.setPathClassColor(ignoreClass, Color.rgb(255, 255, 0))   // Yellow
 
