@@ -25,13 +25,16 @@ git clone https://github.com/Cellular-Imaging-Amsterdam-UMC/qp-lessons.git
 The repository is organized into daily modules:
 
 ### Day 1: Basics & Positivity
-*   **0. Basic Annotations** (`Day1/0) basic_annotations`)
+*   **1. Basic Annotations** (`Day1/1) basic_annotations`)
     *   **Topic**: Interface navigation and manual tools.
     *   **What you'll learn**: How to use the Wand, Brush, and Shape tools, and how to view basic measurements.
-*   **1. Threshold Classification** (`Day1/1) threshold_classification`)
+*   **2. Scripting Basics** (`Day1/2) scripting_basics`)
+    *   **Topic**: Introduction to Groovy scripting.
+    *   **What you'll learn**: How to write simple scripts to access objects, loop through data, and filter results. Demystifying the "Code" behind the GUI.
+*   **3. Threshold Classification** (`Day1/3) threshold_classification`)
     *   **Topic**: The simplest form of segmentation.
     *   **What you'll learn**: How to segment objects based on pixel intensity alone. Ideal for fluorescence images or high-contrast structures.
-*   **2. Positive Cell Detection** (`Day1/2) positive_cell_detection`)
+*   **4. Positive Cell Detection** (`Day1/4) positive_cell_detection`)
     *   **Topic**: Streamlined positivity analysis.
     *   **What you'll learn**: A combined workflow for detecting cells and classifying them as positive or negative in a single step (commonly used for Ki67 or other biomarkers).
 
@@ -43,10 +46,20 @@ The repository is organized into daily modules:
     *   **Topic**: Object-based classification.
     *   **What you'll learn**: How to detect individual cells and then train a machine learning model to sort them into categories (e.g., Normal vs. Apoptotic) based on shape and intensity features.
 
-### Day 3
-*   *(Coming Soon)*
+### Day 3: Advanced Deep Learning
+*   **1. DL Segmentation** (`Day3/1) dl_segmentation`)
+    *   **Topic**: StarDist & Cellpose.
+    *   **What you'll learn**: Replacing standard watershed with AI models for robust nuclei/cell detection.
+*   **2. Spot Detection** (`Day3/2) spot_detection`)
+    *   **Topic**: Spotiflow.
+    *   **What you'll learn**: Detecting sub-cellular signals (DNA repair foci) using deep learning.
+*   **3. Cellpose Training** (`Day3/3) cellpose_training`)
+    *   **Topic**: Custom Model Training.
+    *   **What you'll learn**: How to annotate ground truth and train a custom Cellpose model for difficult images (Phase Contrast).
 
 ## Prerequisites
 
-* **QuPath v0.6.0+**: Download from [qupath.github.io](https://qupath.github.io/).
-* **Sample Images**: The lessons use sample images located in the `resources/` folder." 
+*   **QuPath v0.6.0+**: Download from [qupath.github.io](https://qupath.github.io/).
+*   **Extensions**: For Day 3, you need the StarDist, Cellpose, and Spotiflow extensions installed.
+*   **Python Environment**: A configured Python environment with `cellpose`, and `spotiflow` is required for Day 3. See [README_CELLPOSE_SPOTIFLOW.md](README_CELLPOSE_SPOTIFLOW.md) for setup instructions.
+*   **Sample Images**: The lessons use sample images located in the `resources/` folder." 
