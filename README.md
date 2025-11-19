@@ -25,6 +25,9 @@ git clone https://github.com/Cellular-Imaging-Amsterdam-UMC/qp-lessons.git
 The repository is organized into daily modules:
 
 ### Day 1: Basics & Positivity
+*   **0. Basic Annotations** (`Day1/0) basic_annotations`)
+    *   **Topic**: Interface navigation and manual tools.
+    *   **What you'll learn**: How to use the Wand, Brush, and Shape tools, and how to view basic measurements.
 *   **1. Threshold Classification** (`Day1/1) threshold_classification`)
     *   **Topic**: The simplest form of segmentation.
     *   **What you'll learn**: How to segment objects based on pixel intensity alone. Ideal for fluorescence images or high-contrast structures.
