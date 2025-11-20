@@ -21,10 +21,11 @@
     *   Select the **Brush Tool** (`B`).
     *   Paint a region.
     *   **Tip:** Hold `Alt` while painting to erase.
-    *   **Tip:** Scroll to change brush size.
+    *   **Tip:** Hold `Shift` while brushing to continue adding to (or subtracting from) the current region.
 *   **The Wand Tool:**
     *   Select the **Wand Tool** (`W`).
     *   Click on a high-contrast area (like the dark purple epidermis in the skin image).
+    *   Hold `Shift` to add to the current Wand selection if it already picked a region.
     *   Observe how it automatically selects the region based on color.
 
 ## Part 3: Measurements (5 Minutes)

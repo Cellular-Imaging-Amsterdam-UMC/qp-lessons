@@ -19,7 +19,7 @@ Before running this lesson, you **MUST** have the following installed and config
     *   Drag and drop `resources/nuclei.ome.tif` into the viewer.
     *   Set image type to "Fluorescence".
 2.  **Install Scripts**:
-    *   Drag the `.groovy` files from `scripts/` into the Script Editor.
+    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
 
 ## The Scripts
 *   **`01_stardist_nuclei.groovy`**: Runs the StarDist 2D model to detect nuclei.

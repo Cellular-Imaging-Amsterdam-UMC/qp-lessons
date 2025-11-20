@@ -14,7 +14,7 @@ This module teaches the **Positive Cell Detection** workflow. This is a streamli
     *   Drag and drop the `resources/Pancreatic Islet Cells of the Mouse.tif` file into the QuPath window.
     *   Set image type to "Fluorescence" if prompted.
 2.  **Install Scripts**:
-    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath script editor.
+    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
 
 ## The Scripts
 *   **`01_setup_positive.groovy`**: Defines the "Positive" and "Negative" classes.

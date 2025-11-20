@@ -14,7 +14,7 @@ This module teaches sub-cellular detection using **Spotiflow**, a deep learning 
     *   Drag and drop `resources/NucleiDNARepairFoci.ome.tif`.
     *   Set image type to "Fluorescence".
 2.  **Install Scripts**:
-    *   Drag the `.groovy` files from `scripts/` into the Script Editor.
+    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
 
 ## The Scripts
 *   **`01_detect_nuclei.groovy`**: Detects the nuclei first (Parent objects).

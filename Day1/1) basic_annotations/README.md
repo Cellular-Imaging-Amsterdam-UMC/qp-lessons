@@ -15,7 +15,7 @@ This introductory module covers the fundamental skills needed to use QuPath: nav
     *   Drag and drop the `resources/skin.ome.tif` file into the QuPath window.
     *   (Optional) If asked, set the image type to "Brightfield (H&E)".
 2.  **Install Scripts**:
-    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath script editor.
+    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
 
 ## The Scripts
 *   **`01_setup_basics.groovy`**: Clears the workspace to give you a fresh canvas.
