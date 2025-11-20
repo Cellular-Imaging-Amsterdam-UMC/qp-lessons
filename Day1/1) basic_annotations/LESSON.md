@@ -23,7 +23,10 @@
     *   **Project Tab:** Shows your file list.
     *   **Annotations Tab:** Lists all objects you draw.
     *   **Hierarchy Tab:** Shows parent/child relationships 
-    *   Remember the hierarchy is a tree: annotations can contain  other annotations. Use `Hierarchy > Update hierarchy` after adding or deleting objects so the tree refreshes
+    *   Remember the hierarchy is a tree: annotations can contain other annotations. Use `Hierarchy > Update hierarchy` after adding or deleting objects so the tree refreshes.
+    *   Right-click a node (or use `Objects > Move to parent/child`) to change its class or move it into the desired nesting without losing context.
+
+<a href="screenshots/Hierarchy.png"><img src="screenshots/Hierarchy.png" width="60%" alt="Hierarchy tree example"></a>
 
 ## Part 2: Annotation Tools (10 Minutes)
 *   **Shapes:**
@@ -52,6 +55,8 @@
     *   Use `Objects > Copy` + `Objects > Paste` to duplicate a region before experimenting, then `Objects > Rename` to keep track of variant copies.
     *   Select `Objects > Delete` to remove mistakes and clean up, or `Objects > Export > Annotations` to share your drawings with colleagues.
     *   Remember you can find these commands under the `Objects` or `Annotations` menus and watch how selections react as you add, subtract, and merge regions.
+
+<a href="screenshots/Annotations.png"><img src="screenshots/Annotations.png" width="60%" alt="Annotation tools summary"></a>
 
 ## Part 4: Measurements (5 Minutes)
 *   **Immediate Feedback:**
