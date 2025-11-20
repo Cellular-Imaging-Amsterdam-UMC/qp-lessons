@@ -26,7 +26,7 @@
     *   Remember the hierarchy is a tree: annotations can contain other annotations. Use `Hierarchy > Update hierarchy` after adding or deleting objects so the tree refreshes.
     *   Right-click a node (or use `Objects > Move to parent/child`) to change its class or move it into the desired nesting without losing context.
 
-<a href="screenshots/Hierarchy.png"><img src="screenshots/Hierarchy.png" width="60%" alt="Hierarchy tree example"></a>
+<p align="center"><a href="screenshots/Hierarchy.png"><img src="screenshots/Hierarchy.png" width="60%" alt="Hierarchy tree example"></a></p>
 
 ## Part 2: Annotation Tools (10 Minutes)
 *   **Shapes:**
@@ -56,8 +56,6 @@
     *   Select `Objects > Delete` to remove mistakes and clean up, or `Objects > Export > Annotations` to share your drawings with colleagues.
     *   Remember you can find these commands under the `Objects` or `Annotations` menus and watch how selections react as you add, subtract, and merge regions.
 
-<a href="screenshots/Annotations.png"><img src="screenshots/Annotations.png" width="60%" alt="Annotation tools summary"></a>
-
 ## Part 4: Measurements (5 Minutes)
 *   **Immediate Feedback:**
     *   Select an annotation. Look at the bottom status bar to see the **Area** and **Perimeter**.
@@ -72,6 +70,8 @@
 *   **Exporting Results:**
     *   Use `Measure > Export > Annotations` to save the drawn objects as a QuPath annotation file, or `Measure > Export > Measurement table` to write the current table to CSV/TSV so you can inspect it in Excel or R.
     *   If you need to export measurements from multiple images at once, open the Measurement Exporter (`Automate > Measurement exporter` or use the toolbar icon) to batch-select folders, specify the columns you want, and choose a destination file. You can include linked metadata (e.g., image name, annotations counts) so downstream analyses remain traceable.
+
+    <p align="center"><a href="screenshots/Measurements.png"><img src="screenshots/Measurements.png" width="60%" alt="Measurements dialog"></a></p>
 
 ## Part 5: Saving (2 Minutes)
 *   **Concept:** QuPath does not edit your original image file. It saves a separate `.qpdata` file inside the current project, and it only prompts you to save (or actually saves) when you close the project or switch to another image.

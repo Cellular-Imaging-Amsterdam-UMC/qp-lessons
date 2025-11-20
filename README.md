@@ -37,6 +37,9 @@ The repository is organized into daily modules:
 *   **4. Positive Cell Detection** (`Day1/4) positive_cell_detection`)
     *   **Topic**: Streamlined positivity analysis.
     *   **What you'll learn**: A combined workflow for detecting cells and classifying them as positive or negative in a single step (commonly used for Ki67 or other biomarkers).
+*   **5. Assignments** (`Day1/5) assignments`)
+    *   **Topic**: Applied practice.
+    *   **What you'll learn**: Measure glandular areas manually vs. thresholding and run an automatic positive cell detection workflow to reinforce Day 1 concepts.
 
 ### Day 2: Machine Learning Classification
 *   **1. Pixel Classification** (`Day2/1) pixel_classification`)
@@ -70,6 +73,7 @@ The repository is organized into daily modules:
     *   [Scripting Basics](Day1/2%29%20scripting_basics/README.md)
     *   [Threshold Classification](Day1/3%29%20threshold_classification/README.md)
     *   [Positive Cell Detection](Day1/4%29%20positive_cell_detection/README.md)
+    *   [Assignments](Day1/5%29%20assignments/README.md)
 *   **Day 2**
     *   [Pixel Classification](Day2/1%29%20pixel_classification/README.md)
     *   [Cell Classification](Day2/2%29%20cell_classification/README.md)
