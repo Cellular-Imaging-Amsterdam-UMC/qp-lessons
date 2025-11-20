@@ -10,6 +10,7 @@ This module teaches sub-cellular detection using **Spotiflow**, a deep learning 
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
+    *   Create or open a project (`File > New Project...` or `File > Project > Open project`) so QuPath stores detections and annotations in the project folder before importing images.
     *   Drag and drop `resources/NucleiDNARepairFoci.ome.tif`.
     *   Set image type to "Fluorescence".
 2.  **Install Scripts**:

@@ -10,6 +10,7 @@ This module teaches the **Positive Cell Detection** workflow. This is a streamli
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
+    *   Use `File > New Project...` to create or open an existing project folder (ideally an empty subfolder) so QuPath tracks all your annotations and results.
     *   Drag and drop the `resources/Pancreatic Islet Cells of the Mouse.tif` file into the QuPath window.
     *   Set image type to "Fluorescence" if prompted.
 2.  **Install Scripts**:

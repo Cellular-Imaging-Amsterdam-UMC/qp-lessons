@@ -62,4 +62,4 @@ The repository is organized into daily modules:
 *   **QuPath v0.6.0+**: Download from [qupath.github.io](https://qupath.github.io/).
 *   **Extensions**: For Day 3, you need the StarDist, Cellpose, and Spotiflow extensions installed.
 *   **Python Environment**: A configured Python environment with `cellpose`, and `spotiflow` is required for Day 3. See [README_CELLPOSE_SPOTIFLOW.md](README_CELLPOSE_SPOTIFLOW.md) for setup instructions.
-*   **Sample Images**: The lessons use sample images located in the `resources/` folder." 
+*   **Sample Images**: The lessons use sample images located in the `resources/` folder, and each lesson keeps a local `resources/` subdirectory with the files referenced in that module for easy access."

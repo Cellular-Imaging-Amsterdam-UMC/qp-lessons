@@ -11,6 +11,7 @@ This introductory module covers the fundamental skills needed to use QuPath: nav
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
+    *   Use `File > New Project...` to create or open an existing project folder (usually an empty subfolder) so QuPath has a workspace to store annotations, scripts, and results before importing images.
     *   Drag and drop the `resources/skin.ome.tif` file into the QuPath window.
     *   (Optional) If asked, set the image type to "Brightfield (H&E)".
 2.  **Install Scripts**:

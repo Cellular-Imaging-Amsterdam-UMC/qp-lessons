@@ -10,6 +10,7 @@ This module teaches the simplest form of segmentation: **Thresholding**. It is i
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
+    *   Use `File > New Project...` to create or open an existing project folder (ideally an empty subfolder) so QuPath saves your annotations and scripts there.
     *   Drag and drop the `resources/Pancreatic Islet Cells of the Mouse.tif` file into the QuPath window.
     *   (Optional) If asked, set the image type to "Fluorescence".
 2.  **Install Scripts**:

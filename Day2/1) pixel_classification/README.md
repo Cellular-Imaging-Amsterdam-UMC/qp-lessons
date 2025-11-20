@@ -10,7 +10,7 @@ This kit provides a structured lesson plan and "Magic Scripts" to teach pixel cl
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
-    *   Drag and drop an empty folder onto QuPath to create a project (or use `File > Project > Create project`).
+    *   Drag and drop an empty folder onto QuPath (or use `File > Project > Create project`) to create a new project, or open an existing project folder; this gives QuPath a workspace to store annotations, classifiers, and scripts for the lesson.
     *   Drag the `resources/skin.ome.tif` file into the QuPath window to add it to the project.
 2.  **Install Scripts**:
     *   Copy the `scripts` folder from this kit into your QuPath project folder.

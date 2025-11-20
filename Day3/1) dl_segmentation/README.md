@@ -15,6 +15,7 @@ Before running this lesson, you **MUST** have the following installed and config
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
+    *   Create or open a project (`File > New Project...` or `File > Project > Open project`) pointed at an empty folder so QuPath saves all detection results and annotations in that workspace.
     *   Drag and drop `resources/nuclei.ome.tif` into the viewer.
     *   Set image type to "Fluorescence".
 2.  **Install Scripts**:

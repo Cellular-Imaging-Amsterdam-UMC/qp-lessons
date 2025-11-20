@@ -10,7 +10,7 @@ This module teaches how to **Train a Custom Cellpose Model**. Sometimes pre-trai
 
 ## Setup Instructions
 1.  **Create Project**:
-    *   Create a new QuPath project.
+    *   Open QuPath and use `File > New Project...` to create (or `File > Project > Open project` to reuse) a folder for this lesson; the project folder is where annotations, training data, and scripts are stored, so start here before importing images.
     *   Import all images from `resources/PhaseContrast/`.
 2.  **Install Scripts**:
     *   Drag the `.groovy` files from `scripts/` into the Script Editor.

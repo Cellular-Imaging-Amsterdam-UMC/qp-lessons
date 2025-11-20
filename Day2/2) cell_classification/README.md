@@ -11,6 +11,7 @@ This module teaches **Object Classification**. Unlike pixel classification (pain
 ## Setup Instructions
 1.  **Create Project**:
     *   Open QuPath.
+    *   Use `File > New Project...` (or `File > Project > Create project`) to create or open an existing project folder (preferably an empty subfolder) so QuPath keeps the annotations, detections, and script results together.
     *   Drag and drop the `resources/nuclei.ome.tif` file into the QuPath window.
     *   Set image type to "Fluorescence" if prompted.
 2.  **Install Scripts**:
