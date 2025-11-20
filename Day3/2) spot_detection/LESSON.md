@@ -1,5 +1,7 @@
 # Lesson Plan: Spot Detection with Spotiflow
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 20 Minutes
 **Goal:** Detect DNA repair foci within nuclei using a pre-trained deep learning spot detector.
 

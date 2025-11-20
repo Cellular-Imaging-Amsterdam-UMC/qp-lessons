@@ -1,5 +1,7 @@
 # Lesson Plan: Pixel Classification in QuPath
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 30-60 Minutes
 **Goal:** Teach the concept of "Training by Example" using Random Trees pixel classification.
 

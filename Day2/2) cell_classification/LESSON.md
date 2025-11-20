@@ -1,5 +1,7 @@
 # Lesson Plan: Cell Classification (Normal vs Apoptotic)
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 20-30 Minutes
 **Goal:** Teach the workflow of Cell Detection -> Feature Extraction -> Object Classification.
 

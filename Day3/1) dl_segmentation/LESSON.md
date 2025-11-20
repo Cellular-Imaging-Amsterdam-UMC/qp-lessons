@@ -1,5 +1,7 @@
 # Lesson Plan: Deep Learning Segmentation
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 30 Minutes
 **Goal:** Compare standard watershed detection with AI-based methods (StarDist & Cellpose).
 

@@ -1,5 +1,7 @@
 # Lesson Plan: Training Cellpose on Phase Contrast
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 45-60 Minutes
 **Goal:** Go from raw images to a custom-trained Deep Learning model.
 

@@ -63,3 +63,19 @@ The repository is organized into daily modules:
 *   **Extensions**: For Day 3, you need the StarDist, Cellpose, and Spotiflow extensions installed.
 *   **Python Environment**: A configured Python environment with `cellpose`, and `spotiflow` is required for Day 3. See [README_CELLPOSE_SPOTIFLOW.md](README_CELLPOSE_SPOTIFLOW.md) for setup instructions.
 *   **Sample Images**: The lessons use sample images located in the `resources/` folder, and each lesson keeps a local `resources/` subdirectory with the files referenced in that module for easy access."
+
+## Lesson Table of Contents
+*   **Day 1**
+    *   [Basic Annotations](Day1/1%29%20basic_annotations/README.md)
+    *   [Scripting Basics](Day1/2%29%20scripting_basics/README.md)
+    *   [Threshold Classification](Day1/3%29%20threshold_classification/README.md)
+    *   [Positive Cell Detection](Day1/4%29%20positive_cell_detection/README.md)
+*   **Day 2**
+    *   [Pixel Classification](Day2/1%29%20pixel_classification/README.md)
+    *   [Cell Classification](Day2/2%29%20cell_classification/README.md)
+*   **Day 3**
+    *   [DL Segmentation](Day3/1%29%20dl_segmentation/README.md)
+    *   [Spot Detection](Day3/2%29%20spot_detection/README.md)
+    *   [Cellpose Training](Day3/3%29%20cellpose_training/README.md)
+
+Each lesson folder also contains `LESSON.md`, which expands on the activities; read the README first before diving into the lesson plan.

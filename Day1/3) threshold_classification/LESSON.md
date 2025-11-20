@@ -1,5 +1,7 @@
 # Lesson Plan: Threshold Classification
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 15-20 Minutes
 **Goal:** Teach how to segment objects based on pixel intensity using the "Create Thresholder" tool.
 

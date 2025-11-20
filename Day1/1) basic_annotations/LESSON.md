@@ -1,5 +1,7 @@
 # Lesson Plan: QuPath Basics - Annotations & Measurements
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 15-20 Minutes
 **Goal:** Familiarize users with the QuPath interface, navigation, and manual annotation tools before moving to automated analysis.
 

@@ -1,5 +1,7 @@
 # Lesson Plan: Scripting Basics
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 20-30 Minutes
 **Goal:** Demystify the Script Editor. Users will write their first lines of code to interact with QuPath objects, understanding that "everything you do in the GUI can be done in code."
 

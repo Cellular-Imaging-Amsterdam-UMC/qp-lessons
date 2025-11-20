@@ -1,5 +1,7 @@
 # Lesson Plan: Positive Cell Detection
 
+**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+
 **Duration:** 15-20 Minutes
 **Goal:** Teach how to detect cells and classify them as Positive/Negative based on intensity in a single step.
 
