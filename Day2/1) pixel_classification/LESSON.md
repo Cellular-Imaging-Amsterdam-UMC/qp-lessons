@@ -1,46 +1,76 @@
-# Lesson Plan: Pixel Classification in QuPath
+# Lesson Guide: Pixel Classification in QuPath
 
-**Before running this lesson, read `README.md` in this folder for the setup instructions.**
+**Before you start, read `README.md` in this folder for the setup instructions.**
 
 **Duration:** 30-60 Minutes
-**Goal:** Teach the concept of "Training by Example" using Random Trees pixel classification.
+**Goal:** Experience "Training by Example" using the Random Trees pixel classifier.
 
 ## Part 1: The "Why" (5 Minutes)
-*   **Concept:** Why can't we just select the purple stuff?
+*   **Guiding question:** Why can't we just select the purple stuff?
 *   **Activity:**
     1.  Open `skin.ome.tif`.
-    2.  Zoom into the dark purple edge (Epidermis).
-    3.  Ask students to describe the color (Purple).
-    4.  Ask them to describe the Dermis (Pink).
-    5.  **Conclusion:** Color alone is not enough. We need texture. We need a "Robot Eye" that looks at patterns, not just pixels.
+    2.  Zoom into the dark purple edge (epidermis).
+    3.  Describe the epidermis color (deep purple) and texture in your own words.
+    4.  Move into the dermis and describe its pink tone and smoother texture.
+    5.  **Takeaway:** Color alone is not enough. You need texture cues—the "robot eye"—to separate tissues reliably.
 
-## Part 2: The Setup (2 Minutes)
-*   **Action:** Run the `01_magic_setup.groovy` script.
-*   **Explain:** "I've just created our buckets: Epidermis (Red), Dermis (Green), and Whitespace (Gray). We need to teach the computer what goes in each bucket."
+## Part 2: Create a Training Image (Optional but strongly recommended, 5 Minutes)
+*   **Purpose:** Cropping a training-only composite gives you fast reload times and a tidy workspace while you practice.
+*   **Steps:**
+    1.  Use `Classify > Training images > Create region annotations` to drop square regions over representative epidermis, dermis, and whitespace patches (press **S** to save when finished).
+    2.  Select `Classify > Training images > Create training image`, choose your classification (e.g., `Region*`), set a preferred width (around 50,000 px works well here), and click **OK** to generate the composite.
+    3.  Open the new training image from the project list and continue annotating there—it behaves like a regular slide but loads almost instantly.
+*   **Applied example:** Extract a strip containing epidermis, dermis, and blank background. Use this smaller slide for your practice run, then hop back to the original whole slide once you feel ready to analyze everything.
 
-## Part 3: Interactive Training (15 Minutes)
+<p align="center"><a href="screenshots/TrainingPixelClassifier.png"><img src="screenshots/TrainingPixelClassifier.png" width="60%" alt="Training Pixel Classifier"></a></p>
+
+## Part 3: The Setup (2 Minutes)
+*   **Run** the `01_magic_setup.groovy` script.
+*   **What this does:** It creates the three classes you will train—Epidermis (red), Dermis (green), and Whitespace (gray)—so you can immediately start drawing examples.
+
+## Part 4: Interactive Training (15 Minutes)
 *   **Step 1: Annotate**
-    *   Select the **Epidermis** class.
-    *   Use the **Brush Tool** to paint a few small areas of the purple outer layer.
-    *   Select **Dermis** and paint some pink connective tissue.
-    *   Select **Whitespace** and paint the empty glass background.
+    *   Select the **Epidermis** class and toggle **Auto Set** on.
+    *   Use the **Brush Tool** to paint several small areas along the purple outer layer.
+    *   Switch to **Dermis** and paint a few patches of the pink connective tissue.
+    *   Switch to **Whitespace** and paint the empty glass background.
 *   **Step 2: Train**
-    *   Go to `Classify > Pixel classification > Train pixel classifier`.
-    *   **Crucial Step:** Press **Live Prediction**.
-*   **Step 3: Refine (The "Human-in-the-Loop")**
-    *   Look for errors (e.g., "The computer thinks this ink mark is a tumor").
-    *   **Fix it:** Select the correct class (Whitespace) and paint over the mistake.
-    *   Watch the classifier update instantly.
+    *   Open `Classify > Pixel classification > Train pixel classifier` (see the [Pixel classification tutorial](https://qupath.readthedocs.io/en/stable/docs/tutorials/pixel_classification.html)).
+    *   When the dialog appears:
+        *   **Classifier:** Choose *Random trees (RTrees)*—it is fast, forgiving, and ideal for a first classifier.
+        *   **Resolution:** Start at *Moderate* (3.65 µm/px). Lower values train faster with less detail; higher values capture more structure but add noise.
+        *   **Features:** Leave *Default multiscale features 2D* enabled so the classifier can mix Gaussian blur, Laplacian, and structure tensor cues.
+        *   **Output:** Stay with *Classification* to store the class probabilities per pixel. Remember that *Probability maps* can come later if you need heatmaps.
+        *   **Region:** Keep *Everywhere* to learn from the whole slide, or switch to *Within annotations* when you want to restrict learning to a specific ROI.
+        *   **Load training / Save / Classifier name:** Enter something descriptive (e.g., `Skin_RT_2025`). Save once you like the preview so you can reload it later.
+    *   **Crucial step:** Click **Live prediction** so the viewer updates instantly each time you add or correct strokes.
+*   **Step 3: Refine (Human-in-the-loop)**
+    *   Watch for mistakes (for example, QuPath may think an ink mark is dermis).
+    *   Select the correct class, paint over the error, and let Live prediction refresh.
+    *   Continue looping between annotate → train → check until the overlay looks right.
 
-## Part 4: Under the Hood (10 Minutes)
-*   **Concept:** How does it work?
-*   **Activity:** In the classifier dialog:
-    *   Change **Resolution** to "Low". Observe how it gets "blobby" and fast.
-    *   Change **Resolution** to "High". Observe how it gets noisy and slow.
-    *   Explain **Features**: The computer isn't just seeing color; it's applying filters (Gaussian blur, Edge detection) to understand texture.
+## Part 5: Under the Hood (10 Minutes)
+*   **Purpose:** See how parameter choices influence quality and speed.
+*   **Try this:**
+    *   Change **Resolution** to *Low*. Notice how the overlay gets blocky but refreshes quickly.
+    *   Change **Resolution** to *High*. Notice the finer detail, extra noise, and slower refresh.
+    *   Open **Select features…** in the training dialog and explore how the components work (see the [QuPath pixel-classification tutorial](https://qupath.readthedocs.io/en/stable/docs/tutorials/pixel_classification.html#select-features) for visuals):
+        *   **Channels:** Choose which stains feed the classifier. Using all channels helps when texture differences hide in non-RGB spaces.
+        *   **Scales:** Smaller scales (e.g., 0.5) emphasize fine detail, while larger scales (e.g., 2.0) smooth over noise to capture broad tissue trends.
+        *   **Features:** Each feature type (Gaussian blur, Laplacian of Gaussian, structure tensor, etc.) highlights different patterns—edges, blobs, gradients—so the classifier sees more than raw intensity.
+        *   **Local normalization:** Setting a radius (like 8 px) forces QuPath to compare each pixel to its neighborhood, which can tame illumination variation before features are computed.
+    *   Toggle feature combinations and scales, retrain, and observe how the probability map shifts. This helps you build intuition for which settings capture epidermis vs dermis texture.
 
-## Part 5: The Result (5 Minutes)
-*   **Action:** Save the classifier (name it "My First Classifier").
-*   **Action:** Run the `02_magic_report.groovy` script.
-*   **Outcome:** A popup box appears: *"Epidermis Percentage: 15.2%"*.
-*   **Discussion:** This number is a quantitative biomarker. It's reproducible and objective, unlike a human estimate like "looks like about 10%."
+## Part 6: Apply to the Whole Slide (5 Minutes)
+*   **Open** the original `skin.ome.tif` if you trained on a cropped image.
+*   **Load** your saved classifier via `Classify > Pixel classification > Load pixel classifier` and select the file you saved earlier.
+*   **Create objects:** Choose `Classify > Pixel classification > Create objects` and keep the default *Do not split* option so QuPath converts epidermis/dermis pixels into regions without fragmenting them.
+*   **Inspect** the overlay, look at the different in size, and save the project so the classification sticks to the full-resolution slide.
+
+## Part 7: The Result (5 Minutes)
+*   **Save** the classifier ("My First Classifier" works) so you can reuse it.
+*   **Run** the `02_magic_report.groovy` script.
+*   **Read the popup:** QuPath reports something like *"Epidermis Percentage: 15.2%"*.
+*   **Interpretation:** That percentage is a reproducible biomarker—far more objective than eyeballing "about 10%."
+
+<p align="center"><a href="screenshots/Skin.png"><img src="screenshots/Skin.png" width="60%" alt="Training Pixel Classifier, results"></a></p>
