@@ -12,6 +12,10 @@
 *   **Action:** Run `01_setup_positive.groovy`.
 *   **Explain:** "I've created our buckets: **Positive** (Red) and **Negative** (Blue)."
 
+*   **Before running detection:** Positive cell detection acts only inside the currently selected annotation. Select an existing ROI or create one so the tool knows where to work.
+    *   For small demo images, use `Objects > Create full image annotation` (shortcut **Ctrl+Shift+A**) to wrap the entire field of view instantly.
+    *   Bes sure the new annotation is selected; QuPath will only detect inside highlighted/selected regions.
+
 ## Part 3: Running the Tool (10 Minutes)
 *   **Step 1: Open the Tool**
     *   `Analyze > Cell detection > Positive cell detection`.
@@ -32,7 +36,20 @@
 
 <p align="center"><a href="screenshots/PosCellDet.png"><img src="screenshots/PosCellDet.png" width="60%" alt="Positive Cell Detection Example"></a></p>
 
-## Part 4: The Result (3 Minutes)
+## Part 4: Alternative – Detect, Then Classify (5 Minutes)
+*   **Why:** Show that the automated pipeline (cell detection + classifier) reaches the same end point as the manual tricks from Part 3, but is easier to repeat across many images.
+*   **Step 1 – Detect cells:**
+    *   Run `Analyze > Cell detection...` you will see the same parameters as in the positive cell detection from Part 4.
+    *   Click **Run** to add nuclei/cell objects to the hierarchy. 
+*   **Step 2 – Build a single measurement classifier:**
+    *   Choose `Classify > Object classification > Single measurement classifier...`.
+    *   In the dialog (second screenshot), set **Object filter = Cells**, **Measurement = Cytoplasm: Channel 1 mean**, adjust the **Threshold** slider, and assign **Above threshold = Positive**, **Below threshold = Negative**.
+    *   Optionally type a descriptive **Classifier name** and click **Save** so you can reapply it later or batch-process via `Classify > Load object classifier`.
+*   **Result:** Click **Apply** to instantly recolor every detected cell as Positive/Negative—the same outcome as Part 3, but now driven by reproducible measurements.
+
+<p align="center"><a href="screenshots/SingleClassifier.png"><img src="screenshots/SingleClassifier.png" width="60%" alt="Single measurement calassifier"></a></p>
+
+## Part 5: Getting The Result with a Script (3 Minutes)
 *   **Action:** Run `02_report_positive.groovy`.
 *   **Outcome:** A popup box appears: *"Positivity: 65.4%"*.
 *   **Discussion:** This is the standard method for scoring biomarkers like Ki67, ER, PR, or Insulin where the difference is purely intensity-based.
