@@ -1,8 +1,6 @@
-/**
- * 03_run_custom_model.groovy
- * 
- * Runs the custom-trained Cellpose model.
- */
+// 03_run_custom_model.groovy
+
+// Runs the custom-trained Cellpose model.
 
 import qupath.ext.biop.cellpose.Cellpose2D
 

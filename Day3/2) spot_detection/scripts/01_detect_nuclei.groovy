@@ -1,9 +1,7 @@
-/**
- * 01_detect_nuclei.groovy
- * 
- * Uses StarDist (or standard detection) to find nuclei.
- * These will serve as the "Parent" objects for spot detection.
- */
+// 01_detect_nuclei.groovy
+
+// Uses StarDist (or standard detection) to find nuclei.
+// These will serve as the "Parent" objects for spot detection.
 
 import qupath.ext.stardist.StarDist2D
 

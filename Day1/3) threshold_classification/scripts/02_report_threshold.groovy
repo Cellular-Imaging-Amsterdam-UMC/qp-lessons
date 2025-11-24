@@ -1,10 +1,8 @@
-/**
- * 02_report_threshold.groovy
- * 
- * REPORT SCRIPT
- * -------------
- * Measures the area of the Islet class.
- */
+// 02_report_threshold.groovy
+
+// REPORT SCRIPT
+// -------------
+// Measures the area of the Islet class.
 
 import qupath.lib.gui.QuPathGUI
 

@@ -1,11 +1,9 @@
-/**
- * 02_report_basics.groovy
- * 
- * REPORT SCRIPT
- * -------------
- * Counts the number of annotations drawn by the user and sums their area.
- * This demonstrates that QuPath "knows" what you drew.
- */
+// 02_report_basics.groovy
+
+// REPORT SCRIPT
+// -------------
+// Counts the number of annotations drawn by the user and sums their area.
+// This demonstrates that QuPath "knows" what you drew.
 
 import qupath.lib.gui.QuPathGUI
 

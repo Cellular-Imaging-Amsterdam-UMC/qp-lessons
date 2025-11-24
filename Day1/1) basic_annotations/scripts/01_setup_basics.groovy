@@ -1,10 +1,8 @@
-/**
- * 01_setup_basics.groovy
- * 
- * SETUP SCRIPT
- * ------------
- * Clears any existing annotations to provide a clean slate for the lesson.
- */
+// 01_setup_basics.groovy
+
+// SETUP SCRIPT
+// ------------
+// Clears any existing annotations to provide a clean slate for the lesson.
 
 import qupath.lib.gui.QuPathGUI
 

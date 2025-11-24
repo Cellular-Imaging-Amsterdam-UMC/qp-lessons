@@ -1,9 +1,7 @@
-/**
- * 02_spotiflow_foci.groovy
- * 
- * Runs Spotiflow to detect spots inside the selected nuclei.
- * Requires: QuPath Spotiflow Extension.
- */
+// 02_spotiflow_foci.groovy
+
+// Runs Spotiflow to detect spots inside the selected nuclei.
+// Requires: QuPath Spotiflow Extension.
 
 import qupath.ext.spotiflow.Spotiflow
 

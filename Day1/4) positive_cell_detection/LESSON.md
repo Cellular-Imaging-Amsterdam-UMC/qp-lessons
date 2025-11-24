@@ -6,8 +6,7 @@
 **Goal:** Teach how to detect cells and classify them as Positive/Negative based on intensity in a single step.
 
 ## Part 1: The Concept (5 Minutes)
-*   **Scenario:** "We want to count how many cells in this islet are producing insulin (Positive) vs those that are not (Negative)."
-*   **Concept:** Instead of training a machine learning classifier (like in Lesson 3), we can use a simple **Intensity Threshold**. If a cell is brighter than X, it's Positive.
+*   **Scenario:** "We want to count how many cells in this image of the pancreas are producing insulin (Positive Red Signal)."
 
 ## Part 2: The Setup (2 Minutes)
 *   **Action:** Run `01_setup_positive.groovy`.
@@ -16,16 +15,22 @@
 ## Part 3: Running the Tool (10 Minutes)
 *   **Step 1: Open the Tool**
     *   `Analyze > Cell detection > Positive cell detection`.
-*   **Step 2: Configure Detection**
-    *   **Detection Image:** Choose the channel that shows the nuclei (if available) or the main structure.
-    *   **Requested Pixel Size:** 0.5 µm (Adjust based on image resolution).
-*   **Step 3: Configure Intensity Threshold**
-    *   **Score Compartment:** Choose `Cell: Mean` or `Nucleus: Mean`.
-    *   **Threshold 1+:** This is the cutoff.
-    *   **Visual Check:** Look at the preview. Cells above the threshold turn **Red** (Positive). Cells below turn **Blue** (Negative).
-    *   Adjust the threshold slider until it accurately separates the bright cells from the dim ones.
-*   **Step 4: Run**
-    *   Click **Run**.
+* **Step 2: Configure Detection**
+    * **Detection channel:** Pick the fluorescence channel containing nuclei (Channel 2 in this dataset).
+    * **Requested pixel size:** 0.5 µm keeps the detection smooth without being too slow.
+    * **Background radius / Median filter / Sigma:** These smooth the image before nucleus finding. Use the screenshot values (8, 0, 1.5) and explain that larger radii remove more low-frequency background while sigma controls Gaussian blur.
+    * **Minimum/Maximum area:** Filters detections outside 10–400 µm² so debris or merged clumps are ignored.
+    * **Split by shape:** Leave checked so elongated clusters can be separated into individual cells.
+* **Step 3: Tune Intensity & Cell Parameters**
+    * **Threshold (Intensity parameters):** Defines which nuclei are initially accepted. Start around 25 for channel 2 and tweak while watching the preview.
+    * **Cell expansion (Include cell nucleus):** Grows each detection by 5 µm into the cytoplasm so measurements see both nucleus and cytoplasm.
+    * **Smooth boundaries** keeps the expanded cell outline clean; **Make measurements** ensures the statistics appear in the Measurement table.
+    * **Score compartment:** Choose where the positivity is measured (e.g., `Cytoplasm: Channel 1 mean`).
+    * **Threshold 1+/2+/3+:** These sliders define the intensity bins for the score compartment. With **Single threshold** enabled, only `Threshold 1+` is used and everything above it is marked **Positive**—perfect for a binary Positive/Negative lesson.
+* **Step 4: Run**
+    * Click **Run**.
+
+<p align="center"><a href="screenshots/PosCellDet.png"><img src="screenshots/PosCellDet.png" width="60%" alt="Positive Cell Detection Example"></a></p>
 
 ## Part 4: The Result (3 Minutes)
 *   **Action:** Run `02_report_positive.groovy`.

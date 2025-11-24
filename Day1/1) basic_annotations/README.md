@@ -14,8 +14,8 @@ This introductory module covers the fundamental skills needed to use QuPath: nav
     *   Use `File > New Project...` to create or open an existing project folder (usually an empty subfolder) so QuPath has a workspace to store annotations, scripts, and results before importing images.
     *   Drag and drop the `resources/skin.ome.tif` file into the QuPath window.
     *   (Optional) If asked, set the image type to "Brightfield (H&E)".
-2.  **Install Scripts**:
-    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
+2.  **Install Scripts (optional for this first lesson)**:
+    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script. More about scripting in lesson 2) scripting_basics.
 
 ## Color Deconvolution & Channels
 *   The `skin.ome.tif` image is a brightfield **H&E** stain, so QuPath automatically creates multiple display channels beyond the raw RGB view (e.g., Optical Density sum, Hematoxylin, Eosin, Residual, and individual Red/Green/Blue channels).

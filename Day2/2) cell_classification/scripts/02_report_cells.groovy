@@ -1,10 +1,8 @@
-/**
- * 02_report_cells.groovy
- * 
- * REPORT SCRIPT
- * -------------
- * Counts the cells and calculates the Apoptotic Index.
- */
+// 02_report_cells.groovy
+
+// REPORT SCRIPT
+// -------------
+// Counts the cells and calculates the Apoptotic Index.
 
 import qupath.lib.gui.QuPathGUI
 

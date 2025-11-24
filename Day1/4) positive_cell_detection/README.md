@@ -5,7 +5,7 @@ This module teaches the **Positive Cell Detection** workflow. This is a streamli
 
 ## Prerequisites
 1.  **QuPath v0.6.0+**
-2.  **Sample Image**: `resources/Pancreatic Islet Cells of the Mouse.tif` (Same as Lesson 1).
+2.  **Sample Image**: `resources/Pancreatic Islet Cells of the Mouse.tif` (Same as Lesson 3).
 
 ## Setup Instructions
 1.  **Create Project**:

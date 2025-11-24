@@ -1,31 +1,39 @@
-/**
- * 01_setup_positive.groovy
- * 
- * SETUP SCRIPT
- * ------------
- * Prepares the classes for Positive Cell Detection.
- */
+// 01_setup_positive.groovy
 
-import qupath.lib.gui.QuPathGUI
-import qupath.lib.objects.classes.PathClassFactory
-import javafx.scene.paint.Color
+// SETUP SCRIPT
+// ------------
+// Prepares the classes for Positive Cell Detection.
+
+import javafx.application.Platform
+import qupath.lib.objects.classes.PathClass
+import qupath.lib.common.ColorTools
 
 // 1. Define the classes
-// QuPath has built-in "Positive" and "Negative" classes usually derived from a base
-def positiveClass = PathClassFactory.getPathClass("Positive")
-def negativeClass = PathClassFactory.getPathClass("Negative")
+def qupath = getQuPath()
+def classList = qupath.getAvailablePathClasses()
 
-// 2. Set the classes
-setPathClasses([positiveClass, negativeClass])
+def ensureClass = { String name, int color ->
+	def pathClass = PathClass.fromString(name, color)
+	def exists = classList.any { it.getName() == name }
 
-// 3. Set Colors
-// Positive = Red (Standard convention)
-// Negative = Blue (Standard convention)
-def pathClassTools = QuPathGUI.getInstance().getPathClassTools()
-pathClassTools.setPathClassColor(positiveClass, Color.rgb(255, 0, 0))    // Red
-pathClassTools.setPathClassColor(negativeClass, Color.rgb(0, 0, 255))    // Blue
+	if (!exists) {
+		Platform.runLater {
+			classList.add(pathClass)
+			println "Added class: $name"
+		}
+	} else {
+		println "Class already exists: $name"
+	}
 
-// 4. Clean up
-clearAnnotations()
+	return pathClass
+}
 
-Dialogs.showInfoNotification("Setup", "Classes 'Positive' & 'Negative' created.\nReady for detection.")
+def positiveClass = ensureClass("Positive", ColorTools.makeRGB(255, 0, 0))
+def negativeClass = ensureClass("Negative", ColorTools.makeRGB(0, 0, 255))
+
+// 2. (Intentionally left as session-only classes)
+
+// 3. Clean up
+removeAnnotations()
+
+Dialogs.showInfoNotification("Setup", "Classes 'Positive' & 'Negative' ready for detection.")

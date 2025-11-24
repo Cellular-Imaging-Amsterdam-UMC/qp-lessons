@@ -1,8 +1,6 @@
-/**
- * 02_count_annotations.groovy
- * 
- * Demonstrates how to "get" data from QuPath.
- */
+// 02_count_annotations.groovy
+
+// Demonstrates how to "get" data from QuPath.
 
 // 1. Get the list of all annotation objects
 def annotations = getAnnotationObjects()

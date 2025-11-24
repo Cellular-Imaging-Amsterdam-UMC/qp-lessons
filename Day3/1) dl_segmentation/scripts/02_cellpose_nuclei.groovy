@@ -1,9 +1,7 @@
-/**
- * 02_cellpose_nuclei.groovy
- * 
- * Runs Cellpose for cell/nuclei detection.
- * Requires: QuPath Cellpose Extension & Configured Python Environment.
- */
+// 02_cellpose_nuclei.groovy
+
+// Runs Cellpose for cell/nuclei detection.
+// Requires: QuPath Cellpose Extension & Configured Python Environment.
 
 import qupath.ext.biop.cellpose.Cellpose2D
 

@@ -1,13 +1,11 @@
-/**
- * 02_magic_report.groovy
- * 
- * MAGIC REPORT SCRIPT
- * -------------------
- * This script runs the pixel classification measurement and displays
- * a simplified result for teaching purposes.
- * 
- * Compatible with QuPath v0.4.0 - v0.6.0+
- */
+// 02_magic_report.groovy
+
+// MAGIC REPORT SCRIPT
+// -------------------
+// This script runs the pixel classification measurement and displays
+// a simplified result for teaching purposes.
+
+// Compatible with QuPath v0.4.0 - v0.6.0+
 
 import qupath.lib.gui.QuPathGUI
 import qupath.lib.objects.classes.PathClass

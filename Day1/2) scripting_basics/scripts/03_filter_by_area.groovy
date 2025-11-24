@@ -1,8 +1,6 @@
-/**
- * 03_filter_by_area.groovy
- * 
- * Demonstrates Loops and If-Statements.
- */
+// 03_filter_by_area.groovy
+
+// Demonstrates Loops and If-Statements.
 
 def annotations = getAnnotationObjects()
 

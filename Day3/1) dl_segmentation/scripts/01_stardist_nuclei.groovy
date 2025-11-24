@@ -1,9 +1,7 @@
-/**
- * 01_stardist_nuclei.groovy
- * 
- * Runs StarDist 2D for nuclear detection.
- * Requires: QuPath StarDist Extension & Configured Python Environment.
- */
+// 01_stardist_nuclei.groovy
+
+// Runs StarDist 2D for nuclear detection.
+// Requires: QuPath StarDist Extension & Configured Python Environment.
 
 import qupath.ext.stardist.StarDist2D
 

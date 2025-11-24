@@ -1,10 +1,8 @@
-/**
- * 02_report_positive.groovy
- * 
- * REPORT SCRIPT
- * -------------
- * Calculates the percentage of positive cells.
- */
+// 02_report_positive.groovy
+
+// REPORT SCRIPT
+// -------------
+// Calculates the percentage of positive cells.
 
 import qupath.lib.gui.QuPathGUI
 

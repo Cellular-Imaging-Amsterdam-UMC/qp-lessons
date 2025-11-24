@@ -1,26 +1,46 @@
-/**
- * 01_setup_threshold.groovy
- * 
- * SETUP SCRIPT
- * ------------
- * Prepares the classes for the Thresholding lesson.
- */
+// 01_setup_threshold.groovy
 
-import qupath.lib.gui.QuPathGUI
-import qupath.lib.objects.classes.PathClassFactory
-import javafx.scene.paint.Color
+// SETUP SCRIPT
+// ------------
+// Prepares the classes for the Thresholding lesson.
+
+import javafx.application.Platform
+import qupath.lib.objects.classes.PathClass
+import qupath.lib.common.ColorTools
 
 // 1. Define the class
-def isletClass = PathClassFactory.getPathClass("Islet")
+def className = "Islet"
+def classColor = ColorTools.makeRGB(255, 255, 0) // Yellow
+def qupath = getQuPath()
+def classList = qupath.getAvailablePathClasses()
 
-// 2. Set the class
-setPathClasses([isletClass])
+def ensureClass = { String name, int color ->
+	def desiredClass = PathClass.fromString(name, color)
+	def existing = classList.find { it.getName() == name }
 
-// 3. Set Color (Yellow for visibility on Red background)
-def pathClassTools = QuPathGUI.getInstance().getPathClassTools()
-pathClassTools.setPathClassColor(isletClass, Color.rgb(255, 255, 0)) // Yellow
+	if (existing == null) {
+		Platform.runLater {
+			classList.add(desiredClass)
+			println "Added class: $name"
+		}
+		return desiredClass
+	}
 
-// 4. Clean up
-clearAnnotations()
+	if (existing.getColor() != color) {
+		Platform.runLater {
+			existing.setColor(color)
+			println "Updated color for class: $name"
+		}
+	} else {
+		println "Class already exists: $name"
+	}
 
-Dialogs.showInfoNotification("Setup", "Class 'Islet' created.\nReady for thresholding.")
+	return existing
+}
+
+def isletClass = ensureClass(className, classColor)
+
+// 3. Clean up
+removeAnnotations()
+
+Dialogs.showInfoNotification("Setup", "Class '${className}' ready for thresholding.")

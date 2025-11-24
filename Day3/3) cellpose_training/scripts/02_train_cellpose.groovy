@@ -1,8 +1,6 @@
-/**
- * 02_train_cellpose.groovy
- * 
- * Trains a custom Cellpose model using the annotations in the project.
- */
+// 02_train_cellpose.groovy
+
+// Trains a custom Cellpose model using the annotations in the project.
 
 import qupath.ext.biop.cellpose.Cellpose2D
 
