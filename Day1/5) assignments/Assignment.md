@@ -17,4 +17,13 @@
     3.  Record the positive percentage from the detection summary or measurement table.
 *   **Deliverable:** Document the key parameters you used (pixel size, intensity channel, threshold) and the final positive fraction. And add screenshots.
 
+## Bonus Assignment – Your Own Experiment
+
+* **Image:** Pick any image from the main `resources/` folder.
+* **Objective:** Design a mini-analysis that combines at least two tools from Day 1 (manual annotations, thresholding, positive cell detection, pixel classifiers, measurement table, etc.). Decide what biological question you want to answer (area fraction, number of positives, intensity comparison) and choose the workflow that best supports it.
+    1. Briefly describe why you selected the image and what you plan to measure.
+    2. Run the necessary steps (e.g., draw annotations, create a thresholder, detect cells + single measurement classifier, export measurements).
+    3. Summarize the result in a short paragraph plus a screenshot or chart.
+* **Deliverable:** Turn in a one-slide summary or short paragraph detailing the question, the tools you used, key parameter values, and the final measurement. Include at least one screenshot referencing the tools in action.
+
 > **Tip:** Treat this session as self-guided assignement. You can refer back to the earlier Day 1 lessons (basic annotations, thresholding, threshold classification, positive cell detection) if you need a walkthrough of any step.
