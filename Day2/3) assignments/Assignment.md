@@ -30,5 +30,5 @@ These exercises reinforce the Pixel Classification and Cell Classification lesso
 	3. Summarize the result in a short paragraph plus a screenshot or chart.
 * **Deliverable:** Turn in a one-slide summary or short paragraph detailing the question, the Day 2 tools you used, key parameter values (resolution, feature set, classifier type), and the final measurement. Include at least one screenshot showing the classifier or report in action.
 
-> **Tip:** Treat this as a self-guided experiment. Combine pixel classification, object classification, feature engineering, and reporting scripts to answer a question that would be tedious with manual tools alone.
+> **Tip:** Treat this as a self-guided experiment. Pixel classification, object classification, feature engineering, and reporting scripts to answer a question that would be tedious with manual tools alone.
 
