@@ -3,7 +3,7 @@
 These exercises reinforce the Pixel Classification and Cell Classification lessons. Encourage students to save their QuPath projects before starting.
 
 ## Assignment 1 – Stratified Skin Pixel Classification
-<p align="center"><a href="resources/Skin-he.png"><img src="resources/Skin-he.png" width="70%" alt="H&E stained human skin"></a></p>
+<p align="center"><a href="resources/Skin-he.png"><img src="resources/Skin-he.png" width="40%" alt="H&E stained human skin"></a></p>
 <p align="center"><em>H&E staining of human skin. This photograph of H&E-stained tissue reveals the epidermis and partial dermis. All cellular components can be visualized with the H&E stain: stratum corneum (SC); the epidermal phase transition zone (EPTZ) (~42 µm); stratum granulosum (SG); stratum spinosum (SS); stratum basale (SB); and the dermis (D). No nuclear staining occurs in the denucleated cells of the SC. Scale bar 30 µm.</em></p>
 
 1. Open `resources/skin.ome.tif` and run `assignment1_magic_setup.groovy` if needed.
