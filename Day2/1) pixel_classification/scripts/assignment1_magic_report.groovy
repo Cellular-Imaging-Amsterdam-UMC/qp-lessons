@@ -1,4 +1,4 @@
-// 02_magic_report.groovy
+// assignment1_magic_report.groovy
 
 // MAGIC REPORT SCRIPT
 // -------------------
@@ -35,8 +35,16 @@ if (hierarchy.getAnnotationObjects().isEmpty()) {
 // At this point you should have run "Create Objects" from the pixel classifier.
 // We loop through those objects and sum the epidermis/dermis areas.
 
-def epidermisArea = 0.0
-def dermisArea = 0.0
+def classNames = [
+    "Stratum corneum",
+    "EPTZ",
+    "Stratum granulosum",
+    "Stratum spinosum",
+    "Stratum basale",
+    "Dermis"
+]
+
+def classAreas = classNames.collectEntries { [(it): 0.0] }
 def totalArea = 0.0
 
 def annotations = getAnnotationObjects()
@@ -51,29 +59,26 @@ for (annotation in annotations) {
     if (pathClass == null) continue
     
     def area = annotation.getROI().getArea() * pixelSize * pixelSize // microns squared
+    def name = pathClass.getName()
     
-    if (pathClass.getName() == "Epidermis") {
-        epidermisArea += area
-    } else if (pathClass.getName() == "Dermis") {
-        dermisArea += area
-    }
-    
-    // Only include tissue in the total, ignore whitespace
-    if (pathClass.getName() == "Epidermis" || pathClass.getName() == "Dermis") {
+    if (classAreas.containsKey(name)) {
+        classAreas[name] += area
         totalArea += area
     }
 }
 
 if (totalArea == 0) {
-    Dialogs.showWarningNotification("Magic Report", "Found objects, but none were Epidermis or Dermis.")
+    Dialogs.showWarningNotification("Assignment 1 Report", "Found objects, but none were skin layer classes.")
     return
 }
 
-def epidermisPercentage = (epidermisArea / totalArea) * 100
+def summary = classAreas.collect { name, area ->
+    def pct = (area / totalArea) * 100
+    return String.format("%s: %.2f mm² (%.1f%%)", name, area / 1_000_000, pct)
+}.join("\n")
 
 // 4. Show your magic result
-def message = String.format("Epidermis Area: %.2f mm²\nDermis Area: %.2f mm²\n\nEpidermis Percentage: %.1f%%", 
-    epidermisArea / 1000000, dermisArea / 1000000, epidermisPercentage)
+def message = "Skin layer summary (Assignment 1)\nSlide: skin.ome.tif\n\n" + summary
 
-Dialogs.showInfoNotification("Magic Report Results", message)
+Dialogs.showInfoNotification("Assignment 1 Report", message)
 print(message)

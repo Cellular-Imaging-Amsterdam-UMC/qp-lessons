@@ -17,5 +17,5 @@ This kit provides a structured lesson plan and "Magic Scripts" to teach pixel cl
     *   Alternatively, drag and drop the `.groovy` files onto the QuPath script editor (`Automate > Show script editor`).
 
 ## The "Magic" Scripts
-*   **`01_magic_setup.groovy`**: Run this *before* the lesson starts (or at the very beginning). It sets up the classes (Epidermis, Dermis, Whitespace) with high-contrast colors and clears any old junk.
-*   **`02_magic_report.groovy`**: Run this *after* the students have trained their classifier. It calculates the Tumor Percentage and displays it in a simple popup box, avoiding the complex data tables for beginners.
+*   **`assignment1_magic_setup.groovy`**: Run this *before* the lesson starts (or at the very beginning). It sets up the skin-layer classes (Stratum corneum, EPTZ, Stratum granulosum, Stratum spinosum, Stratum basale, Dermis + Whitespace) with high-contrast colors and clears any old annotations.
+*   **`assignment1_magic_report.groovy`**: Run this *after* the students have trained their classifier. It summarizes the area and percentage for each skin compartment so they can compare layer proportions without digging through measurement tables.

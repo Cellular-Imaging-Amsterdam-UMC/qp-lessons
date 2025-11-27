@@ -25,15 +25,14 @@
 <p align="center"><a href="screenshots/TrainingPixelClassifier.png"><img src="screenshots/TrainingPixelClassifier.png" width="60%" alt="Training Pixel Classifier"></a></p>
 
 ## Part 3: The Setup (2 Minutes)
-*   **Run** the `01_magic_setup.groovy` script.
-*   **What this does:** It creates the three classes you will train—Epidermis (red), Dermis (green), and Whitespace (gray)—so you can immediately start drawing examples.
+*   **Run** the `assignment1_magic_setup.groovy` script.
+*   **What this does:** It creates the layer classes you will train—Stratum corneum, EPTZ, Stratum granulosum, Stratum spinosum, Stratum basale, Dermis, plus Whitespace—each with a contrasting color so you can immediately start drawing examples for every compartment.
 
 ## Part 4: Interactive Training (15 Minutes)
 *   **Step 1: Annotate**
-    *   Select the **Epidermis** class and toggle **Auto Set** on.
-    *   Use the **Brush Tool** to paint several small areas along the purple outer layer.
-    *   Switch to **Dermis** and paint a few patches of the pink connective tissue.
-    *   Switch to **Whitespace** and paint the empty glass background.
+    *   Toggle **Auto Set** on and work from the surface inward: **Stratum corneum → EPTZ → Stratum granulosum → Stratum spinosum → Stratum basale → Dermis**.
+    *   Use the **Brush Tool** with small strokes and keep each layer on its own class to avoid cross-contamination.
+    *   Finish with a quick pass on **Whitespace** for the empty glass background.
 *   **Step 2: Train**
     *   Open `Classify > Pixel classification > Train pixel classifier` (see the [Pixel classification tutorial](https://qupath.readthedocs.io/en/stable/docs/tutorials/pixel_classification.html)).
     *   When the dialog appears:
@@ -68,9 +67,9 @@
 *   **Inspect** the overlay, look at the different in size, and save the project so the classification sticks to the full-resolution slide.
 
 ## Part 7: The Result (5 Minutes)
-*   **Save** the classifier ("My First Classifier" works) so you can reuse it.
-*   **Run** the `02_magic_report.groovy` script.
-*   **Read the popup:** QuPath reports something like *"Epidermis Percentage: 15.2%"*.
-*   **Interpretation:** That percentage is a reproducible biomarker—far more objective than eyeballing "about 10%."
+*   **Save** the classifier ("SkinLayers_RT" works) so you can reuse it.
+*   **Run** the `assignment1_magic_report.groovy` script.
+*   **Read the popup:** QuPath summarizes each compartment (e.g., *"Stratum corneum: 0.12 mm² (6.3%)"*).
+*   **Interpretation:** Layer percentages become reproducible biomarkers—far more objective than eyeballing "about 10%" of epidermis.
 
 <p align="center"><a href="screenshots/Skin.png"><img src="screenshots/Skin.png" width="60%" alt="Training Pixel Classifier, results"></a></p>
