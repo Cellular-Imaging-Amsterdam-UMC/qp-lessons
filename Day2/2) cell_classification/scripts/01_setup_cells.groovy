@@ -28,9 +28,8 @@ def ensureClass = { String name, int color ->
 	return pathClass
 }
 
-def normalClass = ensureClass("Normal", ColorTools.makeRGB(100, 100, 255)) // Light Blue
-def apoptoticClass = ensureClass("Apoptotic", ColorTools.makeRGB(255, 0, 0)) // Red
-def ignoreClass = ensureClass("Ignore*", ColorTools.makeRGB(255, 255, 0)) // Yellow
+def normalClass = ensureClass("Normal", ColorTools.makeRGB(0, 255, 0)) // Green
+def apoptoticClass = ensureClass("Apoptotic", ColorTools.makeRGB(0, 0, 255)) // Blue
 
 // 2. Classes registered in session list
 

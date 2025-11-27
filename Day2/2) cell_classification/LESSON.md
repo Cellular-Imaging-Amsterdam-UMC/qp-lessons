@@ -29,21 +29,40 @@
 *   **Outcome:** Yellow outlines should cover every nucleus. They start as "Unclassified" objects that you'll label next.
 *   **Note on object type:** Cell Detection creates the special **Cell** object type—essentially a paired nucleus ROI with an optional expanded cytoplasm ROI—so QuPath can store both nuclear and cellular measurements together (see the [object types overview](https://qupath.readthedocs.io/en/stable/docs/concepts/objects.html#types-of-object)).
 
-<p align="center"><a href="screenshots/detectcells.png"><img src="detectcells/Hierarchy.png" width="60%" alt="Detect Cells"></a></p>
+<p align="center"><a href="screenshots/detectcells.png"><img src="screenshots/detectcells.png" width="60%" alt="Detect Cells"></a></p>
 
 ## Part 4: Training the Classifier (10 Minutes)
-*   **Step 1: Annotate examples**
-    *   Pick the **Normal** class, right-click a dim smooth nucleus, and choose `Set class` (or draw a tiny ROI around it).
-    *   Switch to **Apoptotic**, right-click a bright condensed nucleus, and set its class.
-    *   Aim for 5–10 examples per class before training.
-*   **Step 2: Train**
+*   **Step 1: Pick your training style**
+    *   **Points workflow (screenshot below):** Open the **Points** panel, click **Add** to create a point annotation group, then double-click its entry to set the name and class (matching the dialog shown above). With the group active, click inside nuclei to drop labeled points; Alt-click removes a point, drag to reposition.
+
+<p align="center"><a href="screenshots/classifycells_1.png"><img src="screenshots/classifycells_1.png" width="60%" alt="Training with Points"></a></p>
+<table style="margin:0 auto">
+    <tr>
+        <td style="padding:0 12px" align="center">
+            <a href="screenshots/annotation properties_normal.png"><img src="screenshots/annotation properties_normal.png" width="360" alt="Normal class properties dialog"></a>
+        </td>
+        <td style="padding:0 12px" align="center">
+            <a href="screenshots/annotation properties_apoptottic.png"><img src="screenshots/annotation properties_apoptottic.png" width="360" alt="Apoptotic class properties dialog"></a>
+        </td>
+    </tr>
+</table>
+
+*   **Unlocked annotations workflow (screenshot below):** Draw rectangular annotations that enclose good examples, keep them unlocked, and set their classes in the **Annotations** pane. All detections inside the annotation inherit that class for training, which speeds up labeling dense regions.
+   
+<p align="center"><a href="screenshots/classifycells_2.png"><img src="screenshots/classifycells_2.png" width="60%" alt="Training with Unlocked Annotations"></a></p>
+
+*   **Step 2: Gather examples**
+    *   In either workflow, make sure both **Normal** and **Apoptotic** cells are represented (≈5–10 of each). Use `Set class` or the **Set selected** button to toggle classes quickly.
+*   **Step 3: Train**
     *   Open `Classify > Object classification > Train object classifier`.
     *   **Classifier:** Keep Random Trees.
-    *   **Features:** Ensure "Nucleus: Mean" (intensity) and "Nucleus: Circularity" (shape) are enabled.
-    *   Click **Live update** to see instant feedback.
-*   **Step 3: Refine**
-    *   Check the overlay. If an apoptotic nucleus shows up blue, right-click it and reset the class to **Apoptotic**.
-    *   Continue correcting mistakes until the colors match what you see.
+    *   **Features:** Rather than relying only on `Nucleus: Mean`, toggle on shape and texture metrics that stay stable across microscopes—`Nucleus: Area`, `Nucleus: Circularity`, `Nucleus: Eccentricity`, plus `Nucleus: Std. dev.` for intensity variation. Let students experiment with which combination separates the phenotypes best.
+    *   Set **Training** to `Points only` or `Unlocked annotations` to match your labeling style, then click **Live update** for instant feedback.
+*   **Step 4: Refine**
+    *   Continue correcting mistakes by adding more points/annotations as needed and keep Live update running.
+
+
+
 
 ## Part 5: The Result (5 Minutes)
 *   **Save** the classifier ("Apoptosis Finder" is a good name) so you can reuse it later.
