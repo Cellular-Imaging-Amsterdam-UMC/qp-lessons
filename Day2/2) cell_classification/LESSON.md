@@ -53,7 +53,7 @@
 <p align="center"><a href="screenshots/classifycells_2.png"><img src="screenshots/classifycells_2.png" width="80%" alt="Training with Unlocked Annotations"></a></p>
 
 *   **Step 2: Gather examples**
-    *   In either workflow, make sure both **Normal** and **Apoptotic** cells are represented (≈5–10 of each). Use `Set class` or the **Set selected** button to toggle classes quickly.
+    *   In either workflow, make sure both **Normal** and **Apoptotic** cells are represented (≈5–10 of each). In the Unlocked annotations workflow use `Set class` or the **Set selected** button to toggle classes quickly.
 *   **Step 3: Train**
     *   Open `Classify > Object classification > Train object classifier`.
     *   **Classifier:** Keep Random Trees.
