@@ -29,7 +29,7 @@
 *   **Outcome:** Yellow outlines should cover every nucleus. They start as "Unclassified" objects that you'll label next.
 *   **Note on object type:** Cell Detection creates the special **Cell** object type—essentially a paired nucleus ROI with an optional expanded cytoplasm ROI—so QuPath can store both nuclear and cellular measurements together (see the [object types overview](https://qupath.readthedocs.io/en/stable/docs/concepts/objects.html#types-of-object)).
 
-<p align="center"><a href="screenshots/detectcells.png"><img src="screenshots/detectcells.png" width="60%" alt="Detect Cells"></a></p>
+<p align="center"><a href="screenshots/detectcells.png"><img src="screenshots/detectcells.png" width="30%" alt="Detect Cells"></a></p>
 
 ## Part 4: Training the Classifier (10 Minutes)
 *   **Step 1: Pick your training style**
