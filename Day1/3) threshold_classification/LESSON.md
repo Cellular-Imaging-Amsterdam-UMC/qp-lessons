@@ -12,6 +12,8 @@
 ## Part 2: The Setup (2 Minutes)
 *   **Action:** Run `01_setup_threshold.groovy`.
 *   **Explain:** "I've created a class called **Islet**. We want to find all pixels that belong to this class."
+*   **QuPath classes:** Classes are named labels (with colors) that tell QuPath what each object represents—crucial for measurement tables, training classifiers, and keeping your hierarchy organized.
+*   **Create classes by hand:** In the **Annotations** tab, look to the **Class list** panel (screenshot above). Press the `+` button to add a class. Give the class a name such as `Islet`, choose a color swatch, and click **OK**. Highlight the class in the list so it shows the eye icon, then draw annotations or select existing ones and press **Set selected** (or `Ctrl + K` / right-click ▸ **Set class**) to apply it. Use **Auto set** if you want each newly drawn object to inherit the currently highlighted class automatically.
 
 ## Part 3: Interactive Thresholding (10 Minutes)
 *   **Step 1: Open the Tool**

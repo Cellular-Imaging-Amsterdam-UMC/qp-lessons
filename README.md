@@ -83,3 +83,5 @@ The repository is organized into daily modules:
     *   [Cellpose Training](Day3/3%29%20cellpose_training/README.md)
 
 Each lesson folder also contains `LESSON.md`, which expands on the activities; read the README first before diving into the lesson plan.
+
+For detailed help and tutorials, visit the [official QuPath documentation](https://qupath.readthedocs.io/en/stable/index.html).
