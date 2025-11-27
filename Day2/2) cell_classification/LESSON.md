@@ -36,7 +36,8 @@
     *   **Points workflow (screenshot below):** Open the **Points** panel, click **Add** to create a point annotation group, then double-click its entry to set the name and class (matching the dialog shown above). With the group active, click inside nuclei to drop labeled points; Alt-click removes a point, drag to reposition.
 
 <p align="center"><a href="screenshots/classifycells_1.png"><img src="screenshots/classifycells_1.png" width="60%" alt="Training with Points"></a></p>
-<table style="margin:0 auto">
+
+<table width=90% align="center" style="margin:0 auto">
     <tr>
         <td style="padding:0 12px" align="center">
             <a href="screenshots/annotation properties_normal.png"><img src="screenshots/annotation properties_normal.png" width="360" alt="Normal class properties dialog"></a>
