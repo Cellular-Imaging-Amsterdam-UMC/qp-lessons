@@ -35,7 +35,7 @@
 *   **Step 1: Pick your training style**
     *   **Points workflow (screenshot below):** Open the **Points** panel, click **Add** to create a point annotation group, then double-click its entry to set the name and class (matching the dialog shown above). With the group active, click inside nuclei to drop labeled points; Alt-click removes a point, drag to reposition.
 
-<p align="center"><a href="screenshots/classifycells_1.png"><img src="screenshots/classifycells_1.png" width="60%" alt="Training with Points"></a></p>
+<p align="center"><a href="screenshots/classifycells_1.png"><img src="screenshots/classifycells_1.png" width="80%" alt="Training with Points"></a></p>
 
 <table width=90% align="center" style="margin:0 auto">
     <tr>
@@ -50,7 +50,7 @@
 
 *   **Unlocked annotations workflow (screenshot below):** Draw rectangular annotations that enclose good examples, keep them unlocked, and set their classes in the **Annotations** pane. All detections inside the annotation inherit that class for training, which speeds up labeling dense regions.
    
-<p align="center"><a href="screenshots/classifycells_2.png"><img src="screenshots/classifycells_2.png" width="60%" alt="Training with Unlocked Annotations"></a></p>
+<p align="center"><a href="screenshots/classifycells_2.png"><img src="screenshots/classifycells_2.png" width="80%" alt="Training with Unlocked Annotations"></a></p>
 
 *   **Step 2: Gather examples**
     *   In either workflow, make sure both **Normal** and **Apoptotic** cells are represented (≈5–10 of each). Use `Set class` or the **Set selected** button to toggle classes quickly.
