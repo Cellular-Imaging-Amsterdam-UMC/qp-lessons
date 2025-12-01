@@ -3,7 +3,7 @@
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 
 **Duration:** 30 Minutes
-**Goal:** Compare standard watershed detection with AI-based methods (StarDist & Cellpose).
+**Goal:** Compare standard standard cell detection detection with AI-based methods (StarDist & Cellpose).
 
 ## Part 1: The Problem (5 Minutes)
 *   **Activity:** Run standard `Analyze > Cell detection > Cell detection` on `nuclei.ome.tif`.
