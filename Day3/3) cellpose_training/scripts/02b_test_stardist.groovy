@@ -47,8 +47,10 @@ def preferredModelName = 'dsb2018_heavy_augment.pb' // Expected inside STARDIST_
 def    channelDefault           = 'DAPI' // Headless default; dialog uses dropdown populated from image
 double downscaleDefault         = 1.0       // >=1; larger = faster & coarser
 double thresholdDefault         = 0.50      // 0..1
+double cellexpansionDefault     = 0.0       // microns; 0 = off
 int    meanfiltersizeDefault    = 2         // pixels; 0 = off
 int    gaussianfiltersizeDefault = 0        // pixels; 0 = off
+boolean createAnnotationsDefault = false    // true = create annotations, false = detections
 boolean excludeOnBordersDefault = true     // true = remove detections touching image borders
 
 // ---------------------------
@@ -127,8 +129,10 @@ def parseChannel(Object c) {
 def channel            = channelDefault
 double downscale       = downscaleDefault
 double threshold       = thresholdDefault
+double cellexpansion   = cellexpansionDefault
 int    meanfiltersize  = meanfiltersizeDefault
 int    gaussianfiltersize = gaussianfiltersizeDefault
+boolean createAnnotations = createAnnotationsDefault
 boolean excludeOnBorders = excludeOnBordersDefault
 
 if (showSettingsDialog) {
@@ -142,10 +146,14 @@ if (showSettingsDialog) {
             "Scale factor for detection resolution; larger = faster/coarser")
         .addDoubleParameter("threshold", "Probability Threshold [0..1]", thresholdDefault, "", 0.0, 1.0,
             "Probability threshold for detections")
+        .addDoubleParameter("cellexpansion", "Cell expansion", cellexpansionDefault, "µm", 0.0, 100.0,
+            "0 = off; converted to px using image calibration")
         .addIntParameter("meanfiltersize", "Mean filter radius", meanfiltersizeDefault, "px", 0, 99,
             "0 = off")
         .addIntParameter("gaussianfiltersize", "Gaussian filter radius", gaussianfiltersizeDefault, "px", 0, 99,
             "0 = off")
+        .addBooleanParameter("createAnnotations", "Create annotations (instead of detections)", createAnnotationsDefault,
+            "If enabled, StarDist will create annotation objects")
         .addBooleanParameter("excludeOnBorders", "Exclude detections on borders", excludeOnBordersDefault,
             "If enabled, removes detections touching image borders")
 
@@ -159,8 +167,10 @@ if (showSettingsDialog) {
     channel            = (chosen != null) ? chosen.toString() : defaultChannelName
     downscale          = params.getDoubleParameterValue("downscale")
     threshold          = params.getDoubleParameterValue("threshold")
+    cellexpansion      = params.getDoubleParameterValue("cellexpansion")
     meanfiltersize     = params.getIntParameterValue("meanfiltersize")
     gaussianfiltersize = params.getIntParameterValue("gaussianfiltersize")
+    createAnnotations  = params.getBooleanParameterValue("createAnnotations")
     excludeOnBorders   = params.getBooleanParameterValue("excludeOnBorders")
 }
 
@@ -175,16 +185,8 @@ if (meanfiltersize < 0)
     throw new IllegalArgumentException("Parameter 'meanfiltersize' must be ≥ 0 (current value: ${meanfiltersize}).")
 if (gaussianfiltersize < 0)
     throw new IllegalArgumentException("Parameter 'gaussianfiltersize' must be ≥ 0 (current value: ${gaussianfiltersize}).")
-def classLabel = "Nuclei"
-
-// ---------------------------
-// Remove existing nuclei annotations to avoid duplicates
-// ---------------------------
-def existingNuclei = getAnnotationObjects().findAll { it.getPathClass()?.toString() == classLabel }
-if (!existingNuclei.isEmpty()) {
-    println "Removing ${existingNuclei.size()} existing nuclei annotations..."
-    removeObjects(existingNuclei, true)
-}
+if (cellexpansion < 0)
+    throw new IllegalArgumentException("Parameter 'cellexpansion' must be ≥ 0 microns (current value: ${cellexpansion}).")
 
 // ---------------------------
 // Build & run StarDist
@@ -195,7 +197,10 @@ try {
         throw new IllegalStateException("Invalid pixel calibration (µm/px): ${umPerPx}")
 
     double targetUmPerPx   = umPerPx * downscale
-    double cellExpansionPx = 0.0
+    double cellExpansionPx = (cellexpansion > 0) ? (cellexpansion / umPerPx) : 0.0
+
+    // Dynamic classification name based on cellexpansion
+    def classLabel = (cellexpansion > 0) ? "Cells" : "Nuclei"
 
     def builder = StarDist2D
         .builder(pathModel)
@@ -203,13 +208,13 @@ try {
         .channels(parseChannel(channel))   // accepts either int index or string name
         .normalizePercentiles(1, 99)
         .pixelSize(targetUmPerPx)
+        .cellExpansion(cellExpansionPx)
 //        .cellConstrainScale(1.5)
         .measureShape()
         .measureIntensity()
         .includeProbability(true)
         .doLog()
         .classify(classLabel)
-        .createAnnotations()
     // Optional advanced options:
         // .tileSize(1024)
         // .nThreads(4)
@@ -224,6 +229,10 @@ try {
     if (gaussianfiltersize > 0)
         builder.preprocess(ImageOps.Filters.gaussianBlur(gaussianfiltersize as double))
 
+    if (createAnnotations)
+        builder.createAnnotations()
+
+
     def stardist = builder.build()
 
     def imageData = getCurrentImageData()
@@ -234,8 +243,8 @@ try {
 
     // Remove border detections if requested
     if (excludeOnBorders) {
-        def annotationObjects = getAnnotationObjects().findAll { it.getPathClass()?.toString() == classLabel }
-        def toRemove = annotationObjects.findAll { detection ->
+        def allDetections = getDetectionObjects()
+        def toRemove = allDetections.findAll { detection ->
             def roi = detection.getROI()
             if (roi == null) return false
             
@@ -246,7 +255,7 @@ try {
             return bounds
         }
         removeObjects(toRemove, true)
-        println "Removed ${toRemove.size()} border annotations."
+        println "Removed ${toRemove.size()} border detections. ${allDetections.size() - toRemove.size()} detections remaining."
     }
 
 } catch (Exception e) {

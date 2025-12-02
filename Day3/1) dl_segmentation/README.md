@@ -23,4 +23,4 @@ Before running this lesson, you **MUST** have the following installed and config
 
 ## The Scripts
 *   **`01_stardist_nuclei.groovy`**: Runs the StarDist 2D model to detect nuclei.
-*   **`02_cellpose_nuclei.groovy`**: Runs Cellpose (using the 'cyto2' or 'nuclei' model) to segment cells.
+*   **`02_cellpose.groovy`**: Runs Cellpose (using models like 'cyto3' or 'nuclei') to segment cells or nuclei. Supports the Cellpose channel convention: `chan` for the primary segmentation channel and `chan2` as an optional nuclear channel for cyto models.

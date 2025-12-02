@@ -378,6 +378,20 @@ def loadSpotiflowDetections = { List records, File datasetDir ->
 }
 
 // ---------------------------
+// Remove existing nuclei and foci to avoid duplicates
+// ---------------------------
+def existingNuclei = getAnnotationObjects().findAll { it.getPathClass()?.toString() == annotationClassName }
+if (!existingNuclei.isEmpty()) {
+    println "Removing ${existingNuclei.size()} existing nuclei annotations..."
+    removeObjects(existingNuclei, true)
+}
+def existingFociPre = getDetectionObjects().findAll { it.getPathClass()?.toString() == fociClassNameDefault }
+if (!existingFociPre.isEmpty()) {
+    println "Removing ${existingFociPre.size()} existing foci detections..."
+    removeObjects(existingFociPre, true)
+}
+
+// ---------------------------
 // 1) Run StarDist
 // ---------------------------
 println "\n========== Running StarDist =========="

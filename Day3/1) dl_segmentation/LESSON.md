@@ -38,11 +38,11 @@
 
 ## Part 3: Cellpose (10 Minutes)
 *   **Concept:** Cellpose is a generalist algorithm that works on a wide variety of shapes (not just stars). It's slower but often more robust for irregular shapes.
-*   **Action:** Run `02_cellpose_nuclei.groovy`.
+*   **Action:** Run `02_cellpose.groovy`.
 *   **Key Parameters:**
     *   **Cellpose model:** Choose a pretrained model (e.g., `cyto3` for cytoplasm, `nuclei` for nuclei).
-    *   **Nuclei channel:** The channel containing nuclei signal.
-    *   **Cytoplasm channel:** (Optional) Channel for cytoplasm; set to "None" for nuclei-only segmentation.
+    *   **Primary channel (chan):** The main channel to segment. This should contain the signal for whatever you're detecting (nuclei, cells, bacteria, etc.) depending on the model chosen.
+    *   **Nuclear channel for cyto models (chan2):** (Optional) Only used with cyto models to help identify cell boundaries. Set to "None" for nuclei-only models or when not needed.
     *   **Diameter (µm):** Expected median diameter of objects. Critical for good results—measure a few objects first!
     *   **Cellprob threshold:** Controls mask confidence. Default is 0; negative values include more marginal detections.
     *   **Flow threshold:** Controls flow error tolerance for mask generation. Default ~0.4; higher = more permissive.

@@ -16,6 +16,3 @@ This module teaches sub-cellular detection using **Spotiflow**, a deep learning 
 2.  **Install Scripts**:
     *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
 
-## The Scripts
-*   **`01_detect_nuclei.groovy`**: Detects the nuclei first (Parent objects).
-*   **`02_spotiflow_foci.groovy`**: Runs Spotiflow to find green foci *inside* the nuclei.
