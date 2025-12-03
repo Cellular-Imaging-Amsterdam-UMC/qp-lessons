@@ -1,7 +1,7 @@
 {
   "builderType": "uri",
   "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-  "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R21.tif",
+  "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R21.tif",
   "args": [
     "--series",
     "0"

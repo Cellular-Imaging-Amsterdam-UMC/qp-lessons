@@ -1,9 +1,0 @@
-{
-  "builderType": "uri",
-  "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-  "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course1/R01.tif",
-  "args": [
-    "--series",
-    "0"
-  ]
-}

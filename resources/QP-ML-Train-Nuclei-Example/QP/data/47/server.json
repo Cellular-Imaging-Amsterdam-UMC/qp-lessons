@@ -1,6 +1,0 @@
-{
-  "builderType": "uri",
-  "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
-  "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_2.tif",
-  "args": []
-}

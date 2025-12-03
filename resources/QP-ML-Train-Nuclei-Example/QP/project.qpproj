@@ -2,14 +2,14 @@
   "version": "0.6.0",
   "createTimestamp": 1650458159398,
   "modifyTimestamp": 1650458159398,
-  "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course1/QP-Train01/project.qpproj",
+  "uri": "file:/U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/QP/project.qpproj",
   "lastID": 50,
   "images": [
     {
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R01.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R01.tif",
         "args": [
           "--series",
           "0"
@@ -57,7 +57,7 @@
         }
       },
       "entryID": 3,
-      "randomizedName": "f59f1d48-842c-4606-9a87-1eeb2c763919",
+      "randomizedName": "494036b4-6429-4992-b3ee-0d641a424045",
       "imageName": "R01.tif",
       "metadata": {},
       "tags": []
@@ -66,7 +66,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R02.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R02.tif",
         "args": [
           "--series",
           "0"
@@ -114,7 +114,7 @@
         }
       },
       "entryID": 4,
-      "randomizedName": "65f2b65f-99ff-4edf-9c82-7aa94b291b35",
+      "randomizedName": "ff4f3426-391a-4287-adbd-15f9b331734a",
       "imageName": "R02.tif",
       "metadata": {},
       "tags": []
@@ -123,7 +123,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R03.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R03.tif",
         "args": [
           "--series",
           "0"
@@ -171,7 +171,7 @@
         }
       },
       "entryID": 5,
-      "randomizedName": "ef3a0925-100b-421b-a55a-87d8123fe394",
+      "randomizedName": "050efe1c-9135-473b-a213-59afe2412cba",
       "imageName": "R03.tif",
       "metadata": {},
       "tags": []
@@ -180,7 +180,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R04.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R04.tif",
         "args": [
           "--series",
           "0"
@@ -228,7 +228,7 @@
         }
       },
       "entryID": 6,
-      "randomizedName": "7237ba79-b3cc-4e97-9606-76b2d04731c7",
+      "randomizedName": "0c2ab697-2488-4c2b-a954-e9a1ed47ae56",
       "imageName": "R04.tif",
       "metadata": {},
       "tags": []
@@ -237,7 +237,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R05.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R05.tif",
         "args": [
           "--series",
           "0"
@@ -285,7 +285,7 @@
         }
       },
       "entryID": 7,
-      "randomizedName": "85ae533c-6fa9-4c88-83a9-2f19171bd622",
+      "randomizedName": "a8bbe2ef-15d4-4c08-ac55-9f5358a33c0d",
       "imageName": "R05.tif",
       "metadata": {},
       "tags": []
@@ -294,7 +294,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R06.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R06.tif",
         "args": [
           "--series",
           "0"
@@ -342,7 +342,7 @@
         }
       },
       "entryID": 8,
-      "randomizedName": "7c176331-55d4-43f2-9ac8-4e072c3a5d29",
+      "randomizedName": "98a90bb3-31a7-4430-8d86-68b4b0399a2b",
       "imageName": "R06.tif",
       "metadata": {},
       "tags": []
@@ -351,7 +351,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R07.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R07.tif",
         "args": [
           "--series",
           "0"
@@ -399,7 +399,7 @@
         }
       },
       "entryID": 9,
-      "randomizedName": "3d8b3e32-7865-4aeb-a9ac-4410a4693c20",
+      "randomizedName": "eb8ffec9-11dd-4a06-9451-18c820ad16aa",
       "imageName": "R07.tif",
       "metadata": {},
       "tags": []
@@ -408,7 +408,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R08.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R08.tif",
         "args": [
           "--series",
           "0"
@@ -456,7 +456,7 @@
         }
       },
       "entryID": 10,
-      "randomizedName": "3a4b292f-f9d6-48a3-bde8-d7145a7f6f19",
+      "randomizedName": "f7de4dc8-e5d9-459b-b85d-755bf8f104f6",
       "imageName": "R08.tif",
       "metadata": {},
       "tags": []
@@ -465,7 +465,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R09.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R09.tif",
         "args": [
           "--series",
           "0"
@@ -513,7 +513,7 @@
         }
       },
       "entryID": 11,
-      "randomizedName": "0d77adfd-9a5d-4f76-be6a-2796116c3d30",
+      "randomizedName": "edada65f-2179-4e0e-8a84-14902c4bb787",
       "imageName": "R09.tif",
       "metadata": {},
       "tags": []
@@ -522,7 +522,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R10.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R10.tif",
         "args": [
           "--series",
           "0"
@@ -570,7 +570,7 @@
         }
       },
       "entryID": 12,
-      "randomizedName": "f6e09ad0-3ef5-41d3-a630-88be91f631d4",
+      "randomizedName": "e2de18e0-9d26-416b-ab10-3ff00fa96643",
       "imageName": "R10.tif",
       "metadata": {},
       "tags": []
@@ -579,7 +579,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R11.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R11.tif",
         "args": [
           "--series",
           "0"
@@ -627,7 +627,7 @@
         }
       },
       "entryID": 13,
-      "randomizedName": "550a02f9-cd17-4579-afd5-e00f3979e4a0",
+      "randomizedName": "2dbf93b2-6af8-47dc-9366-463a9bcde5e4",
       "imageName": "R11.tif",
       "metadata": {},
       "tags": []
@@ -636,7 +636,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R12.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R12.tif",
         "args": [
           "--series",
           "0"
@@ -684,7 +684,7 @@
         }
       },
       "entryID": 14,
-      "randomizedName": "6dc16ae7-340b-4b3c-b774-da3eb6def9bd",
+      "randomizedName": "cc658cba-2c37-4774-a408-9c8fe3a6dc65",
       "imageName": "R12.tif",
       "metadata": {},
       "tags": []
@@ -693,7 +693,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R13.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R13.tif",
         "args": [
           "--series",
           "0"
@@ -741,7 +741,7 @@
         }
       },
       "entryID": 15,
-      "randomizedName": "60c03cda-08da-42f7-abac-670a9ef0e427",
+      "randomizedName": "cb6b5569-9c2c-4059-ad2e-fb4758a012fa",
       "imageName": "R13.tif",
       "metadata": {},
       "tags": []
@@ -750,7 +750,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R14.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R14.tif",
         "args": [
           "--series",
           "0"
@@ -798,7 +798,7 @@
         }
       },
       "entryID": 16,
-      "randomizedName": "fc020108-7a0e-4f77-815e-fc7afcc9116b",
+      "randomizedName": "8eaf8714-3c27-44b7-8b2e-d72c246725dd",
       "imageName": "R14.tif",
       "metadata": {},
       "tags": []
@@ -807,7 +807,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R15.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R15.tif",
         "args": [
           "--series",
           "0"
@@ -855,7 +855,7 @@
         }
       },
       "entryID": 17,
-      "randomizedName": "8912b5c9-999d-41aa-ac7d-2e5accf9eeb9",
+      "randomizedName": "d73b9a3c-b532-4bd6-bf2d-e27a32de6b37",
       "imageName": "R15.tif",
       "metadata": {},
       "tags": []
@@ -864,7 +864,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R16.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R16.tif",
         "args": [
           "--series",
           "0"
@@ -912,7 +912,7 @@
         }
       },
       "entryID": 18,
-      "randomizedName": "498b5daa-027a-4311-8fad-c202b906c742",
+      "randomizedName": "d575136e-4165-4f9c-bb67-61a2dde3d066",
       "imageName": "R16.tif",
       "metadata": {},
       "tags": []
@@ -921,7 +921,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R17.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R17.tif",
         "args": [
           "--series",
           "0"
@@ -969,7 +969,7 @@
         }
       },
       "entryID": 19,
-      "randomizedName": "a6cd28fd-9ccd-4e2d-99c2-5a6a3f60c981",
+      "randomizedName": "8e40c464-1e46-42f3-9204-470c78a06c7a",
       "imageName": "R17.tif",
       "metadata": {},
       "tags": []
@@ -978,7 +978,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R18.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R18.tif",
         "args": [
           "--series",
           "0"
@@ -1026,7 +1026,7 @@
         }
       },
       "entryID": 20,
-      "randomizedName": "053a1570-1a28-4e8a-9cca-fcf54fbe4d5c",
+      "randomizedName": "23dea8a8-059d-4d77-8964-2cab58e1b9f9",
       "imageName": "R18.tif",
       "metadata": {},
       "tags": []
@@ -1035,7 +1035,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R19.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R19.tif",
         "args": [
           "--series",
           "0"
@@ -1083,7 +1083,7 @@
         }
       },
       "entryID": 21,
-      "randomizedName": "30f1c474-8382-4ba2-ac1a-4e65a3819c87",
+      "randomizedName": "98fe2722-cb9d-466b-917c-569d4c41fea6",
       "imageName": "R19.tif",
       "metadata": {},
       "tags": []
@@ -1092,7 +1092,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R20.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R20.tif",
         "args": [
           "--series",
           "0"
@@ -1140,7 +1140,7 @@
         }
       },
       "entryID": 22,
-      "randomizedName": "cae480db-eb24-4f55-b57f-89759eb165aa",
+      "randomizedName": "075c51d3-1ef0-4a97-851f-3626115c2f30",
       "imageName": "R20.tif",
       "metadata": {},
       "tags": []
@@ -1149,7 +1149,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R21.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R21.tif",
         "args": [
           "--series",
           "0"
@@ -1197,7 +1197,7 @@
         }
       },
       "entryID": 23,
-      "randomizedName": "f06b1b4e-acac-430f-b12e-d004858d9c36",
+      "randomizedName": "4ad5b570-ed97-4681-9013-2b7229992eec",
       "imageName": "R21.tif",
       "metadata": {},
       "tags": []
@@ -1206,7 +1206,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R22.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R22.tif",
         "args": [
           "--series",
           "0"
@@ -1254,7 +1254,7 @@
         }
       },
       "entryID": 24,
-      "randomizedName": "b5327446-a830-4ad8-92ae-c41e3bb81e4e",
+      "randomizedName": "8f9292ba-7418-467a-9273-389b98604534",
       "imageName": "R22.tif",
       "metadata": {},
       "tags": []
@@ -1263,7 +1263,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R23.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R23.tif",
         "args": [
           "--series",
           "0"
@@ -1311,7 +1311,7 @@
         }
       },
       "entryID": 25,
-      "randomizedName": "638f3b0e-9b87-4932-9002-ffad1725aca0",
+      "randomizedName": "f7cc97a8-8620-45c4-bd8e-9dc3b2df127f",
       "imageName": "R23.tif",
       "metadata": {},
       "tags": []
@@ -1320,7 +1320,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R24.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R24.tif",
         "args": [
           "--series",
           "0"
@@ -1368,7 +1368,7 @@
         }
       },
       "entryID": 26,
-      "randomizedName": "01fdf8ef-42b6-4668-99f0-90c2f1a77988",
+      "randomizedName": "b8de6c12-07b4-4b12-8532-c4bc8f702d52",
       "imageName": "R24.tif",
       "metadata": {},
       "tags": []
@@ -1377,7 +1377,7 @@
       "serverBuilder": {
         "builderType": "uri",
         "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R25.tif",
+        "uri": "file:///U:/Ron/Documents/Github/qp-lessons/resources/QP-ML-Train-Nuclei-Example/R25.tif",
         "args": [
           "--series",
           "0"
@@ -1425,191 +1425,8 @@
         }
       },
       "entryID": 27,
-      "randomizedName": "4f868f28-a0cb-4c3a-bf07-bbf4049e63b1",
+      "randomizedName": "32ee5e76-8bc6-4b0d-8486-22b5b067fbc2",
       "imageName": "R25.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
-        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_2.tif",
-        "args": [],
-        "metadata": {
-          "name": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
-          "width": 256,
-          "height": 256,
-          "sizeZ": 1,
-          "sizeT": 1,
-          "channelType": "DEFAULT",
-          "isRGB": false,
-          "pixelType": "UINT16",
-          "levels": [
-            {
-              "downsample": 1.0,
-              "width": 256,
-              "height": 256
-            }
-          ],
-          "channels": [
-            {
-              "name": "Channel 1",
-              "color": -1
-            }
-          ],
-          "pixelCalibration": {
-            "pixelWidth": {
-              "value": 0.0798999971635501,
-              "unit": "µm"
-            },
-            "pixelHeight": {
-              "value": 0.0798999971635501,
-              "unit": "µm"
-            },
-            "zSpacing": {
-              "value": 1.0,
-              "unit": "µm"
-            },
-            "timeUnit": "SECONDS",
-            "timepoints": [
-              0.0
-            ]
-          },
-          "preferredTileWidth": 256,
-          "preferredTileHeight": 256
-        }
-      },
-      "entryID": 44,
-      "randomizedName": "648e576d-d66c-4f10-b86b-9a3835b97f25",
-      "imageName": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
-        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_1.tif",
-        "args": []
-      },
-      "entryID": 45,
-      "randomizedName": "66ba92cc-f825-407c-a619-6e79ce779874",
-      "imageName": "JE2NileRed_oilp22_PMP_101220_003_1.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
-        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/brightfield/JE2NileRed_oilp22_PMP_101220_003_2.tif",
-        "args": [],
-        "metadata": {
-          "name": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
-          "width": 256,
-          "height": 256,
-          "sizeZ": 1,
-          "sizeT": 1,
-          "channelType": "DEFAULT",
-          "isRGB": false,
-          "pixelType": "UINT16",
-          "levels": [
-            {
-              "downsample": 1.0,
-              "width": 256,
-              "height": 256
-            }
-          ],
-          "channels": [
-            {
-              "name": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
-              "color": -1
-            }
-          ],
-          "pixelCalibration": {
-            "pixelWidth": {
-              "value": 0.0798999971635501,
-              "unit": "µm"
-            },
-            "pixelHeight": {
-              "value": 0.0798999971635501,
-              "unit": "µm"
-            },
-            "zSpacing": {
-              "value": 1.0,
-              "unit": "µm"
-            },
-            "timeUnit": "SECONDS",
-            "timepoints": [
-              0.0
-            ]
-          },
-          "preferredTileWidth": 256,
-          "preferredTileHeight": 256
-        }
-      },
-      "entryID": 46,
-      "randomizedName": "aeba654e-d1d5-4de5-be82-61565f67e9c7",
-      "imageName": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
-        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_2.tif",
-        "args": []
-      },
-      "entryID": 47,
-      "randomizedName": "be623660-a767-49e2-a83d-d1f1515c4886",
-      "imageName": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course1/R01.tif",
-        "args": [
-          "--series",
-          "0"
-        ]
-      },
-      "entryID": 48,
-      "randomizedName": "e1c3179f-d11d-4d3c-ad72-83f361ffb82b",
-      "imageName": "R01.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
-        "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course2/R07.tif",
-        "args": [
-          "--series",
-          "0"
-        ]
-      },
-      "entryID": 49,
-      "randomizedName": "8c2e8d8a-237b-4c9c-bd2f-6f9f1a4f073d",
-      "imageName": "R07.tif",
-      "metadata": {},
-      "tags": []
-    },
-    {
-      "serverBuilder": {
-        "builderType": "uri",
-        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
-        "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course4/01.tif",
-        "args": []
-      },
-      "entryID": 50,
-      "randomizedName": "2663c968-d2a7-4842-950d-0d49fed473aa",
-      "imageName": "01.tif",
       "metadata": {},
       "tags": []
     }

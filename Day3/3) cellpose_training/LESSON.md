@@ -71,7 +71,7 @@
 *   **Action:** Run `04_train_cellpose.groovy`.
 *   **Important Parameters:**
     *   **Base model:** Select `None (train from scratch)` since no pretrained model fits this data.
-    *   **Epochs:** Set to at least **50** when training from scratch (more epochs = longer training but better results).
+    *   **Epochs:** Set to at least **75** when training from scratch (more epochs = longer training but better results). (75 Epochs can take 20 minutes or more on a CPU)
     *   **Diameter:** Set the average diameter of your objects in µm. Measure a few typical objects to estimate this value.
     
     > 💡 **Tip:** You can measure object diameter using `Measure > Show measurement tools` or by drawing a line annotation across a typical object.
