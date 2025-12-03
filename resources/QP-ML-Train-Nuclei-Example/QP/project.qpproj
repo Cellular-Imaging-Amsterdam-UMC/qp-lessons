@@ -1,0 +1,1617 @@
+{
+  "version": "0.6.0",
+  "createTimestamp": 1650458159398,
+  "modifyTimestamp": 1650458159398,
+  "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course1/QP-Train01/project.qpproj",
+  "lastID": 50,
+  "images": [
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R01.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R01.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 3,
+      "randomizedName": "f59f1d48-842c-4606-9a87-1eeb2c763919",
+      "imageName": "R01.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R02.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R02.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 4,
+      "randomizedName": "65f2b65f-99ff-4edf-9c82-7aa94b291b35",
+      "imageName": "R02.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R03.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R03.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 5,
+      "randomizedName": "ef3a0925-100b-421b-a55a-87d8123fe394",
+      "imageName": "R03.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R04.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R04.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 6,
+      "randomizedName": "7237ba79-b3cc-4e97-9606-76b2d04731c7",
+      "imageName": "R04.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R05.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R05.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 7,
+      "randomizedName": "85ae533c-6fa9-4c88-83a9-2f19171bd622",
+      "imageName": "R05.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R06.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R06.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 8,
+      "randomizedName": "7c176331-55d4-43f2-9ac8-4e072c3a5d29",
+      "imageName": "R06.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R07.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R07.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 9,
+      "randomizedName": "3d8b3e32-7865-4aeb-a9ac-4410a4693c20",
+      "imageName": "R07.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R08.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R08.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 10,
+      "randomizedName": "3a4b292f-f9d6-48a3-bde8-d7145a7f6f19",
+      "imageName": "R08.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R09.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R09.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 11,
+      "randomizedName": "0d77adfd-9a5d-4f76-be6a-2796116c3d30",
+      "imageName": "R09.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R10.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R10.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 12,
+      "randomizedName": "f6e09ad0-3ef5-41d3-a630-88be91f631d4",
+      "imageName": "R10.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R11.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R11.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 13,
+      "randomizedName": "550a02f9-cd17-4579-afd5-e00f3979e4a0",
+      "imageName": "R11.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R12.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R12.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 14,
+      "randomizedName": "6dc16ae7-340b-4b3c-b774-da3eb6def9bd",
+      "imageName": "R12.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R13.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R13.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 15,
+      "randomizedName": "60c03cda-08da-42f7-abac-670a9ef0e427",
+      "imageName": "R13.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R14.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R14.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 16,
+      "randomizedName": "fc020108-7a0e-4f77-815e-fc7afcc9116b",
+      "imageName": "R14.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R15.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R15.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 17,
+      "randomizedName": "8912b5c9-999d-41aa-ac7d-2e5accf9eeb9",
+      "imageName": "R15.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R16.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R16.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 18,
+      "randomizedName": "498b5daa-027a-4311-8fad-c202b906c742",
+      "imageName": "R16.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R17.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R17.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 19,
+      "randomizedName": "a6cd28fd-9ccd-4e2d-99c2-5a6a3f60c981",
+      "imageName": "R17.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R18.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R18.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 20,
+      "randomizedName": "053a1570-1a28-4e8a-9cca-fcf54fbe4d5c",
+      "imageName": "R18.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R19.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R19.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 21,
+      "randomizedName": "30f1c474-8382-4ba2-ac1a-4e65a3819c87",
+      "imageName": "R19.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R20.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R20.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 22,
+      "randomizedName": "cae480db-eb24-4f55-b57f-89759eb165aa",
+      "imageName": "R20.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R21.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R21.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 23,
+      "randomizedName": "f06b1b4e-acac-430f-b12e-d004858d9c36",
+      "imageName": "R21.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R22.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R22.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 24,
+      "randomizedName": "b5327446-a830-4ad8-92ae-c41e3bb81e4e",
+      "imageName": "R22.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R23.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R23.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 25,
+      "randomizedName": "638f3b0e-9b87-4932-9002-ffad1725aca0",
+      "imageName": "R23.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R24.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R24.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 26,
+      "randomizedName": "01fdf8ef-42b6-4668-99f0-90c2f1a77988",
+      "imageName": "R24.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R25.tif",
+        "args": [
+          "--series",
+          "0"
+        ],
+        "metadata": {
+          "name": "R25.tif",
+          "width": 1024,
+          "height": 1024,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.69,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "z-slice"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": []
+          },
+          "preferredTileWidth": 1024,
+          "preferredTileHeight": 128
+        }
+      },
+      "entryID": 27,
+      "randomizedName": "4f868f28-a0cb-4c3a-bf07-bbf4049e63b1",
+      "imageName": "R25.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
+        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_2.tif",
+        "args": [],
+        "metadata": {
+          "name": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
+          "width": 256,
+          "height": 256,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 256,
+              "height": 256
+            }
+          ],
+          "channels": [
+            {
+              "name": "Channel 1",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.0798999971635501,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.0798999971635501,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "µm"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": [
+              0.0
+            ]
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 256
+        }
+      },
+      "entryID": 44,
+      "randomizedName": "648e576d-d66c-4f10-b86b-9a3835b97f25",
+      "imageName": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
+        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_1.tif",
+        "args": []
+      },
+      "entryID": 45,
+      "randomizedName": "66ba92cc-f825-407c-a619-6e79ce779874",
+      "imageName": "JE2NileRed_oilp22_PMP_101220_003_1.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
+        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/brightfield/JE2NileRed_oilp22_PMP_101220_003_2.tif",
+        "args": [],
+        "metadata": {
+          "name": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
+          "width": 256,
+          "height": 256,
+          "sizeZ": 1,
+          "sizeT": 1,
+          "channelType": "DEFAULT",
+          "isRGB": false,
+          "pixelType": "UINT16",
+          "levels": [
+            {
+              "downsample": 1.0,
+              "width": 256,
+              "height": 256
+            }
+          ],
+          "channels": [
+            {
+              "name": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
+              "color": -1
+            }
+          ],
+          "pixelCalibration": {
+            "pixelWidth": {
+              "value": 0.0798999971635501,
+              "unit": "µm"
+            },
+            "pixelHeight": {
+              "value": 0.0798999971635501,
+              "unit": "µm"
+            },
+            "zSpacing": {
+              "value": 1.0,
+              "unit": "µm"
+            },
+            "timeUnit": "SECONDS",
+            "timepoints": [
+              0.0
+            ]
+          },
+          "preferredTileWidth": 256,
+          "preferredTileHeight": 256
+        }
+      },
+      "entryID": 46,
+      "randomizedName": "aeba654e-d1d5-4de5-be82-61565f67e9c7",
+      "imageName": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
+        "uri": "file:/C:/rahoebe/QP-Lessons/resources/Bacteria/fluorescence/JE2NileRed_oilp22_PMP_101220_003_2.tif",
+        "args": []
+      },
+      "entryID": 47,
+      "randomizedName": "be623660-a767-49e2-a83d-d1f1515c4886",
+      "imageName": "JE2NileRed_oilp22_PMP_101220_003_2.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course1/R01.tif",
+        "args": [
+          "--series",
+          "0"
+        ]
+      },
+      "entryID": 48,
+      "randomizedName": "e1c3179f-d11d-4d3c-ad72-83f361ffb82b",
+      "imageName": "R01.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+        "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course2/R07.tif",
+        "args": [
+          "--series",
+          "0"
+        ]
+      },
+      "entryID": 49,
+      "randomizedName": "8c2e8d8a-237b-4c9c-bd2f-6f9f1a4f073d",
+      "imageName": "R07.tif",
+      "metadata": {},
+      "tags": []
+    },
+    {
+      "serverBuilder": {
+        "builderType": "uri",
+        "providerClassName": "qupath.imagej.images.servers.ImageJServerBuilder",
+        "uri": "file:/U:/QuPath_Course_data/QP-ML-Train-Course4/01.tif",
+        "args": []
+      },
+      "entryID": 50,
+      "randomizedName": "2663c968-d2a7-4842-950d-0d49fed473aa",
+      "imageName": "01.tif",
+      "metadata": {},
+      "tags": []
+    }
+  ]
+}

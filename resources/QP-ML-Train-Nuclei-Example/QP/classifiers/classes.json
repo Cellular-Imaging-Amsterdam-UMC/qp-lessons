@@ -1,0 +1,20 @@
+{
+  "pathClasses": [
+    {
+      "name": "Region*",
+      "color": -16777036
+    },
+    {
+      "name": "Ignore*",
+      "color": -4934476
+    },
+    {
+      "name": "Training",
+      "color": -15346395
+    },
+    {
+      "name": "Validation",
+      "color": -3919181
+    }
+  ]
+}

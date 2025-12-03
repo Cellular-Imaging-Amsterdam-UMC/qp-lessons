@@ -1,0 +1,50 @@
+{
+  "builderType": "uri",
+  "providerClassName": "qupath.lib.images.servers.bioformats.BioFormatsServerBuilder",
+  "uri": "file:///U:/QuPath_Course_data/QP-ML-Train-Course1/R08.tif",
+  "args": [
+    "--series",
+    "0"
+  ],
+  "metadata": {
+    "name": "R08.tif",
+    "width": 1024,
+    "height": 1024,
+    "sizeZ": 1,
+    "sizeT": 1,
+    "channelType": "DEFAULT",
+    "isRGB": false,
+    "pixelType": "UINT16",
+    "levels": [
+      {
+        "downsample": 1.0,
+        "width": 1024,
+        "height": 1024
+      }
+    ],
+    "channels": [
+      {
+        "name": "Channel 1",
+        "color": -1
+      }
+    ],
+    "pixelCalibration": {
+      "pixelWidth": {
+        "value": 0.69,
+        "unit": "µm"
+      },
+      "pixelHeight": {
+        "value": 0.69,
+        "unit": "µm"
+      },
+      "zSpacing": {
+        "value": 1.0,
+        "unit": "z-slice"
+      },
+      "timeUnit": "SECONDS",
+      "timepoints": []
+    },
+    "preferredTileWidth": 1024,
+    "preferredTileHeight": 128
+  }
+}

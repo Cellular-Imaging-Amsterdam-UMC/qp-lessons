@@ -1,0 +1,6 @@
+model,image,Prediction v. GT Intersection over Union,false positive,true positive,false negative,precision,recall,accuracy,f1 score,n_true,n_pred,mean_true_score,mean_matched_score,panoptic_quality
+cellpose_residual_on_style_on_concatenation_off_train_2022_12_09_10_35_54.706453,R01_region_0.tif,0.0,0,0,3,0,0,0,0,3,0,0.0,0.0,0.0
+cellpose_residual_on_style_on_concatenation_off_train_2022_12_09_10_35_54.706453,R02_region_0.tif,0.0,0,0,2,0,0,0,0,2,0,0.0,0.0,0.0
+cellpose_residual_on_style_on_concatenation_off_train_2022_12_09_10_35_54.706453,R03_region_0.tif,0.48333333333333334,0,1,1,1.0,0.5,0.5,0.6666666666666666,2,1,0.3945578231292517,0.7891156462585034,0.5260770975056689
+cellpose_residual_on_style_on_concatenation_off_train_2022_12_09_10_35_54.706453,R04_region_0.tif,0.0,0,0,2,0,0,0,0,2,0,0.0,0.0,0.0
+cellpose_residual_on_style_on_concatenation_off_train_2022_12_09_10_35_54.706453,R06_region_0.tif,0.0,0,0,2,0,0,0,0,2,0,0.0,0.0,0.0
