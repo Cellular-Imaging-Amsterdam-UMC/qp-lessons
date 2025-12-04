@@ -87,35 +87,48 @@ Select one of the following images from `resources/` and consider the suggested 
 
 ---
 
-## Assignment B – Train on Alternate Objects
+## Assignment B – Evaluate and Improve Your Trained Model
 
-*   **Context:** In Lesson 3 (cellpose_training), you trained a model on one type of object (either Nuclei or Nucleoli in the phase contrast images).
-*   **Objective:** Train a new model on the **other** object type that you didn't use in the lesson.
+*   **Context:** In Lesson 3 (cellpose_training), you trained a custom Cellpose model on phase contrast images. Now it's time to systematically evaluate its performance and optionally improve it.
+*   **Objective:** Evaluate your trained model on multiple unseen images and optionally fine-tune it by adding more annotations.
 
-    1.  **Create a New Project:** Start fresh with a new QuPath project using the same `resources/PhaseContrast/` images.
-    2.  **Calibrate Images:** Run `01_calibrate_images.groovy` to set the pixel size.
-    3.  **Create Ground Truth:** Create Training (at least 6) and Validation (at least 2) regions containing **dense annotations** of the alternate object type.
-    4.  **Train the Model:** Run `04_train_cellpose.groovy` with:
-        *   Base model: `None (train from scratch)`
-        *   Epochs: **at least 75**
-        *   Diameter: Set appropriately for the object size (Nucleoli are much smaller than Nuclei!)
-    5.  **Validate:** Run `05_run_custom_cellpose_model.groovy` on an unseen image and evaluate the results.
+### Part 1: Systematic Evaluation
+
+1.  **Open Your Lesson 3 Project:** Continue with the QuPath project from Lesson 3 (cellpose_training).
+2.  **Select Test Images:** Choose **3-5 images** that were NOT used for training or validation (e.g., images `21.jpg` to `30.jpg`).
+3.  **Run Your Model:** Apply `05_run_custom_cellpose_model.groovy` to each test image.
+4.  **Evaluate Performance:** For each image, assess:
+    *   **True Positives:** Objects correctly detected
+    *   **False Positives:** Detections that are not real objects
+    *   **False Negatives:** Objects that were missed
+    *   **Boundary Quality:** Are object edges well-defined?
+
+### Part 2: Document Results
 
 *   **Deliverables:**
-    1.  **Screenshot** of the detection result on an unseen image
-    2.  **Model parameters table:**
-        | Parameter | Value |
-        |-----------|-------|
-        | Base model | |
-        | Epochs | |
-        | Diameter (µm) | |
-        | Training regions | |
-        | Validation regions | |
-    3.  **Comparison notes** (3-5 sentences): Compare the difficulty of annotating this object type vs. the one from the lesson. Consider:
-        *   Was it easier or harder to identify object boundaries?
-        *   Did object density or overlap cause challenges?
-        *   How did object size affect annotation time?
-    4.  **Performance reflection:** How well did your trained model perform? Any obvious errors or missed detections?
+    1.  **Screenshots** of detection results on at least 3 test images
+    2.  **Evaluation table:**
+        | Image | Objects (est.) | Detected | False Positives | Missed | Quality (1-5) |
+        |-------|----------------|----------|-----------------|--------|---------------|
+        | 21.jpg | | | | | |
+        | 22.jpg | | | | | |
+        | 23.jpg | | | | | |
+    3.  **Performance summary** (3-5 sentences): Where does your model perform well? Where does it struggle? Are there specific image regions or object types that cause problems?
+
+### Part 3: Fine-Tuning (Optional)
+
+If your model shows consistent errors, try improving it:
+
+1.  **Identify Problem Areas:** Note where false positives/negatives occur most often.
+2.  **Add More Training Data:** Create **2-4 additional Training regions** in areas similar to where the model struggles.
+3.  **Re-train:** Run `04_train_cellpose.groovy` with:
+    *   Same model name (a new version will be created automatically)
+    *   Same parameters as before
+4.  **Compare Models:** Run both the original and improved model on the same test images.
+
+*   **Optional Deliverables:**
+    1.  **Side-by-side comparison** of original vs. improved model on the same image
+    2.  **Brief notes** on what annotations you added and whether performance improved
 
 ---
 

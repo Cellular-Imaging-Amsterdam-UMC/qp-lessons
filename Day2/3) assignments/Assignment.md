@@ -14,13 +14,25 @@ These exercises reinforce the Pixel Classification and Cell Classification lesso
 <p align="center"><em>H&E staining of human skin reveals the epidermis and partial dermis. All cellular components can be visualized with the H&E stain: stratum corneum (SC); the epidermal phase transition zone (EPTZ) (~42 µm); stratum granulosum (SG); stratum spinosum (SS); stratum basale (SB); and the dermis (D). Scale bar 30 µm.</em></p>
 
 
-## Assignment 2 – Dividing Cell Identification in `cellsnuclei.ome.tif`
-1. Open `resources/CellsNuclei.ome.tif` (red nuclei, green membranes similar to the preview image) and run `scripts/assignment2_magic_setup.groovy` to load the **Dividing**, **Non-dividing**, and **Background** classes.
+## Assignment 2 – EM Organelle Pixel Classification
+1. Open `resources/Cell(EM).ome.tif` – an electron microscopy image showing detailed subcellular ultrastructure.
+2. Use the **Pixel classifier** to segment different cellular compartments based on their texture and intensity patterns.
+3. Create classes for the main structures visible: **Mitochondria** (dark oval structures with internal cristae), **Cytoplasm**, **Vesicles**, and **Membrane** (or choose your own relevant structures).
+4. Train the classifier using texture features—EM images are ideal for texture-based classification due to their rich structural detail.
+5. Click **Create objects** and measure the area fraction of each compartment.
+6. **Deliverable:** Screenshot of the pixel classifier overlay, a table showing the area/percentage of each segmented structure, and a short note on which structures were easiest vs. hardest to classify.
+
+<p align="center"><a href="resources/Cell-EM.png"><img src="resources/Cell-EM.png" width="50%" alt="Electron microscopy image of cellular ultrastructure"></a></p>
+<p align="center"><em>Electron microscopy (EM) image showing detailed cellular ultrastructure including mitochondria, cytoplasm, vesicles, and membrane structures.</em></p>
+
+
+## Assignment 3 – Dividing Cell Identification in `CellsNuclei.ome.tif`
+1. Open `resources/CellsNuclei.ome.tif` (red nuclei, green membranes similar to the preview image) and run `scripts/assignment3_magic_setup.groovy` to load the **Dividing**, **Non-dividing**, and **Background** classes.
 2. Run `Analyze > Cell detection > Cell detection` with a nuclei size of ~6 µm and a cell expansion of 2–3 µm so the bright green membrane is included in the cell ROI.
 3. Label at least 15 examples of each class using either the **Points** or **Unlocked annotations** workflow, then train an **Object classifier** (Random Trees) emphasizing membrane intensity features (e.g., `Cell: Mean`, `Cell: Std dev`, `Nucleus: Mean`). Keep Live update enabled and refine mislabeled cells.
-4. Click **Create objects** if needed, then execute `scripts/assignment2_magic_report.groovy` to record the total number and percentage of Dividing vs Non-dividing cells.
+4. Click **Create objects** if needed, then execute `scripts/assignment3_magic_report.groovy` to record the total number and percentage of Dividing vs Non-dividing cells.
 5. Compare the classifier’s readout to a **Positive cell detection** or **Single measurement classifier** workflow from Day 1 (reuse the scripts from `Day1/4) positive_cell_detection`). Document how the automated thresholds differ from your trained classifier.
-6. **Deliverable:** Screenshot of the classifier overlay, the text output from `assignment2_magic_report.groovy`, and a short paragraph summarizing the % dividing cells from both methods and explaining any discrepancies.
+6. **Deliverable:** Screenshot of the classifier overlay, the text output from `assignment3_magic_report.groovy`, and a short paragraph summarizing the % dividing cells from both methods and explaining any discrepancies.
 
 ## Bonus Assignment – Your Own Day 2 Experiment
 * **Image:** Pick any image from the main `resources/` folder.
