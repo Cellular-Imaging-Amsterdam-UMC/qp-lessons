@@ -1,4 +1,4 @@
-# Lesson Plan: QuPath Basics - Annotations & Measurements
+# Lesson: QuPath Basics - Annotations & Measurements
 
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 

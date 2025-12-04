@@ -1,4 +1,4 @@
-# Lesson Plan: Threshold Classification
+# Lesson: Threshold Classification
 
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 

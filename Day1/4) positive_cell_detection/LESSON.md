@@ -1,4 +1,4 @@
-# Lesson Plan: Positive Cell Detection
+# Lesson: Positive Cell Detection
 
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 

@@ -1,4 +1,4 @@
-# Lesson Plan: Spot Detection with Spotiflow
+# Lesson: Spot Detection with Spotiflow
 
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 

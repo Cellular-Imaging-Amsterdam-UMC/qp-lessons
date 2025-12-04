@@ -1,4 +1,4 @@
-# Lesson Guide: Pixel Classification in QuPath
+# Lesson: Pixel Classification in QuPath
 
 **Before you start, read `README.md` in this folder for the setup instructions.**
 

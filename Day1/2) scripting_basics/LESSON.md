@@ -1,4 +1,4 @@
-# Lesson Plan: Scripting Basics
+# Lesson: Scripting Basics
 
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 

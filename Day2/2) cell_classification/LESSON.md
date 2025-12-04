@@ -1,4 +1,4 @@
-# Lesson Guide: Cell Classification (Normal vs Apoptotic)
+# Lesson: Cell Classification (Normal vs Apoptotic)
 
 **Before you start, read `README.md` in this folder for the setup instructions.**
 

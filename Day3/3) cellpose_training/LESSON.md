@@ -1,4 +1,4 @@
-# Lesson Plan: Training a Custom Cellpose Model on Phase Contrast Images Objects
+# Lesson: Training a Custom Cellpose Model on Phase Contrast Images Objects
 
 **Before running this lesson, read `README.md` in this folder for the setup instructions.**
 
