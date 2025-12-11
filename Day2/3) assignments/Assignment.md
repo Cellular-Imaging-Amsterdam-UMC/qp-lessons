@@ -27,8 +27,8 @@ These exercises reinforce the Pixel Classification and Cell Classification lesso
 
 
 ## Assignment 3 – Dividing Cell Identification in `CellsNuclei.ome.tif`
-1. Open `resources/CellsNuclei.ome.tif` (red nuclei, green membranes similar to the preview image) and run `scripts/assignment3_magic_setup.groovy` to load the **Dividing**, **Non-dividing**, and **Background** classes.
-2. Run `Analyze > Cell detection > Cell detection` with a nuclei size of ~6 µm and a cell expansion of 2–3 µm so the bright green membrane is included in the cell ROI.
+1. Open `resources/CellsNuclei.ome.tif` (red nuclei, green membranes similar to the preview image) and run `scripts/assignment3_magic_setup.groovy` to load the **Dividing** and **Non-dividing** classes.
+2. Run `Analyze > Cell detection > Cell detection` 
 3. Label at least 15 examples of each class using either the **Points** or **Unlocked annotations** workflow, then train an **Object classifier** (Random Trees) emphasizing membrane intensity features (e.g., `Cell: Mean`, `Cell: Std dev`, `Nucleus: Mean`). Keep Live update enabled and refine mislabeled cells.
 4. Click **Create objects** if needed, then execute `scripts/assignment3_magic_report.groovy` to record the total number and percentage of Dividing vs Non-dividing cells.
 5. Compare the classifier’s readout to a **Positive cell detection** or **Single measurement classifier** workflow from Day 1 (reuse the scripts from `Day1/4) positive_cell_detection`). Document how the automated thresholds differ from your trained classifier.
