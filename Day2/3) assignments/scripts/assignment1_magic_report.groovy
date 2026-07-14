@@ -5,9 +5,10 @@
 // This script grabs the areas from your current pixel classification
 // and shows a short summary so you can focus on the interpretation.
 
-// Compatible with QuPath v0.4.0 - v0.6.0+
+// Compatible with QuPath v0.7.0+
 
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.objects.classes.PathClass
 import java.awt.image.BufferedImage
 
@@ -50,7 +51,7 @@ def totalArea = 0.0
 def annotations = getAnnotationObjects()
 
 if (annotations.isEmpty()) {
-    Dialogs.showErrorMessage("Assignment 1 Report", "No objects found!\n\nDid you remember to click 'Create Objects' in the pixel classifier?")
+    GuiDialogs.showErrorMessage("Assignment 1 Report", "No objects found!\n\nDid you remember to click 'Create Objects' in the pixel classifier?")
     return
 }
 
@@ -68,7 +69,7 @@ for (annotation in annotations) {
 }
 
 if (totalArea == 0) {
-    Dialogs.showWarningNotification("Assignment 1 Report", "Found objects, but none were skin layer classes.")
+    GuiDialogs.showWarningNotification("Assignment 1 Report", "Found objects, but none were skin layer classes.")
     return
 }
 
@@ -80,5 +81,5 @@ def summary = classAreas.collect { name, area ->
 // 4. Show your magic result
 def message = "Skin layer summary (Assignment 1)\nSlide: skin.ome.tif\n\n" + summary
 
-Dialogs.showInfoNotification("Assignment 1 Report", message)
+GuiDialogs.showInfoNotification("Assignment 1 Report", message)
 print(message)

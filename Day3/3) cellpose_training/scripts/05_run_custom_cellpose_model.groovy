@@ -1,5 +1,5 @@
 // *************************************************************
-//  Run Custom Cellpose Model – Detection within selected parent objects (QuPath 0.6.x)
+//  Run Custom Cellpose Model – Detection within selected parent objects (QuPath 0.7.x)
 // 
 //  Features:
 //  - Model selection from project's models folder (created by training script)
@@ -11,7 +11,7 @@
 //************************************************************/
 
 import qupath.ext.biop.cellpose.Cellpose2D
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.opencv.ops.ImageOps
 import qupath.lib.gui.QuPathGUI
@@ -71,7 +71,7 @@ if (projectModelsDir.exists() && projectModelsDir.isDirectory()) {
 }
 
 if (modelFiles.isEmpty()) {
-    Dialogs.showErrorMessage("Cellpose", 
+    GuiDialogs.showErrorMessage("Cellpose",
         "No custom models found in project/models folder.\n\n" +
         "Please train a model first using 04_train_cellpose.groovy")
     return
@@ -92,7 +92,7 @@ def defaultModelChoice = modelChoices.first()
 // ---------------------------
 def pathObjects = getSelectedObjects()
 if (pathObjects == null || pathObjects.isEmpty()) {
-    Dialogs.showErrorMessage("Cellpose", "Please select at least one parent object (e.g., ROI or annotation).")
+    GuiDialogs.showErrorMessage("Cellpose", "Please select at least one parent object (e.g., ROI or annotation).")
     return
 }
 
@@ -172,7 +172,7 @@ if (showSettingsDialog) {
         .addBooleanParameter("excludeOnBorders", "Exclude detections on borders", excludeOnBordersDefault,
             "If enabled, removes detections touching image borders")
 
-    if (!Dialogs.showParameterDialog("Run Custom Cellpose Model", params)) {
+    if (!GuiDialogs.showParameterDialog("Run Custom Cellpose Model", params)) {
         println "Cellpose: cancelled by user."
         return
     }
@@ -279,7 +279,7 @@ try {
     }
 
 } catch (Exception e) {
-    Dialogs.showErrorMessage("Cellpose", e.getMessage())
+    GuiDialogs.showErrorMessage("Cellpose", e.getMessage())
     println "Error during Cellpose execution: ${e.getMessage()}"
     println "Correct the settings or selection and try again."
 }

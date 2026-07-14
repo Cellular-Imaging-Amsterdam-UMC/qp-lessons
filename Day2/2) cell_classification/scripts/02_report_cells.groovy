@@ -5,12 +5,13 @@
 // Counts the cells and calculates the Apoptotic Index.
 
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // Get all detection objects (cells)
 def cells = getDetectionObjects()
 
 if (cells.isEmpty()) {
-    Dialogs.showErrorMessage("Report", "No cells found!\nDid you run 'Cell Detection'?")
+    GuiDialogs.showErrorMessage("Report", "No cells found!\nDid you run 'Cell Detection'?")
     return
 }
 
@@ -37,7 +38,7 @@ for (cell in cells) {
 def totalClassified = normalCount + apoptoticCount
 
 if (totalClassified == 0) {
-    Dialogs.showWarningNotification("Report", "Cells found, but none are classified.\nDid you train the object classifier?")
+    GuiDialogs.showWarningNotification("Report", "Cells found, but none are classified.\nDid you train the object classifier?")
     return
 }
 
@@ -48,5 +49,5 @@ def message = String.format(
     cells.size(), normalCount, apoptoticCount, apoptoticIndex
 )
 
-Dialogs.showInfoNotification("Cell Analysis Results", message)
+GuiDialogs.showInfoNotification("Cell Analysis Results", message)
 print(message)

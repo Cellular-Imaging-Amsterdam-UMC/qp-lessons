@@ -1,86 +1,85 @@
-# Setting up Cellpose and Spotiflow for QuPath
+# Setting up Cellpose and Spotiflow for QuPath 0.7
 
-This guide explains how to set up a single Python environment that supports both **Cellpose** and **Spotiflow** for use with QuPath, and how to install the necessary QuPath extensions.
+This guide creates one Python environment for the Cellpose and Spotiflow QuPath extensions. It intentionally pins **Cellpose 3.1.1.3**, the newest Cellpose 3 release before Cellpose-SAM was introduced in Cellpose 4. Do not replace the pin with an unversioned `pip install cellpose`, because that installs Cellpose-SAM 4.x.
 
-## Part 1: Python Environment Setup
+## Part 1: Python environment
 
-We will create a Conda environment named `qupath-dl` that contains both libraries.
+The commands below create a Conda environment named `qupath-dl` with Python 3.12.
 
 ### Prerequisites
-*   **Miniconda or Anaconda**: Ensure you have conda installed. [Download Miniconda](https://docs.conda.io/en/latest/miniconda.html).
-*   **GPU Drivers (Optional but Recommended)**: If you have an NVIDIA GPU, ensure your drivers are up to date.
 
-### Step-by-Step Installation
+- Miniconda, Anaconda, Mamba, or Micromamba.
+- For GPU acceleration, a supported NVIDIA GPU with a current driver.
 
-1.  **Open your terminal** (Anaconda Prompt on Windows).
+### Installation
 
-2.  **Create a new environment** with Python 3.12:
-    ```bash
-    conda create -n qupath-dl python=3.10
-    ```
+1. Open an Anaconda Prompt or terminal.
 
-3.  **Activate the environment**:
-    ```bash
-    conda activate qupath-dl
-    ```
+2. Create and activate the environment:
 
-4.  **Install PyTorch**:
-    *   *For GPU (CUDA 12.6 example - check [pytorch.org](https://pytorch.org/get-started/locally/) for your system):*
-        ```bash
-        pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
-        ```
-    *   *For CPU only:*
-        ```bash
-        pip install torch torchvision torchaudio
-        ```
+   ```bash
+   conda create -n qupath-dl python=3.12 pip
+   conda activate qupath-dl
+   ```
 
-5.  **Install Cellpose**:
-    ```bash
-    pip install cellpose
-    ```
+3. Install PyTorch. Choose exactly one of the following commands.
 
-6.  **Install Spotiflow**:
-    ```bash
-    pip install spotiflow
-    ```
+   NVIDIA GPU (CUDA 12.6 wheels, matching the QuPath 7 standalone setup):
 
-7.  **Verify Installation**:
-    Run these commands in python to check if they import correctly:
-    ```bash
-    python -c "import cellpose; print('Cellpose version:', cellpose.__version__)"
-    python -c "import spotiflow; print('Spotiflow installed')"
-    ```
+   ```bash
+   python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+   ```
 
----
+   CPU only:
 
-## Part 2: QuPath Extension Installation
+   ```bash
+   python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+   ```
 
-You need to install the BIOP extensions to allow QuPath to talk to your Python environment.
+   If CUDA 12.6 is not suitable for your system, select the appropriate command from the [PyTorch installation guide](https://pytorch.org/get-started/locally/).
 
-### 1. Download the Extensions
-*   **Cellpose Extension**: Go to the [BIOP Cellpose GitHub](https://github.com/BIOP/qupath-extension-cellpose/releases) and download the latest `.zip` archive (e.g., `qupath-extension-cellpose-x.x.x.zip`). Extract the archive and copy the entire folder contents into your QuPath `extensions` directory (default on Windows: `%APPDATA%\QuPath\extensions`). Do not copy only the `.jar` file.
-*   **Spotiflow Extension**: Go to the [BIOP Spotiflow GitHub](https://github.com/BIOP/qupath-extension-spotiflow/releases) and download the latest `.jar` file.
+4. Install the Python backends used by the lessons:
 
-### 2. Install in QuPath
-1.  Open QuPath.
-2.  Drag and drop the downloaded `.jar` files onto the QuPath window.
-3.  Restart QuPath.
+   ```bash
+   python -m pip install "cellpose[gui]==3.1.1.3" "spotiflow==0.6.5"
+   ```
 
----
+5. Verify the installation:
 
-## Part 3: Configuring QuPath
+   ```bash
+   python -c "import cellpose, spotiflow, torch; assert cellpose.__version__ == '3.1.1.3'; print('Cellpose:', cellpose.__version__); print('Spotiflow:', spotiflow.__version__); print('CUDA available:', torch.cuda.is_available())"
+   ```
 
-Now you need to tell QuPath where your Python environment is.
+If an existing environment contains Cellpose 4, recreating the environment is safer than downgrading it in place.
 
-1.  Open QuPath.
-2.  Go to `Edit > Preferences`.
-3.  **For Cellpose**:
-    *   Find the **Cellpose** section.
-    *   **Python Environment**: Select `Conda`.
-    *   **Environment Name**: Enter `qupath-dl`.
-    *   (Alternatively, point to the python executable path).
-4.  **For Spotiflow**:
-    *   Find the **Spotiflow** section.
-    *   Set the environment to the same `qupath-dl` environment.
+## Part 2: QuPath 0.7 extensions
 
-**Done!** You can now run the Deep Learning lessons.
+Install QuPath 0.7-compatible releases of both BIOP extensions:
+
+- [BIOP Cellpose extension releases](https://github.com/BIOP/qupath-extension-cellpose/releases)
+- [BIOP Spotiflow extension releases](https://github.com/BIOP/qupath-extension-spotiflow/releases)
+
+The QuPath 7 standalone distribution used for these lessons contains Cellpose extension 0.12.1 and Spotiflow extension 0.4.1. When installing Cellpose from its release archive, copy **all** supplied files—not only the JAR—into the QuPath extensions directory. On Windows, the default user extension location is `%APPDATA%\QuPath\extensions` unless a custom QuPath user path is configured.
+
+Restart QuPath after installing or replacing extensions.
+
+## Part 3: Configure QuPath
+
+1. Open `Edit > Preferences` in QuPath 0.7.
+2. In the Cellpose settings, set the Python executable to the environment's interpreter:
+
+   ```text
+   <conda-root>\envs\qupath-dl\python.exe
+   ```
+
+3. In the Spotiflow settings, select the same Python executable.
+4. Leave the separate Cellpose-SAM Python path empty; these lessons use Cellpose 3.
+5. Restart QuPath, then run a Cellpose and a Spotiflow lesson script to confirm the setup.
+
+To locate the interpreter path from the activated environment, run:
+
+```bash
+python -c "import sys; print(sys.executable)"
+```
+
+You can now run the Day 3 deep-learning lessons with QuPath 0.7.

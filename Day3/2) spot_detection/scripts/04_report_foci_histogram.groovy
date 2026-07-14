@@ -1,5 +1,5 @@
 /*************************************************************
- * Foci Histogram Report – Display distribution of spots per nucleus (QuPath 0.6.x)
+ * Foci Histogram Report – Display distribution of spots per nucleus (QuPath 0.7.x)
  *
  * PURPOSE
  * - Creates a histogram showing the distribution of foci counts per nucleus.
@@ -14,7 +14,7 @@
  * - Prints summary statistics to the log.
  *************************************************************/
 
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import javafx.application.Platform
 import javafx.scene.Scene
@@ -39,7 +39,7 @@ def params = new ParameterList()
     .addIntParameter("binSize", "Histogram bin size", binSizeDefault, "", 1, 50,
         "Number of foci counts to group into each histogram bin (1 = no binning)")
 
-if (!Dialogs.showParameterDialog("Foci Histogram Settings", params)) {
+if (!GuiDialogs.showParameterDialog("Foci Histogram Settings", params)) {
     println "Report: cancelled by user."
     return
 }
@@ -57,7 +57,7 @@ def nuclei = getAnnotationObjects().findAll {
 }
 
 if (nuclei.isEmpty()) {
-    Dialogs.showErrorMessage("Report", 
+    GuiDialogs.showErrorMessage("Report",
         "No nuclei annotations found!\nPlease run the detection scripts first.")
     return
 }
@@ -75,7 +75,7 @@ for (name in possibleNames) {
 }
 
 if (measurementName == null) {
-    Dialogs.showErrorMessage("Report", 
+    GuiDialogs.showErrorMessage("Report",
         "No foci count measurements found!\nPlease run Spotiflow foci detection first.")
     return
 }
@@ -210,4 +210,4 @@ def summaryMessage = String.format(
     "Nuclei analyzed: %d\nTotal foci: %d\n\nMean: %.2f foci/nucleus\nMedian: %.1f\nRange: %d - %d",
     totalNuclei, totalFoci, meanFoci, medianFoci, minFoci, maxFoci
 )
-Dialogs.showInfoNotification("Foci Analysis Complete", summaryMessage)
+GuiDialogs.showInfoNotification("Foci Analysis Complete", summaryMessage)

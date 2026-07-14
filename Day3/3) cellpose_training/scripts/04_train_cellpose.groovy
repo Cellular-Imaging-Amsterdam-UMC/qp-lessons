@@ -1,5 +1,5 @@
 // *************************************************************
-//  Cellpose 2D Training – Train a custom model (QuPath 0.6.x)
+//  Cellpose 2D Training – Train a custom model (QuPath 0.7.x)
 // 
 //  Features:
 //  - Base model selection: train from scratch ("None") or transfer learn from existing model
@@ -15,7 +15,7 @@
 //************************************************************/
 
 import qupath.ext.biop.cellpose.Cellpose2D
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.lib.gui.QuPathGUI
 import qupath.opencv.ops.ImageOps
@@ -199,7 +199,7 @@ if (!allRegions.isEmpty()) {
 // Show errors and abort if any
 if (!errors.isEmpty()) {
     def errorMessage = "Pre-training validation failed:\n\n• " + errors.join("\n• ")
-    Dialogs.showErrorMessage("Training Validation Failed", errorMessage)
+    GuiDialogs.showErrorMessage("Training Validation Failed", errorMessage)
     println "VALIDATION FAILED:\n" + errorMessage
     return
 }
@@ -287,7 +287,7 @@ if (showSettingsDialog) {
         .addBooleanParameter("saveFlows", "Save flow fields", saveFlowsDefault,
             "Save flow fields during training (useful for debugging)")
 
-    if (!Dialogs.showParameterDialog("Cellpose Training Parameters", params)) {
+    if (!GuiDialogs.showParameterDialog("Cellpose Training Parameters", params)) {
         println "Cellpose training: cancelled by user."
         return
     }
@@ -435,11 +435,11 @@ try {
     cellpose.showTrainingGraph()
 
     // Show success message
-    Dialogs.showInfoNotification("Cellpose Training", 
+    GuiDialogs.showInfoNotification("Cellpose Training",
         "Training complete!\nModel saved as: ${finalModelName}\nLocation: ${modelsDir.absolutePath}")
 
 } catch (Exception e) {
-    Dialogs.showErrorMessage("Cellpose Training", e.getMessage())
+    GuiDialogs.showErrorMessage("Cellpose Training", e.getMessage())
     println "Error during Cellpose training: ${e.getMessage()}"
     e.printStackTrace()
 }

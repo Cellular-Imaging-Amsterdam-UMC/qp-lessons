@@ -5,11 +5,12 @@
 // This script prepares the QuPath environment for Assignment 1.
 // It defines epidermal sublayers + dermis classes and assigns colors.
 
-// Compatible with QuPath v0.4.0 - v0.6.0+
+// Compatible with QuPath v0.7.0+
 
 import javafx.application.Platform
 import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // 1. Define the classes we want to use
 // We use PathClass.fromString to ensure we are using the singleton instances and setting colors
@@ -52,4 +53,4 @@ removeAnnotations()
 // 5. Feedback
 print("Assignment 1 Setup Complete!")
 print("Classes defined: " + classes.collect { it.getName() })
-Dialogs.showInfoNotification("Assignment 1 Setup", "Skin layer classes loaded and colors set!\nReady to classify skin.\nSlide: skin.ome.tif")
+GuiDialogs.showInfoNotification("Assignment 1 Setup", "Skin layer classes loaded and colors set!\nReady to classify skin.\nSlide: skin.ome.tif")

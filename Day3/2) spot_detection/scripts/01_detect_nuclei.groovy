@@ -1,5 +1,5 @@
 /*************************************************************
- * StarDist 2D – Nuclei detection within selected parent objects (QuPath 0.6.x)
+ * StarDist 2D – Nuclei detection within selected parent objects (QuPath 0.7.x)
  *
  * PURPOSE
  * - Run StarDist 2D nucleus detection inside *selected* parent objects.
@@ -12,7 +12,7 @@
  *     true  = show a dialog to set parameters interactively (model path is NOT asked).
  *
  * REQUIREMENTS
- * - QuPath 0.6.x + qupath-extension-stardist.
+ * - QuPath 0.7.x + qupath-extension-stardist.
  * - Environment variable STARDIST_LOCAL_MODELS_PATH must point to a folder
  *   containing StarDist .pb models.
  * - OpenCV extension enabled if you use the mean filter preprocessing step.
@@ -26,7 +26,7 @@
  *************************************************************/
 
 import qupath.ext.stardist.StarDist2D
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.opencv.ops.ImageOps
 
@@ -85,7 +85,7 @@ if (cal == null)
 // ---------------------------
 def pathObjects = getSelectedObjects()
 if (pathObjects == null || pathObjects.isEmpty()) {
-    Dialogs.showErrorMessage("StarDist", "Please select at least one parent object (e.g., ROI or annotation).")
+    GuiDialogs.showErrorMessage("StarDist", "Please select at least one parent object (e.g., ROI or annotation).")
     return
 }
 
@@ -149,7 +149,7 @@ if (showSettingsDialog) {
         .addBooleanParameter("excludeOnBorders", "Exclude detections on borders", excludeOnBordersDefault,
             "If enabled, removes detections touching image borders")
 
-    if (!Dialogs.showParameterDialog("StarDist parameters", params)) {
+    if (!GuiDialogs.showParameterDialog("StarDist parameters", params)) {
         println "StarDist: cancelled by user."
         return
     }
@@ -250,7 +250,7 @@ try {
     }
 
 } catch (Exception e) {
-    Dialogs.showErrorMessage("StarDist", e.getMessage())
+    GuiDialogs.showErrorMessage("StarDist", e.getMessage())
     println "Error during StarDist execution: ${e.getMessage()}"
     println "Correct the settings or selection and try again."
 }

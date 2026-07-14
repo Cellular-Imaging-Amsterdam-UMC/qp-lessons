@@ -5,6 +5,7 @@
 // Clears any existing annotations to provide a clean slate for the lesson.
 
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // 1. Clean up
 // Removes all objects (Annotations and Detections)
@@ -14,4 +15,4 @@ clearAllObjects()
 // Resets the viewer to fit the image
 // getCurrentViewer().resetView()
 
-Dialogs.showInfoNotification("Setup", "Workspace cleared!\nReady to practice annotations.")
+GuiDialogs.showInfoNotification("Setup", "Workspace cleared!\nReady to practice annotations.")

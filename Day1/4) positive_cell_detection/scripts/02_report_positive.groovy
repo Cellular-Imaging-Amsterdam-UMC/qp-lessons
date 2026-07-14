@@ -5,12 +5,13 @@
 // Calculates the percentage of positive cells.
 
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // Get all detection objects (cells)
 def cells = getDetectionObjects()
 
 if (cells.isEmpty()) {
-    Dialogs.showErrorMessage("Report", "No cells found!\nDid you run 'Positive Cell Detection'?")
+    GuiDialogs.showErrorMessage("Report", "No cells found!\nDid you run 'Positive Cell Detection'?")
     return
 }
 
@@ -33,7 +34,7 @@ for (cell in cells) {
 }
 
 if (totalCount == 0) {
-    Dialogs.showWarningNotification("Report", "Cells found, but none are classified as Positive/Negative.")
+    GuiDialogs.showWarningNotification("Report", "Cells found, but none are classified as Positive/Negative.")
     return
 }
 
@@ -44,5 +45,5 @@ def message = String.format(
     totalCount, positiveCount, negativeCount, positivityIndex
 )
 
-Dialogs.showInfoNotification("Positive Detection Results", message)
+GuiDialogs.showInfoNotification("Positive Detection Results", message)
 print(message)

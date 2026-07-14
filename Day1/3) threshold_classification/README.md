@@ -4,7 +4,7 @@
 This module teaches the simplest form of segmentation: **Thresholding**. It is ideal for fluorescence images or high-contrast structures where intensity alone defines the object.
 
 ## Prerequisites
-1.  **QuPath v0.6.0+**
+1.  **QuPath v0.7.0+**
 2.  **Sample Image**: `resources/Pancreatic Islet Cells of the Mouse.tif` (Local file).
 
 ## Setup Instructions

@@ -1,5 +1,5 @@
 /*************************************************************
- * Spotiflow Foci Detection – Run on existing nuclei annotations (QuPath 0.6.x)
+ * Spotiflow Foci Detection – Run on existing nuclei annotations (QuPath 0.7.x)
  *
  * PURPOSE
  * - Detect foci (spots) inside already detected nuclei annotations using Spotiflow.
@@ -7,7 +7,7 @@
  * - Counts foci per nucleus and adds measurements.
  *
  * REQUIREMENTS
- * - QuPath 0.6.x + qupath-extension-biop-spotiflow
+ * - QuPath 0.7.x + qupath-extension-biop-spotiflow
  * - Nuclei annotations must already exist (from script 01)
  *
  * OUTPUT
@@ -15,7 +15,7 @@
  * - Adds "Foci: Count" measurement to each nucleus annotation
  *************************************************************/
 
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.lib.objects.PathObjects
 import qupath.lib.objects.classes.PathClass
@@ -53,7 +53,7 @@ if (server == null)
 
 def imageData = getCurrentImageData()
 if (imageData == null) {
-    Dialogs.showErrorMessage("Spotiflow", "No image open.")
+    GuiDialogs.showErrorMessage("Spotiflow", "No image open.")
     return
 }
 
@@ -216,7 +216,7 @@ def nuclei = getAnnotationObjects().findAll {
 }
 
 if (nuclei.isEmpty()) {
-    Dialogs.showErrorMessage("Spotiflow", 
+    GuiDialogs.showErrorMessage("Spotiflow",
         "No nuclei annotations found!\nPlease run 01_detect_nuclei.groovy first.")
     return
 }
@@ -270,7 +270,7 @@ if (showSettingsDialog) {
             "Leave blank to use the model-specific threshold.")
         .addChoiceParameter("spotiflowPeakMode", "Peak detection", spotiflowPeakModeDefault, spotiflowPeakModeChoices)
 
-    if (!Dialogs.showParameterDialog("Spotiflow Foci Detection", params)) {
+    if (!GuiDialogs.showParameterDialog("Spotiflow Foci Detection", params)) {
         println "Spotiflow: cancelled by user."
         return
     }
@@ -286,7 +286,7 @@ if (showSettingsDialog) {
     try {
         spotiflowProbThresh = parseOptionalDouble("probability threshold", probThreshText)
     } catch (IllegalArgumentException parseErr) {
-        Dialogs.showErrorMessage("Spotiflow", parseErr.getMessage())
+        GuiDialogs.showErrorMessage("Spotiflow", parseErr.getMessage())
         return
     }
 }
@@ -310,7 +310,7 @@ println "\n========== Preparing Spotiflow dataset =========="
 def exportRecords = exportNucleiPatches(datasetDir, nuclei, fociChannel)
 if (exportRecords.isEmpty()) {
     deleteRecursive(tempRoot)
-    Dialogs.showErrorMessage("Spotiflow", "Failed to export nucleus patches for Spotiflow.")
+    GuiDialogs.showErrorMessage("Spotiflow", "Failed to export nucleus patches for Spotiflow.")
     return
 }
 println "Exported ${exportRecords.size()} nucleus patches for Spotiflow."
@@ -322,7 +322,7 @@ try {
     println "Spotiflow python command finished successfully."
 } catch (Exception e) {
     deleteRecursive(tempRoot)
-    Dialogs.showErrorMessage("Spotiflow", e.getMessage())
+    GuiDialogs.showErrorMessage("Spotiflow", e.getMessage())
     println "Error during Spotiflow execution: ${e.getMessage()}"
     return
 }

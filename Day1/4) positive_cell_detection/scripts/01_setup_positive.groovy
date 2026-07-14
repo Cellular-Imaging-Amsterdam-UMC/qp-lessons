@@ -7,6 +7,7 @@
 import javafx.application.Platform
 import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // 1. Define the classes
 def qupath = getQuPath()
@@ -36,4 +37,4 @@ def negativeClass = ensureClass("Negative", ColorTools.makeRGB(0, 0, 255))
 // 3. Clean up
 removeAnnotations()
 
-Dialogs.showInfoNotification("Setup", "Classes 'Positive' & 'Negative' ready for detection.")
+GuiDialogs.showInfoNotification("Setup", "Classes 'Positive' & 'Negative' ready for detection.")

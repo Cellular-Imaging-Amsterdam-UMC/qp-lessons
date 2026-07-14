@@ -1,5 +1,5 @@
 /*************************************************************
- * Combined StarDist + Spotiflow – Nuclei & Foci Detection (QuPath 0.6.x)
+ * Combined StarDist + Spotiflow – Nuclei & Foci Detection (QuPath 0.7.x)
  *
  * PURPOSE
  * - Run StarDist to detect nuclei as annotations within selected parent objects.
@@ -7,7 +7,7 @@
  * - Count foci per nucleus annotation.
  *
  * REQUIREMENTS
- * - QuPath 0.6.x + qupath-extension-stardist + qupath-extension-biop-spotiflow
+ * - QuPath 0.7.x + qupath-extension-stardist + qupath-extension-biop-spotiflow
  * - Environment variable STARDIST_LOCAL_MODELS_PATH must point to a folder
  *   containing StarDist .pb models.
  *
@@ -18,7 +18,7 @@
  *************************************************************/
 
 import qupath.ext.stardist.StarDist2D
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.lib.objects.PathObjects
 import qupath.lib.objects.classes.PathClass
@@ -88,7 +88,7 @@ if (cal == null)
 
 def imageData = getCurrentImageData()
 if (imageData == null) {
-    Dialogs.showErrorMessage("Script", "No image open.")
+    GuiDialogs.showErrorMessage("Script", "No image open.")
     return
 }
 
@@ -195,7 +195,7 @@ if (showSettingsDialog) {
             "Leave blank to use model defaults.")
         .addChoiceParameter("spotiflowPeakMode", "Peak detection", spotiflowPeakModeDefault, spotiflowPeakModeChoices)
 
-    if (!Dialogs.showParameterDialog("StarDist + Spotiflow Parameters", params)) {
+    if (!GuiDialogs.showParameterDialog("StarDist + Spotiflow Parameters", params)) {
         println "Cancelled by user."
         return
     }
@@ -217,7 +217,7 @@ if (showSettingsDialog) {
     try {
         spotiflowProbThresh = parseOptionalDouble("probability threshold", probThreshText)
     } catch (IllegalArgumentException parseErr) {
-        Dialogs.showErrorMessage("Spotiflow", parseErr.getMessage())
+        GuiDialogs.showErrorMessage("Spotiflow", parseErr.getMessage())
         return
     }
 }
@@ -435,7 +435,7 @@ try {
     println "StarDist complete: created ${createdAnnotations.size()} nucleus annotations."
 
 } catch (Exception e) {
-    Dialogs.showErrorMessage("StarDist", e.getMessage())
+    GuiDialogs.showErrorMessage("StarDist", e.getMessage())
     println "Error during StarDist: ${e.getMessage()}"
     return
 }
@@ -445,7 +445,7 @@ try {
 // ---------------------------
 def nucleiAnnotations = getAnnotationObjects().findAll { it.getPathClass()?.toString() == annotationClassName }
 if (nucleiAnnotations.isEmpty()) {
-    Dialogs.showErrorMessage("Spotiflow", "No nucleus annotations found; cannot run Spotiflow.")
+    GuiDialogs.showErrorMessage("Spotiflow", "No nucleus annotations found; cannot run Spotiflow.")
     return
 }
 def spotiflowRunConfig = [
@@ -463,7 +463,7 @@ datasetDir.mkdirs()
 def exportRecords = exportNucleiPatches(datasetDir, nucleiAnnotations, fociChannel)
 if (exportRecords.isEmpty()) {
     deleteRecursive(tempRoot)
-    Dialogs.showErrorMessage("Spotiflow", "Failed to export nucleus patches for Spotiflow.")
+    GuiDialogs.showErrorMessage("Spotiflow", "Failed to export nucleus patches for Spotiflow.")
     return
 }
 println "Exported ${exportRecords.size()} nucleus patches for Spotiflow."
@@ -475,7 +475,7 @@ try {
     println "Spotiflow python command finished successfully."
 } catch (Exception e) {
     deleteRecursive(tempRoot)
-    Dialogs.showErrorMessage("Spotiflow", e.getMessage())
+    GuiDialogs.showErrorMessage("Spotiflow", e.getMessage())
     println "Error during Spotiflow: ${e.getMessage()}"
     return
 }

@@ -6,13 +6,14 @@
 // This demonstrates that QuPath "knows" what you drew.
 
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // 1. Get the data
 def annotations = getAnnotationObjects()
 def count = annotations.size()
 
 if (count == 0) {
-    Dialogs.showErrorMessage("Report", "No annotations found!\nTry drawing some shapes first.")
+    GuiDialogs.showErrorMessage("Report", "No annotations found!\nTry drawing some shapes first.")
     return
 }
 
@@ -46,5 +47,5 @@ if (isCalibrated && totalArea > 1000000) {
 
 def message = String.format("You drew %d annotations.\nTotal Area: %s", count, areaString)
 
-Dialogs.showInfoNotification("Basic Measurement", message)
+GuiDialogs.showInfoNotification("Basic Measurement", message)
 print(message)

@@ -4,7 +4,7 @@
 This introductory module covers the fundamental skills needed to use QuPath: navigating the interface, drawing manual annotations, and extracting basic measurements.
 
 ## Prerequisites
-1.  **QuPath v0.6.0+**
+1.  **QuPath v0.7.0+**
 2.  **Sample Image**: `resources/skin.ome.tif` (Local file).
     *   *Why this image?* It has distinct regions (Epidermis/Dermis) that are perfect for practicing with the Wand and Brush tools.
 

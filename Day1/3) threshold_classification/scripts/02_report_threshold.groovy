@@ -5,6 +5,7 @@
 // Measures the area of the Islet class.
 
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 def imageData = getCurrentServer().getMetadata()
 def pixelSizeX = imageData.getPixelWidthMicrons()
@@ -32,12 +33,12 @@ for (annotation in annotations) {
 }
 
 if (isletArea == 0) {
-    Dialogs.showErrorMessage("Report", "No 'Islet' objects found!\nDid you click 'Create Objects' in the thresholder?")
+    GuiDialogs.showErrorMessage("Report", "No 'Islet' objects found!\nDid you click 'Create Objects' in the thresholder?")
     return
 }
 
 def unit = isCalibrated ? "µm²" : "pixels"
 def message = String.format("Total Islet Area: %.2f %s", isletArea, unit)
 
-Dialogs.showInfoNotification("Islet Measurement", message)
+GuiDialogs.showInfoNotification("Islet Measurement", message)
 print(message)

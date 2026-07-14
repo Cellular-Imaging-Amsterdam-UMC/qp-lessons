@@ -4,7 +4,7 @@
 This module introduces the **Script Editor** and the basics of the Groovy programming language used in QuPath. It bridges the gap between clicking buttons and automating workflows.
 
 ## Prerequisites
-1.  **QuPath v0.6.0+**
+1.  **QuPath v0.7.0+**
 2.  **Sample Image**: Any image will do, but `resources/skin.ome.tif` is good for drawing practice.
 
 ## Setup Instructions

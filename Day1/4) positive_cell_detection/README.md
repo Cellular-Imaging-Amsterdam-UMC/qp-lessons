@@ -4,7 +4,7 @@
 This module teaches the **Positive Cell Detection** workflow. This is a streamlined tool in QuPath that combines cell detection and intensity thresholding in a single step. It is commonly used for calculating a "Positivity Index" (e.g., Ki67, Insulin positivity).
 
 ## Prerequisites
-1.  **QuPath v0.6.0+**
+1.  **QuPath v0.7.0+**
 2.  **Sample Image**: `resources/Pancreatic Islet Cells of the Mouse.tif` (Same as Lesson 3).
 
 ## Setup Instructions

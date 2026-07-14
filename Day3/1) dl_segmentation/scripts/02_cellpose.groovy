@@ -1,5 +1,5 @@
 // *************************************************************
-//  Cellpose 2D – Detection within selected parent objects (QuPath 0.6.x)
+//  Cellpose 2D – Detection within selected parent objects (QuPath 0.7.x)
 // 
 //  Features:
 //  - Model dropdown from CELLPOSE_LOCAL_MODELS_PATH (filenames only)
@@ -15,7 +15,7 @@
 //************************************************************/
 
 import qupath.ext.biop.cellpose.Cellpose2D
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.opencv.ops.ImageOps
 import qupath.lib.gui.QuPathGUI
@@ -91,7 +91,7 @@ if (cal == null)
 // ---------------------------
 def pathObjects = getSelectedObjects()
 if (pathObjects == null || pathObjects.isEmpty()) {
-    Dialogs.showErrorMessage("Cellpose", "Please select at least one parent object (e.g., ROI or annotation).")
+    GuiDialogs.showErrorMessage("Cellpose", "Please select at least one parent object (e.g., ROI or annotation).")
     return
 }
 
@@ -172,7 +172,7 @@ if (showSettingsDialog) {
         .addBooleanParameter("excludeOnBorders", "Exclude detections on borders", excludeOnBordersDefault,
             "If enabled, removes detections touching image borders")
 
-    if (!Dialogs.showParameterDialog("Cellpose parameters", params)) {
+    if (!GuiDialogs.showParameterDialog("Cellpose parameters", params)) {
         println "Cellpose: cancelled by user."
         return
     }
@@ -276,7 +276,7 @@ try {
     }
 
 } catch (Exception e) {
-    Dialogs.showErrorMessage("Cellpose", e.getMessage())
+    GuiDialogs.showErrorMessage("Cellpose", e.getMessage())
     println "Error during Cellpose execution: ${e.getMessage()}"
     println "Correct the settings or selection and try again."
 }

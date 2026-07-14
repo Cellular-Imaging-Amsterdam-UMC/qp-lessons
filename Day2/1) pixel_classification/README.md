@@ -4,7 +4,7 @@
 This kit provides a structured lesson plan and "Magic Scripts" to teach pixel classification in QuPath. It is designed for a 30-60 minute interactive session.
 
 ## Prerequisites
-1.  **QuPath v0.6.0+**: Download from [qupath.github.io](https://qupath.github.io/).
+1.  **QuPath v0.7.0+**: Download from [qupath.github.io](https://qupath.github.io/).
 2.  **Sample Image**: This lesson uses the local file `resources/skin.ome.tif`.
 
 ## Setup Instructions

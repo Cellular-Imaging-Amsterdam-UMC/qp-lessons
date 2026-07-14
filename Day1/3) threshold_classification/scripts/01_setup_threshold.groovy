@@ -7,6 +7,7 @@
 import javafx.application.Platform
 import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 // 1. Define the class
 def className = "Islet"
@@ -43,4 +44,4 @@ def isletClass = ensureClass(className, classColor)
 // 3. Clean up
 removeAnnotations()
 
-Dialogs.showInfoNotification("Setup", "Class '${className}' ready for thresholding.")
+GuiDialogs.showInfoNotification("Setup", "Class '${className}' ready for thresholding.")

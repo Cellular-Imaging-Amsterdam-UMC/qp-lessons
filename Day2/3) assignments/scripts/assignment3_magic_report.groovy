@@ -1,11 +1,11 @@
 // assignment2_magic_report.groovy
 // Summarizes Dividing vs Non-dividing cell counts for Assignment 2
 
-import qupath.lib.gui.dialogs.Dialogs
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 def detections = getDetectionObjects()
 if (detections.isEmpty()) {
-    Dialogs.showWarningNotification("Assignment 2 Report", "No detections found. Run Cell detection first.")
+    GuiDialogs.showWarningNotification("Assignment 2 Report", "No detections found. Run Cell detection first.")
     return
 }
 
@@ -24,7 +24,7 @@ for (detection in detections) {
 }
 
 if (total == 0) {
-    Dialogs.showWarningNotification("Assignment 2 Report", "Detections exist, but none are labeled as Dividing or Non-dividing.")
+    GuiDialogs.showWarningNotification("Assignment 2 Report", "Detections exist, but none are labeled as Dividing or Non-dividing.")
     return
 }
 
@@ -34,5 +34,5 @@ def summary = counts.collect { name, value ->
 }.join("\n")
 
 def message = "CellsNuclei summary\nSlide: CellsNuclei.ome.tif\nTotal labeled cells: ${total}\n\n${summary}"
-Dialogs.showInfoNotification("Assignment 2 Report", message)
+GuiDialogs.showInfoNotification("Assignment 2 Report", message)
 print(message)

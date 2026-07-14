@@ -1,10 +1,11 @@
 // assignment2_magic_setup.groovy
-// QuPath v0.6.0+ helper script for Assignment 2 (CellsNuclei example)
+// QuPath v0.7.0+ helper script for Assignment 2 (CellsNuclei example)
 // Creates the Dividing / Non-dividing classes with vivid colors
 
 import javafx.application.Platform
 import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
+import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
 def qupath = getQuPath()
 def classList = qupath.getAvailablePathClasses()
@@ -33,6 +34,6 @@ removeAnnotations()
 removeDetections()
 
 print "Assignment 2 Setup Complete!"
-Dialogs.showInfoNotification(
+GuiDialogs.showInfoNotification(
         "Assignment 2 Setup",
         "Classes created: Dividing, Non-dividing, Background.\nReady to run Cell detection on CellsNuclei.ome.tif.")
