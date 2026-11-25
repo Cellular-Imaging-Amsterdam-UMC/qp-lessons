@@ -7,9 +7,9 @@
 
 ## Instruction video
 
-https://github.com/user-attachments/assets/c3c32cf8-9278-4b78-8d4a-b14756244060
+https://github.com/user-attachments/assets/95fd3811-4dbc-40b4-b748-bdec77a31ccf
 
-[Download the original MP4 (2:56)](videos/Day-1-Positive-Cell-Detection.mp4?raw=true) · [English captions (SRT)](videos/Day-1-Positive-Cell-Detection.en.srt)
+[Download the subtitled MP4 (2:56)](videos/Day-1-Positive-Cell-Detection.mp4?raw=true) · [English captions (SRT)](videos/Day-1-Positive-Cell-Detection.en.srt)
 
 Toggle the nucleus and insulin channels on the course image. Then change one threshold at a time in the same test region to see which outlines disappear and which cells change class.
 
