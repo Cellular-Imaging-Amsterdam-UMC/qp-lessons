@@ -36,7 +36,7 @@ boolean showSettingsDialog = true
 // ---------------------------
 // Default parameters
 // ---------------------------
-def    fociChannelDefault    = 'GFP'      // Channel containing foci signal
+def    fociChannelDefault    = null // Auto-select the foci channel from the image metadata
 def    fociClassNameDefault  = 'Foci'     // Class name for detected foci
 def    fociDeviceDefault     = 'auto'     // Device flag for Spotiflow (auto|cuda|cpu|mps)
 def    spotiflowModelDefault = 'general'
@@ -241,7 +241,15 @@ def getChannelNames = {
 // ---------------------------
 // Acquire parameters
 // ---------------------------
-def fociChannel   = fociChannelDefault
+def channelNames = getChannelNames()
+
+// Try to find a default channel (GFP, FITC, or second channel)
+def defaultFociChannel = channelNames.find {
+    def lower = (it ?: "").toLowerCase()
+    lower.contains("gfp") || lower.contains("fitc") || lower.contains("green") || lower.contains("foci")
+} ?: (channelNames.size() > 1 ? channelNames[1] : channelNames[0])
+
+def fociChannel   = fociChannelDefault ?: defaultFociChannel
 def fociClassName = fociClassNameDefault
 def fociDevice    = fociDeviceDefault
 def spotiflowModel = spotiflowModelDefault
@@ -249,14 +257,6 @@ Double spotiflowProbThresh = null
 String spotiflowPeakMode = spotiflowPeakModeDefault
 
 if (showSettingsDialog) {
-    def channelNames = getChannelNames()
-    
-    // Try to find a default channel (GFP, FITC, or second channel)
-    def defaultFociChannel = channelNames.find { 
-        def lower = (it ?: "").toLowerCase()
-        lower.contains("gfp") || lower.contains("fitc") || lower.contains("green") || lower.contains("foci")
-    } ?: (channelNames.size() > 1 ? channelNames[1] : channelNames[0])
-
     def deviceChoices = ["auto", "cuda", "cpu", "mps"]
 
     def params = new ParameterList()

@@ -14,11 +14,15 @@
 //  - Annotations classified as "Validation" for validation data (optional but recommended)
 //************************************************************/
 
+import ij.measure.ResultsTable
 import qupath.ext.biop.cellpose.Cellpose2D
+import qupath.ext.biop.cellpose.CellposeSetup
 import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 import qupath.lib.plugins.parameters.ParameterList
 import qupath.lib.gui.QuPathGUI
+import qupath.lib.gui.UserDirectoryManager
 import qupath.opencv.ops.ImageOps
+import java.nio.file.Files
 
 // ---------------------------
 // Toggle: show parameters dialog?
@@ -91,9 +95,8 @@ def projectPath = project.getPath().getParent()
 
 // Create models directory in project folder
 def modelsDir = new File(projectPath.toFile(), "models")
-if (!modelsDir.exists()) {
-    modelsDir.mkdirs()
-}
+def qcDir = new File(modelsDir, "QC")
+Files.createDirectories(qcDir.toPath())
 
 // ---------------------------
 // Precheck: Validate Training & Validation regions
@@ -424,6 +427,25 @@ try {
     // Show QC results if available
     try {
         def qcResults = cellpose.getQCResults()
+        // The extension only runs QC itself when installed through the extension catalog.
+        if (qcResults == null) {
+            def qcScript = UserDirectoryManager.getInstance().getExtensionsPath()?.resolve("run-cellpose-qc.py")?.toFile()
+            def python = CellposeSetup.getInstance().getCellposePythonPath()
+            if (qcScript?.isFile() && python) {
+                def validationDir = cellpose.getValidationDirectory()
+                def process = new ProcessBuilder(python, "-X", "utf8", qcScript.absolutePath,
+                        validationDir.absolutePath, finalModelName.toString())
+                        .redirectErrorStream(true).start()
+                process.inputStream.withReader('UTF-8') { reader -> reader.eachLine { println it } }
+                int exitCode = process.waitFor()
+                if (exitCode != 0)
+                    throw new IOException("Cellpose QC exited with code ${exitCode}.")
+
+                def csv = new File(validationDir, "QC-Results/Quality_Control for ${finalModelName}.csv")
+                def saved = Files.move(csv.toPath(), qcDir.toPath().resolve(csv.name))
+                qcResults = ResultsTable.open(saved.toString())
+            }
+        }
         if (qcResults != null && qcResults.size() > 0) {
             qcResults.show("QC Results - ${finalModelName}")
         }

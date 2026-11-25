@@ -1,5 +1,5 @@
-// assignment2_magic_setup.groovy
-// QuPath v0.7.0+ helper script for Assignment 2 (CellsNuclei example)
+// assignment3_magic_setup.groovy
+// QuPath v0.7.0+ helper script for Assignment 3 (CellsNuclei example)
 // Creates the Dividing / Non-dividing classes with vivid colors
 
 import javafx.application.Platform
@@ -7,33 +7,28 @@ import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
 import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
+def classes = [
+    "Dividing": ColorTools.makeRGB(0, 255, 0),
+    "Non-dividing": ColorTools.makeRGB(255, 0, 0),
+    "Background": ColorTools.makeRGB(120, 120, 120)
+]
+
+// QuPath's class list is shared with the JavaFX UI. Read and update it on the same thread.
 def qupath = getQuPath()
-def classList = qupath.getAvailablePathClasses()
-
-def ensureClass = { String name, int color ->
-    def pathClass = PathClass.fromString(name, color)
-    def exists = classList.any { it.getName() == name }
-    if (!exists) {
-        Platform.runLater {
-            classList.add(pathClass)
-            println "Added class: $name"
+Platform.runLater {
+    def classList = qupath.getAvailablePathClasses()
+    classes.each { label, color ->
+        if (!classList.any { it?.getName() == label }) {
+            classList.add(PathClass.fromString(label, color))
+            println "Added class: $label"
         }
-    } else {
-        println "Class already exists: $name"
     }
-    return pathClass
 }
-
-def dividingClass = ensureClass("Dividing", ColorTools.makeRGB(0, 255, 0))          // Bright green
-
-def nonDividingClass = ensureClass("Non-dividing", ColorTools.makeRGB(255, 0, 0))   // Red
-
-def backgroundClass = ensureClass("Background", ColorTools.makeRGB(120, 120, 120))  // Gray optional
 
 removeAnnotations()
 removeDetections()
 
-print "Assignment 2 Setup Complete!"
+print "Assignment 3 Setup Complete!"
 GuiDialogs.showInfoNotification(
-        "Assignment 2 Setup",
+        "Assignment 3 Setup",
         "Classes created: Dividing, Non-dividing, Background.\nReady to run Cell detection on CellsNuclei.ome.tif.")

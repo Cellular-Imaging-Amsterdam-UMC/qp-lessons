@@ -44,7 +44,7 @@ def preferredModelName = 'dsb2018_heavy_augment.pb' // Expected inside STARDIST_
 // Default user parameters (used when showSettingsDialog=false;
 // also used as initial values when the dialog is shown)
 // ---------------------------
-def    channelDefault           = 'DAPI' // Headless default; dialog uses dropdown populated from image
+def    channelDefault           = null // Auto-select DAPI or the first channel; override with a name or 0-based index
 double downscaleDefault         = 1.0       // >=1; larger = faster & coarser
 double thresholdDefault         = 0.50      // 0..1
 double cellexpansionDefault     = 0.0       // microns; 0 = off
@@ -126,7 +126,8 @@ def parseChannel(Object c) {
 // ---------------------------
 // Acquire parameters (dialog or defaults)
 // ---------------------------
-def channel            = channelDefault
+def (channelNames, defaultChannelName) = getChannelNamesAndDefault()
+def channel            = channelDefault == null ? defaultChannelName : channelDefault
 double downscale       = downscaleDefault
 double threshold       = thresholdDefault
 double cellexpansion   = cellexpansionDefault
@@ -136,7 +137,6 @@ boolean createAnnotations = createAnnotationsDefault
 boolean excludeOnBorders = excludeOnBordersDefault
 
 if (showSettingsDialog) {
-    def (channelNames, defaultChannelName) = getChannelNamesAndDefault()
 
     def params = new ParameterList()
         // Dropdown (choice) with channel names from current image

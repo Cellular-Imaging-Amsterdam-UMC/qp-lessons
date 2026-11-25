@@ -1,13 +1,13 @@
 # Day 2 Assignments: Machine Learning Classification
 
-These exercises reinforce the Pixel Classification and Cell Classification lessons. Encourage students to save their QuPath projects before starting.
+These exercises reinforce the Pixel Classification and Cell Classification lessons. Use a working project for the exercises and save each image after analysis. See the [course setup steps](../../README.md#before-each-lesson).
 
 ## Assignment 1 – Stratified Skin Pixel Classification
 1. Open `resources/skin.ome.tif` and run `scripts/assignment1_magic_setup.groovy` if needed.
 2. Use the **Pixel classifier** tool to label all six epidermal/dermal compartments created by the setup script: **Stratum corneum, EPTZ, Stratum granulosum, Stratum spinosum, Stratum basale, Dermis** (keep **Whitespace** for glass/background).
-3. Train on a small training image until **Live prediction** shows clean separation of each layer; refine strokes where the classifier confuses adjacent strata.
+3. Train on small representative regions. Use **Live prediction** to refine examples where the classifier confuses adjacent layers, then check an area with no training strokes.
 4. Save the classifier and record how it performs on the full image.
-5. Run `scripts/assignment1_magic_report.groovy` after clicking **Create objects** to capture the area/percent contribution of each stratum; use it whenever you compare different fields of view.
+5. Use **Create objects** to produce annotations in the analysis region before running `scripts/assignment1_magic_report.groovy`. Keep training strokes and earlier results off the reporting image so they are excluded from the six-class tissue area totals.
 6. **Deliverable:** Screenshot of the multi-class overlay, the text output from `assignment1_magic_report.groovy`, and a short note on which layers were hardest to separate (and why).
 
 <p align="center"><a href="resources/Skin-he.png"><img src="resources/Skin-he.png" width="40%" alt="H&E stained human skin"></a></p>
@@ -15,23 +15,19 @@ These exercises reinforce the Pixel Classification and Cell Classification lesso
 
 
 ## Assignment 2 – EM Organelle Pixel Classification
-1. Open `resources/Cell(EM).ome.tif` – an electron microscopy image showing detailed subcellular ultrastructure.
+1. Open `resources/Cell(EM).ome.tif`, a single-channel electron microscopy image. Start with a small ROI where you can identify the structures confidently.
 2. Use the **Pixel classifier** to segment different cellular compartments based on their texture and intensity patterns.
 3. Create classes for the main structures visible: **Mitochondria** (dark oval structures with internal cristae), **Cytoplasm**, **Vesicles**, and **Membrane** (or choose your own relevant structures).
-4. Train the classifier using texture features—EM images are ideal for texture-based classification due to their rich structural detail.
-5. Click **Create objects** and measure the area fraction of each compartment.
+4. Train using intensity and texture features. Start with a resolution fine enough to preserve the structures you labelled. Check an unlabelled part of the ROI before applying the classifier.
+5. Use **Add measurements** on the selected ROI to measure class areas, or use **Create objects** to inspect the contours. State which area you used as the denominator for the fractions.
 6. **Deliverable:** Screenshot of the pixel classifier overlay, a table showing the area/percentage of each segmented structure, and a short note on which structures were easiest vs. hardest to classify.
-
-<p align="center"><a href="resources/Cell-EM.png"><img src="resources/Cell-EM.png" width="50%" alt="Electron microscopy image of cellular ultrastructure"></a></p>
-<p align="center"><em>Electron microscopy (EM) image showing detailed cellular ultrastructure including mitochondria, cytoplasm, vesicles, and membrane structures.</em></p>
-
 
 ## Assignment 3 – Dividing Cell Identification in `CellsNuclei.ome.tif`
 1. Open `resources/CellsNuclei.ome.tif` (red nuclei, green membranes similar to the preview image) and run `scripts/assignment3_magic_setup.groovy` to load the **Dividing** and **Non-dividing** classes.
-2. Run `Analyze > Cell detection > Cell detection` 
-3. Label at least 15 examples of each class using either the **Points** or **Unlocked annotations** workflow, then train an **Object classifier** (Random Trees) emphasizing membrane intensity features (e.g., `Cell: Mean`, `Cell: Std dev`, `Nucleus: Mean`). Keep Live update enabled and refine mislabeled cells.
-4. Click **Create objects** if needed, then execute `scripts/assignment3_magic_report.groovy` to record the total number and percentage of Dividing vs Non-dividing cells.
-5. Compare the classifier’s readout to a **Positive cell detection** or **Single measurement classifier** workflow from Day 1 (reuse the scripts from `Day1/4) positive_cell_detection`). Document how the automated thresholds differ from your trained classifier.
+2. Draw and select a parent annotation. Run `Analyze > Cell detection > Cell detection` using **Channel 1** for nuclei and enable **Make measurements**. Inspect **Channel 2** for the membrane signal.
+3. Label at least 15 examples of each class using either the **Points** or **Unlocked annotations** workflow, then train an **Object classifier** (Random Trees) using available measurements from both channels. Compare nucleus shape and intensity with Channel 2 measurements in the expanded cell region. Use **Live update** to inspect predictions, then check cells outside your training examples.
+4. Apply the object classifier to the existing cells, then run `scripts/assignment3_magic_report.groovy`. It reports the counts and percentages among detections labelled **Dividing** or **Non-dividing**.
+5. On a separate copy or after saving the first report, use a **Single measurement classifier** from Day 1 with one feature and the same two classes. Compare the two percentages on the same cells. Note which examples a one-feature cutoff misses.
 6. **Deliverable:** Screenshot of the classifier overlay, the text output from `assignment3_magic_report.groovy`, and a short paragraph summarizing the % dividing cells from both methods and explaining any discrepancies.
 
 ## Bonus Assignment – Your Own Day 2 Experiment

@@ -1,0 +1,161 @@
+1
+00:00:00,420 --> 00:00:07,589
+In this Day Two exercise, you will teach QuPath
+to recognise tissue by painting examples on a
+skin image.
+
+2
+00:00:07,819 --> 00:00:13,603
+We will start with three practice classes:
+epidermis, dermis, and whitespace.
+
+3
+00:00:13,833 --> 00:00:18,362
+Then we will check the prediction and convert
+it into annotations you can measure.
+
+4
+00:00:19,503 --> 00:00:26,488
+Create a working project, add skin.ome.tif, and
+open it from the Project tab.
+
+5
+00:00:26,718 --> 00:00:34,567
+Set the image type to Brightfield (H&E). Zoom
+into an edge where you can see purple
+epidermis, pink dermis, and empty glass.
+
+6
+00:00:34,797 --> 00:00:41,621
+For this warm-up, use the + button in the class
+list to add Epidermis, Dermis, and Whitespace.
+
+7
+00:00:41,851 --> 00:00:50,550
+For the full six-layer exercise, run the course
+setup script before you start painting. It
+clears earlier annotations.
+
+8
+00:00:51,670 --> 00:01:01,544
+Open the Annotations tab. Choose Epidermis in
+the class list and turn on Auto set. New
+strokes will then inherit the highlighted
+class.
+
+9
+00:01:01,774 --> 00:01:09,938
+Select the Brush in the toolbar, or press B
+with the viewer in focus. The circle shows the
+area the brush will paint.
+
+10
+00:01:11,045 --> 00:01:18,659
+Place the brush inside a clear patch of
+epidermis. Press, drag a short distance, and
+release.
+
+11
+00:01:18,889 --> 00:01:28,583
+Check that the new annotation is labelled
+Epidermis. With the annotation selected, hold
+Shift to add to it, or Alt to erase with the
+brush.
+
+12
+00:01:28,813 --> 00:01:35,442
+Switch the class to Dermis before painting a
+pink patch. Use Whitespace for empty glass.
+
+13
+00:01:35,672 --> 00:01:44,071
+Keep each stroke inside one class. A few small
+examples from different areas give the
+classifier more useful variety.
+
+14
+00:01:45,212 --> 00:01:51,066
+Open Classify, Pixel classification, then Train
+pixel classifier.
+
+15
+00:01:51,296 --> 00:01:59,655
+Start with Random Trees, Moderate resolution,
+and Classification output. Leave the default
+features for your first run.
+
+16
+00:01:59,885 --> 00:02:06,439
+Click Live prediction. The coloured overlay
+shows the class QuPath predicts for each pixel.
+
+17
+00:02:07,545 --> 00:02:16,559
+Compare the first prediction with the
+underlying image. In this example, some dark
+areas within the dermis are predicted as
+epidermis.
+
+18
+00:02:16,789 --> 00:02:25,538
+Add small, correctly labelled examples that
+cover this variation. Keeping Live prediction
+on lets you see the updated result.
+
+19
+00:02:25,768 --> 00:02:33,592
+Compare an unlabelled region again. Press C to
+toggle the classification overlay and inspect
+the tissue underneath.
+
+20
+00:02:34,712 --> 00:02:41,756
+Name and save the classifier. Preserve your
+training examples separately before measuring
+the predictions.
+
+21
+00:02:41,986 --> 00:02:50,420
+Open the reporting image and use Load pixel
+classifier to select your saved model. Draw and
+select the region you want to measure.
+
+22
+00:02:50,650 --> 00:02:58,904
+Click Create objects. Choose Current selection
+for a selected region, or Full image to process
+the entire image.
+
+23
+00:02:59,134 --> 00:03:05,728
+Set the new object type to Annotation. Now the
+predictions have outlines and can be measured.
+
+24
+00:03:06,837 --> 00:03:13,986
+Open Show annotation measurements. The area is
+calculated from the outline and the image
+calibration.
+
+25
+00:03:14,216 --> 00:03:23,205
+Compare each outline with the original image.
+Save the new annotations and record the
+classifier, resolution, and analysis region.
+
+26
+00:03:24,337 --> 00:03:29,741
+Repeat the workflow for the full lesson using
+its six tissue classes and Whitespace.
+
+27
+00:03:29,971 --> 00:03:40,855
+After Create objects, run the course report
+script. Its percentages use the total area of
+the six tissue classes. Whitespace is excluded.
+
+28
+00:03:41,085 --> 00:03:47,924
+The sequence is the same: paint examples, check
+the prediction, create annotations, and
+measure.

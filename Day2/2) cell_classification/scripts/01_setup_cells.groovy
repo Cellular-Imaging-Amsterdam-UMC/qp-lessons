@@ -9,32 +9,23 @@ import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
 import qupath.lib.gui.dialogs.Dialogs as GuiDialogs
 
-// 1. Define the classes
+def classes = [
+    "Normal": ColorTools.makeRGB(0, 255, 0),
+    "Apoptotic": ColorTools.makeRGB(0, 0, 255)
+]
+
+// QuPath's class list is shared with the JavaFX UI. Read and update it on the same thread.
 def qupath = getQuPath()
-def classList = qupath.getAvailablePathClasses()
-
-def ensureClass = { String name, int color ->
-	def pathClass = PathClass.fromString(name, color)
-	def exists = classList.any { it.getName() == name }
-
-	if (!exists) {
-		Platform.runLater {
-			classList.add(pathClass)
-			println "Added class: $name"
-		}
-	} else {
-		println "Class already exists: $name"
-	}
-
-	return pathClass
+Platform.runLater {
+    def classList = qupath.getAvailablePathClasses()
+    classes.each { label, color ->
+        if (!classList.any { it?.getName() == label }) {
+            classList.add(PathClass.fromString(label, color))
+            println "Added class: $label"
+        }
+    }
 }
 
-def normalClass = ensureClass("Normal", ColorTools.makeRGB(0, 255, 0)) // Green
-def apoptoticClass = ensureClass("Apoptotic", ColorTools.makeRGB(0, 0, 255)) // Blue
-
-// 2. Classes registered in session list
-
-// 3. Clean up
 removeAnnotations()
 
 GuiDialogs.showInfoNotification("Setup", "Classes 'Normal', 'Apoptotic', and 'Ignore*' ready for cell detection.")

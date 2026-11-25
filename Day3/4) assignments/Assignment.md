@@ -10,36 +10,36 @@
 
 ### Step 1: Choose Your Image and Biological Question
 
-Select one of the following images from `resources/` and consider the suggested biological question (or create your own):
+Select one of the images below from the [shared course resources](../../resources/) and choose a question. For a treatment-effect question you also need comparable controls and biological replicates.
 
 | Image | Suggested Biological Question |
 |-------|------------------------------|
-| `Cells-Irradiated.ome.tif` | How does irradiation affect nuclear morphology (size, circularity, fragmentation)? |
+| `Cells-Irradiated.ome.tif` | How variable are nuclear size and shape within this irradiated sample? |
 | `NucleiDNARepairFoci.ome.tif` | What is the distribution of nuclear sizes? Are there distinct populations? |
-| `TrophoblastCellCulture.ome.tif` | How variable are cell sizes in this culture? What's the cell density? |
+| `TrophoblastCellCulture.ome.tif` | How variable are cell sizes and what is the cell density in the selected region? |
 | `CellsNuclei.ome.tif` | What percentage of cells show elongated vs. round nuclear morphology? |
 | `PostiveNuclei.ome.tif` | Can we quantify nuclear intensity differences across the population? |
 | `TumorsKidney.ome.tif` | How does nuclear density vary across different tumor regions? |
 
 ### Step 2: Set Up Your Project
 
-1.  **Create a New Project:** `File > Project > Create project`
+1.  **Create a New Project:** Use **Create project…** in the **Project** tab
 2.  **Add Your Image:** `File > Project > Add images` → select your chosen image
-3.  **Create an Annotation:** Draw a rectangular annotation around a region of interest (ROI) containing at least **50-100 objects** for meaningful statistics
+3.  **Create an Annotation:** Draw and select a representative region of interest (ROI). Aim for about 50–100 objects for this descriptive exercise. Check pixel calibration before reporting areas or densities.
 
 ### Step 3: Apply a Pretrained Model
 
 1.  **Choose Your Model:**
-    *   For **nuclei detection**: Use StarDist (`01_stardist_nuclei.groovy`) or Cellpose with `nuclei` model (`02_cellpose.groovy`)
-    *   For **cell detection**: Use Cellpose with `cyto3` model and set appropriate cell expansion
+    *   For **nuclei detection**: Use StarDist (`01_stardist_nuclei.groovy`) or Cellpose with the `nucleitorch_0` model (`02_cellpose.groovy`)
+    *   For **cell detection**: Use `cyto3` when a cell-boundary or cytoplasmic signal is visible. Start with zero expansion when segmenting cell outlines directly.
     
 2.  **Configure Parameters:**
     *   **Channel:** Select the appropriate channel (e.g., DAPI for nuclei)
-    *   **Diameter (Cellpose):** Measure 3-5 typical objects first using `Measure > Show measurement tools`
+    *   **Diameter (Cellpose):** Measure 3–5 typical objects with a line annotation and read length in µm from the annotation measurement table
     *   **Probability/Detection threshold:** Start with defaults, adjust if needed
-    *   **Cell expansion:** Set to 0 for nuclei-only, or 2-5 µm for estimating cell boundaries
+    *   **Cell expansion:** Set to 0 to keep the model outlines. If you start from nuclei, an expansion of 2–5 µm gives an estimated cell region. Record any expansion you use.
 
-3.  **Run Detection:** Execute the script on your selected annotation
+3.  **Run Detection:** Run the script from the [Deep Learning Segmentation lesson](../1%29%20dl_segmentation/LESSON.md) on the selected annotation. Inspect a few outlines before measuring.
 
 ### Step 4: Perform Measurements and Analysis
 
@@ -53,12 +53,12 @@ Select one of the following images from `resources/` and consider the suggested 
     
 3.  **Generate Summary Statistics:**
     *   Go to `Measure > Show detection measurements`
-    *   Use `Table > Export as CSV` to save your data
+    *   Use **Save** in the measurement table to export the values
     *   Note the **mean**, **min**, **max**, and **standard deviation** of key measurements
 
 4.  **Visualize Results:**
     *   Go to `Measure > Show measurement maps` to color-code detections by any measurement
-    *   Create a histogram: Select detections → `Measure > Show histograms`
+    *   Open the detection measurement table and use **Show plots** to view a histogram for the selected measurement
 
 ### Step 5: Document Your Findings
 
@@ -68,11 +68,11 @@ Select one of the following images from `resources/` and consider the suggested 
     3.  **Brief interpretation** (3-5 sentences) answering your biological question based on the data
     4.  **Reflection:** Did the pretrained model work well? What parameters did you adjust and why?
 
-*   **Example Report Format:**
+*   **Example report with illustrative numbers:**
 
     > **Image:** `Cells-Irradiated.ome.tif`
     > 
-    > **Biological Question:** How does irradiation affect nuclear morphology?
+    > **Biological Question:** How variable is nuclear morphology in this irradiated image?
     > 
     > **Model Used:** StarDist (dsb2018_heavy_augment.pb), Threshold: 0.5
     > 
@@ -83,7 +83,7 @@ Select one of the following images from `resources/` and consider the suggested 
     > | Circularity | 0.73 | 0.18 | 0.22 | 0.95 |
     > | Solidity | 0.89 | 0.08 | 0.51 | 0.98 |
     > 
-    > **Interpretation:** The nuclear population shows high variability in circularity (0.22–0.95), suggesting the presence of both normal round nuclei and fragmented/irregular nuclei potentially indicative of apoptosis or radiation damage. The low-solidity outliers (< 0.7) likely represent damaged or fragmenting nuclei.
+    > **Interpretation:** The nuclear population shows high variability in circularity (0.22–0.95), with both round and irregular outlines. Review the low-solidity examples in the image to distinguish true irregularities from segmentation errors.
 
 ---
 
@@ -95,20 +95,20 @@ Select one of the following images from `resources/` and consider the suggested 
 ### Part 1: Systematic Evaluation
 
 1.  **Open Your Lesson 3 Project:** Continue with the QuPath project from Lesson 3 (cellpose_training).
-2.  **Select Test Images:** Choose **3-5 images** that were NOT used for training or validation (e.g., images `21.jpg` to `30.jpg`).
-3.  **Run Your Model:** Apply `05_run_custom_cellpose_model.groovy` to each test image.
+2.  **Select Test Images:** Choose **3–5 held-out images**, for example from `21.jpg`–`30.jpg` if you used the lesson split.
+3.  **Run Your Model:** Define comparable test ROIs, inspect or label the target objects, then select each ROI and run `05_run_custom_cellpose_model.groovy`.
 4.  **Evaluate Performance:** For each image, assess:
-    *   **True Positives:** Objects correctly detected
-    *   **False Positives:** Detections that are not real objects
-    *   **False Negatives:** Objects that were missed
-    *   **Boundary Quality:** Are object edges well-defined?
+    *   **True positives (TP):** Detections that match individual reference objects. Match each object at most once.
+    *   **False positives (FP):** Extra detections, including extra pieces when a single object is split.
+    *   **False negatives (FN):** Reference objects left unmatched, including objects merged with a neighbour.
+    *   **Boundary quality:** Note where outlines are too large, too small, or poorly aligned. Use a consistent rule on every ROI.
 
 ### Part 2: Document Results
 
 *   **Deliverables:**
     1.  **Screenshots** of detection results on at least 3 test images
     2.  **Evaluation table:**
-        | Image | Objects (est.) | Detected | False Positives | Missed | Quality (1-5) |
+        | Image | Reference objects | TP | FP | FN | Boundary notes |
         |-------|----------------|----------|-----------------|--------|---------------|
         | 21.jpg | | | | | |
         | 22.jpg | | | | | |
@@ -120,11 +120,11 @@ Select one of the following images from `resources/` and consider the suggested 
 If your model shows consistent errors, try improving it:
 
 1.  **Identify Problem Areas:** Note where false positives/negatives occur most often.
-2.  **Add More Training Data:** Create **2-4 additional Training regions** in areas similar to where the model struggles.
+2.  **Add More Training Data:** Create **2–4 additional Training regions** on non-test images showing similar examples. If you use the original test images to guide tuning, set aside fresh images for a final independent check.
 3.  **Re-train:** Run `04_train_cellpose.groovy` with:
     *   Same model name (a new version will be created automatically)
     *   Same parameters as before
-4.  **Compare Models:** Run both the original and improved model on the same test images.
+4.  **Compare Models:** Run both models on the same chosen regions, clearing the previous detections or saving each result separately.
 
 *   **Optional Deliverables:**
     1.  **Side-by-side comparison** of original vs. improved model on the same image
@@ -147,11 +147,11 @@ If your model shows consistent errors, try improving it:
     | Model | Base Model | Epochs |
     |-------|------------|--------|
     | Model A | `None (train from scratch)` | 75 |
-    | Model B | `cyto3` or `nuclei` (whichever is closest to your object) | 75 |
+    | Model B | `cyto3` (if available in the base model list) | 75 |
 
 3.  **Run Both Models:** Apply each trained model to the **same unseen test image** using `05_run_custom_cellpose_model.groovy`.
 
-4.  **Compare Results:** Evaluate both models on the same regions.
+4.  **Compare Results:** Use the same regions, target definitions, and inference settings apart from the model file. Record any differences you intentionally introduce.
 
 *   **Deliverables:**
     1.  **Side-by-side screenshots** showing detection results from both models on the same image region

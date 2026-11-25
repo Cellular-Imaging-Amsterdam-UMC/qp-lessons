@@ -3,16 +3,16 @@
 ## Overview
 This module teaches sub-cellular detection using **Spotiflow**, a deep learning method for detecting small, dense spots (like DNA repair foci, FISH signals, or RNA scopes).
 
-## Technical Prerequisites (CRITICAL)
-1.  **QuPath Spotiflow Extension**: [GitHub Link](https://github.com/weigertlab/qupath-extension-spotiflow)
-2.  **Python Environment**: Must have `spotiflow` installed.
+## Technical Prerequisites
+
+*   The [StarDist extension](https://github.com/qupath/qupath-extension-stardist) and the local `dsb2018_heavy_augment.pb` model are used to find nuclei.
+*   The [Spotiflow extension](https://github.com/BIOP/qupath-extension-spotiflow) supplies the configured Python interpreter. This lesson uses Spotiflow 0.6.5 and the `general` pretrained model.
+*   Use the course standalone launcher or follow the [Day 3 setup guide](../../README_CELLPOSE_SPOTIFLOW.md) for a separate installation.
 
 ## Setup Instructions
-1.  **Create Project**:
-    *   Open QuPath.
-    *   Create or open a project (`File > New Project...` or `File > Project > Open project`) so QuPath stores detections and annotations in the project folder before importing images.
-    *   Drag and drop `resources/NucleiDNARepairFoci.ome.tif`.
-    *   Set image type to "Fluorescence".
-2.  **Install Scripts**:
-    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
 
+Follow the [course setup steps](../../README.md#before-each-lesson) with `resources/NucleiDNARepairFoci.ome.tif`. Set the image type to **Fluorescence**.
+
+Start with a small representative region so you can check the nucleus outlines and focus detections quickly.
+
+[Start the lesson](LESSON.md).

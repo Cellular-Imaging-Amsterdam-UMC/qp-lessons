@@ -4,17 +4,16 @@
 This module teaches the **Positive Cell Detection** workflow. This is a streamlined tool in QuPath that combines cell detection and intensity thresholding in a single step. It is commonly used for calculating a "Positivity Index" (e.g., Ki67, Insulin positivity).
 
 ## Prerequisites
-1.  **QuPath v0.7.0+**
+1.  **QuPath 0.7.0**
 2.  **Sample Image**: `resources/Pancreatic Islet Cells of the Mouse.tif` (Same as Lesson 3).
 
 ## Setup Instructions
-1.  **Create Project**:
-    *   Open QuPath.
-    *   Use `File > New Project...` to create or open an existing project folder (ideally an empty subfolder) so QuPath tracks all your annotations and results.
-    *   Drag and drop the `resources/Pancreatic Islet Cells of the Mouse.tif` file into the QuPath window.
-    *   Set image type to "Fluorescence" if prompted.
-2.  **Install Scripts**:
-    *   Drag and drop the `.groovy` files from the `scripts` folder onto the QuPath window to open a script.
+
+Follow the [course setup steps](../../README.md#before-each-lesson) with `resources/Pancreatic Islet Cells of the Mouse.tif`. Set the image type to **Fluorescence**.
+
+Use a fresh image entry for this lesson so the islet annotations from the thresholding exercise are easy to keep separate.
+
+[Start the lesson](LESSON.md). [Watch the instruction video](LESSON.md#instruction-video).
 
 ## The Scripts
 *   **`01_setup_positive.groovy`**: Defines the "Positive" and "Negative" classes.

@@ -1,0 +1,117 @@
+1
+00:00:00,360 --> 00:00:06,074
+Open the mouse pancreatic islet image from the
+course and set the image type to Fluorescence.
+
+2
+00:00:06,314 --> 00:00:11,593
+The blue channel shows nuclei, and the red
+channel contains the insulin marker.
+
+3
+00:00:11,833 --> 00:00:25,027
+In Positive Cell Detection, the two intensity
+thresholds answer different questions. First,
+which nuclei are detected? Then, which of the
+detected cells are positive for the marker?
+
+4
+00:00:26,193 --> 00:00:32,108
+Open Brightness and Contrast. Use the Show
+column to view one channel at a time.
+
+5
+00:00:32,348 --> 00:00:39,532
+Hide Channel One to see the blue nuclei in
+Channel Two. Compare bright and dim nuclei
+across the field.
+
+6
+00:00:39,772 --> 00:00:46,231
+Now show Channel One and hide Channel Two. The
+red signal is the marker we will use for
+scoring.
+
+7
+00:00:46,471 --> 00:00:58,020
+Turn both channels back on when comparing
+detections with the image. These check boxes
+control the viewer display. Set the detection
+and scoring channels explicitly in the tool.
+
+8
+00:00:59,193 --> 00:01:08,617
+Draw a small rectangle that includes some
+bright and dim signal, then select it. The
+three runs in this video use exactly the same
+rectangle.
+
+9
+00:01:08,857 --> 00:01:19,366
+Open Positive Cell Detection. For Detection
+channel, choose Channel Two. Use the lesson
+settings and leave cell expansion at five
+micrometers.
+
+10
+00:01:19,606 --> 00:01:30,095
+Set Score compartment to Cytoplasm, Channel One
+mean. Keep Make measurements and Single
+threshold enabled, then set Threshold One Plus
+to thirty-five.
+
+11
+00:01:31,277 --> 00:01:42,156
+In the Intensity parameters section, set the
+detection Threshold to fifteen and run. In this
+rectangle, QuPath finds two hundred and ninety-
+three cells.
+
+12
+00:01:42,396 --> 00:01:51,014
+Raise just this Threshold to twenty-five and
+run again on the same region. Now QuPath finds
+two hundred and sixty-one cells.
+
+13
+00:01:51,254 --> 00:02:01,863
+The white marks point to examples where the
+higher cutoff removes outlines. Check whether
+faint nuclei are real and whether the lower
+cutoff is also picking up background.
+
+14
+00:02:03,027 --> 00:02:11,616
+Keep the detection Threshold at twenty-five. In
+the scoring section, change Threshold One Plus
+from thirty-five to seventy.
+
+15
+00:02:11,856 --> 00:02:20,450
+The same two hundred and sixty-one cells are
+still detected. The positive count drops from
+one hundred and seventy-four to eighty-eight.
+
+16
+00:02:20,690 --> 00:02:29,259
+Follow the white marks. In those examples, the
+outlines stay in place and change from red for
+positive to blue for negative.
+
+17
+00:02:30,443 --> 00:02:37,982
+First review the outlines against the blue
+nuclei. Then review the positive labels against
+the red insulin signal.
+
+18
+00:02:38,222 --> 00:02:47,241
+Record the settings, compartment, and both
+counts. The report script divides the positive
+count by the positive plus negative counts.
+
+19
+00:02:47,481 --> 00:02:55,660
+In this example, raising the positivity
+threshold alone changes the fraction from about
+sixty-seven percent to thirty-four percent.

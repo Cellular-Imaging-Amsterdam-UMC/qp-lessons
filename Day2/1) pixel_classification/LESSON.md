@@ -5,6 +5,17 @@
 **Duration:** 30-60 Minutes
 **Goal:** Experience "Training by Example" using the Random Trees pixel classifier.
 
+## Instruction video
+
+[Watch or download the video (MP4, 3:49)](videos/Day-2-Pixel-Classification.mp4) · [English captions (SRT)](videos/Day-2-Pixel-Classification.en.srt)
+
+The video starts with a three-class warm-up using Epidermis, Dermis, and Whitespace. It shows how to paint training examples, refine the live prediction, and turn predictions into measurable annotations. For the full exercise, use the class list in Part 2.
+
+- **0:51** — Choose a class and enable **Auto set**.
+- **1:11** — Use the **Brush** to paint small sample regions.
+- **2:07** — Compare the first and refined predictions.
+- **2:34** — Use **Create objects** to convert the prediction into annotations.
+
 ## Part 1: The "Why" (5 Minutes)
 *   **Guiding question:** Why can't we just select the purple stuff?
 *   **Activity:**
@@ -12,43 +23,41 @@
     2.  Zoom into the dark purple edge (epidermis).
     3.  Describe the epidermis color (deep purple) and texture in your own words.
     4.  Move into the dermis and describe its pink tone and smoother texture.
-    5.  **Takeaway:** Color alone is not enough. You need texture cues—the "robot eye"—to separate tissues reliably.
+    5.  **Takeaway:** When two layers have similar colours, texture features can help tell them apart.
 
-## Part 2: Create a Training Image (Optional but strongly recommended, 5 Minutes)
-*   **Purpose:** Cropping a training-only composite gives you fast reload times and a tidy workspace while you practice.
-*   **Steps:**
-    1.  Use `Classify > Training images > Create region annotations` to drop square regions over representative epidermis, dermis, and whitespace patches (press **S** to save when finished).
-    2.  Select `Classify > Training images > Create training image`, choose your classification (e.g., `Region*`), set a preferred width (around 50,000 px works well here), and click **OK** to generate the composite.
-    3.  Open the new training image from the project list and continue annotating there—it behaves like a regular slide but loads almost instantly.
-*   **Applied example:** Extract a strip containing epidermis, dermis, and blank background. Use this smaller slide for your practice run, then hop back to the original whole slide once you feel ready to analyze everything.
+## Part 2: Prepare the Classes and Training Image (5 Minutes)
+
+Run `assignment1_magic_setup.groovy` on the original `skin.ome.tif` before drawing anything. It clears old annotations and adds six tissue classes plus **Whitespace**. EPTZ is the epidermal phase transition zone identified in this course's skin example, between the stratum corneum and stratum granulosum.
+
+You can train directly on the original image or follow these steps to make a smaller training composite.
+
+1. Open `Classify > Training images > Create region annotations`. Give the crop rectangles a common class such as `Region*` and place them over representative areas containing epidermis, dermis, and blank glass. Save the image data with `Ctrl+S`.
+2. Open `Classify > Training images > Create training image`, select the crop class, leave **Preferred image width** at its default for the first attempt, and click **OK**.
+3. Open the new training image from the **Project** tab. Label the tissue layers there in Part 3, then apply your saved classifier to the original in Part 5.
 
 <p align="center"><a href="screenshots/TrainingPixelClassifier.png"><img src="screenshots/TrainingPixelClassifier.png" width="60%" alt="Training Pixel Classifier"></a></p>
 
-## Part 3: The Setup (2 Minutes)
-*   **Run** the `assignment1_magic_setup.groovy` script.
-*   **What this does:** It creates the layer classes you will train—Stratum corneum, EPTZ, Stratum granulosum, Stratum spinosum, Stratum basale, Dermis, plus Whitespace—each with a contrasting color so you can immediately start drawing examples for every compartment.
-
-## Part 4: Interactive Training (15 Minutes)
+## Part 3: Interactive Training (15 Minutes)
 *   **Step 1: Annotate**
     *   Toggle **Auto Set** on and work from the surface inward: **Stratum corneum → EPTZ → Stratum granulosum → Stratum spinosum → Stratum basale → Dermis**.
-    *   Use the **Brush Tool** with small strokes and keep each layer on its own class to avoid cross-contamination.
+    *   Use the **Brush** to draw several small, non-overlapping examples per class. Stay inside clear boundaries first, then add examples with different shades and textures. Check the class on each stroke in the **Annotations** tab.
     *   Finish with a quick pass on **Whitespace** for the empty glass background.
 *   **Step 2: Train**
     *   Open `Classify > Pixel classification > Train pixel classifier` (see the [Pixel classification tutorial](https://qupath.readthedocs.io/en/stable/docs/tutorials/pixel_classification.html)).
     *   When the dialog appears:
         *   **Classifier:** Choose *Random trees (RTrees)*—it is fast, forgiving, and ideal for a first classifier.
-        *   **Resolution:** Start at *Moderate* (3.65 µm/px). Lower values train faster with less detail; higher values capture more structure but add noise.
+        *   **Resolution:** Start at *Moderate* (3.65 µm/px). A larger µm/px value is a coarser resolution and usually runs faster. Finer resolution can preserve thin layers at the cost of processing time.
         *   **Features:** Leave *Default multiscale features 2D* enabled so the classifier can mix Gaussian blur, Laplacian, and structure tensor cues.
-        *   **Output:** Stay with *Classification* to store the class probabilities per pixel. Remember that *Probability maps* can come later if you need heatmaps.
-        *   **Region:** Keep *Everywhere* to learn from the whole slide, or switch to *Within annotations* when you want to restrict learning to a specific ROI.
-        *   **Load training / Save / Classifier name:** Enter something descriptive (e.g., `Skin_RT_2025`). Save once you like the preview so you can reload it later.
+        *   **Output:** Choose *Classification* to assign one class per pixel. A probability output provides a separate score for each class when supported. These scores are estimates and can help identify uncertain regions.
+        *   **Region:** Use *Everywhere* for a whole-view preview or *Any annotation ROI* to limit the overlay. Your labelled examples supply the training pixels.
+        *   **Classifier name:** Enter a descriptive name such as `SkinLayers_RT`. Save the classifier once you are satisfied with the preview.
     *   **Crucial step:** Click **Live prediction** so the viewer updates instantly each time you add or correct strokes.
 *   **Step 3: Refine (Human-in-the-loop)**
     *   Watch for mistakes (for example, QuPath may think an ink mark is dermis).
-    *   Select the correct class, paint over the error, and let Live prediction refresh.
+    *   Select the correct class, label a small representative example of the correct tissue, and let **Live prediction** refresh.
     *   Continue looping between annotate → train → check until the overlay looks right.
 
-## Part 5: Under the Hood (10 Minutes)
+## Part 4: Under the Hood (10 Minutes)
 *   **Purpose:** See how parameter choices influence quality and speed.
 *   **Try this:**
     *   Change **Resolution** to *Low*. Notice how the overlay gets blocky but refreshes quickly.
@@ -58,18 +67,16 @@
         *   **Scales:** Smaller scales (e.g., 0.5) emphasize fine detail, while larger scales (e.g., 2.0) smooth over noise to capture broad tissue trends.
         *   **Features:** Each feature type (Gaussian blur, Laplacian of Gaussian, structure tensor, etc.) highlights different patterns—edges, blobs, gradients—so the classifier sees more than raw intensity.
         *   **Local normalization:** Setting a radius (like 8 px) forces QuPath to compare each pixel to its neighborhood, which can tame illumination variation before features are computed.
-    *   Toggle feature combinations and scales, retrain, and observe how the probability map shifts. This helps you build intuition for which settings capture epidermis vs dermis texture.
+    *   Toggle feature combinations and scales, retrain, and observe how the classification overlay changes. This helps you build intuition for which settings capture epidermis vs dermis texture.
 
-## Part 6: Apply to the Whole Slide (5 Minutes)
-*   **Open** the original `skin.ome.tif` if you trained on a cropped image.
-*   **Load** your saved classifier via `Classify > Pixel classification > Load pixel classifier` and select the file you saved earlier.
-*   **Create objects:** Choose `Classify > Pixel classification > Create objects` and keep the default *Do not split* option so QuPath converts epidermis/dermis pixels into regions without fragmenting them.
-*   **Inspect** the overlay, look at the different in size, and save the project so the classification sticks to the full-resolution slide.
+## Part 5: Apply to the Whole Slide (5 Minutes)
+*   Save the classifier. Open the original `skin.ome.tif` if you trained on the composite. If you trained on the original, save or export the training annotations separately, then remove the labelled strokes and earlier result annotations from the reporting image. The script sums any annotations carrying the six tissue classes.
+*   Choose `Classify > Pixel classification > Load pixel classifier` and select the saved classifier. Check the prediction in an area you did not label. With **Create objects** in the classifier dialog, choose **Full image** or **Current selection** if you selected an analysis annotation. Use **Annotation** as the new object type. Leave **Split objects** off if you want disconnected patches of each class grouped together.
+*   Save your new prediction annotations in the project.
 
-## Part 7: The Result (5 Minutes)
-*   **Save** the classifier ("SkinLayers_RT" works) so you can reuse it.
-*   **Run** the `assignment1_magic_report.groovy` script.
-*   **Read the popup:** QuPath summarizes each compartment (e.g., *"Stratum corneum: 0.12 mm² (6.3%)"*).
-*   **Interpretation:** Layer percentages become reproducible biomarkers—far more objective than eyeballing "about 10%" of epidermis.
+## Part 6: The Result (5 Minutes)
+
+*   Run `assignment1_magic_report.groovy` after **Create objects**. Its percentage uses the summed area of the six tissue classes as the denominator. **Whitespace** is excluded.
+*   Record the classifier name, resolution, analysis region, and area and percentage for each layer. Compare the outlines with the image and describe one region where the predicted boundary is uncertain.
 
 <p align="center"><a href="screenshots/Skin.png"><img src="screenshots/Skin.png" width="60%" alt="Training Pixel Classifier, results"></a></p>

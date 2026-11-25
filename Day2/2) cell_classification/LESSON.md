@@ -7,8 +7,8 @@
 
 ## Part 1: The Concept (5 Minutes)
 *   **Observe the slide:**
-    *   **Normal nuclei** look dimmer, larger, and smooth/oval.
-    *   **Apoptotic nuclei** glow brightly because the chromatin is condensed; they appear smaller or fragmented.
+    *   **Normal examples** in this teaching image tend to be smoother and less condensed.
+    *   **Apoptotic examples** in this image tend to be bright, condensed or fragmented. Label clear examples using shape and intensity together. In other samples, use suitable markers or other independent evidence to confirm apoptosis.
 *   **Strategy:** Simple thresholding would lump cells together. Instead you will:
     1.  **Detect** every nucleus.
     2.  **Measure** intensity and shape features.
@@ -16,24 +16,25 @@
 
 ## Part 2: The Setup (2 Minutes)
 *   **Run** `01_setup_cells.groovy`.
-*   **What you get:** Two classes—**Normal** (blue) and **Apoptotic** (red)—so you can start labeling immediately.
+*   **What you get:** The class list includes **Normal** and **Apoptotic**. Run this before drawing the detection region or any training labels.
 
 ## Part 3: Cell Detection (10 Minutes)
 *   **Step 1: Run detection**
+    *   Draw and select an annotation around an area with examples of both phenotypes.
     *   Choose `Analyze > Cell detection > Cell detection`.
 *   **Step 2: Tune parameters**
-    *   **Detection image:** Select the DAPI channel.
+    *   **Detection image:** Select **Channel 1**, the only channel in `nuclei.ome.tif`.
     *   **Threshold:** Adjust until both dim and bright nuclei are detected.
-    *   **Cell expansion:** Set to 5.
+    *   **Cell expansion:** Start at 5 µm. This estimates the surrounding cell area from the nucleus. Enable **Make measurements** so the classifier has features to read.
     *   Click **Run**.
-*   **Outcome:** Yellow outlines should cover every nucleus. They start as "Unclassified" objects that you'll label next.
+*   **Outcome:** Check that the outlines cover both dim and bright nuclei, and look for missed or merged cells. The detections start unclassified.
 *   **Note on object type:** Cell Detection creates the special **Cell** object type—essentially a paired nucleus ROI with an optional expanded cytoplasm ROI—so QuPath can store both nuclear and cellular measurements together (see the [object types overview](https://qupath.readthedocs.io/en/stable/docs/concepts/objects.html#types-of-object)).
 
 <p align="center"><a href="screenshots/detectcells.png"><img src="screenshots/detectcells.png" width="30%" alt="Detect Cells"></a></p>
 
 ## Part 4: Training the Classifier (10 Minutes)
 *   **Step 1: Pick your training style**
-    *   **Points workflow (screenshot below):** Open the **Points** panel, click **Add** to create a point annotation group, then double-click its entry to set the name and class (matching the dialog shown above). With the group active, click inside nuclei to drop labeled points; Alt-click removes a point, drag to reposition.
+    *   **Points workflow (screenshot below):** Open the **Points** panel, click **Add** to create a point annotation group, then double-click its entry to set the name and class (see the class properties examples below). With the group active, click inside nuclei to drop labeled points; Alt-click removes a point, drag to reposition.
 
 <p align="center"><a href="screenshots/classifycells_1.png"><img src="screenshots/classifycells_1.png" width="80%" alt="Training with Points"></a></p>
 
@@ -48,7 +49,7 @@
     </tr>
 </table>
 
-*   **Unlocked annotations workflow (screenshot below):** Draw rectangular annotations that enclose good examples, keep them unlocked, and set their classes in the **Annotations** pane. All detections inside the annotation inherit that class for training, which speeds up labeling dense regions.
+*   **Unlocked annotations workflow (screenshot below):** Draw rectangular annotations that enclose good examples, keep them unlocked, and set their classes in the **Annotations** pane. The classifier uses detections covered by each unlocked labelled region as examples. Keep each region confined to one phenotype.
    
 <p align="center"><a href="screenshots/classifycells_2.png"><img src="screenshots/classifycells_2.png" width="80%" alt="Training with Unlocked Annotations"></a></p>
 
@@ -57,15 +58,12 @@
 *   **Step 3: Train**
     *   Open `Classify > Object classification > Train object classifier`.
     *   **Classifier:** Keep Random Trees.
-    *   **Features:** Rather than relying only on `Nucleus: Mean`, toggle on shape and texture metrics that stay stable across microscopes—`Nucleus: Area`, `Nucleus: Circularity`, `Nucleus: Eccentricity`, plus `Nucleus: Std. dev.` for intensity variation. Let students experiment with which combination separates the phenotypes best.
+    *   **Features:** Start with the available nuclear mean intensity and area. Try adding circularity and intensity standard deviation if those columns are present. Features and intensities can vary with image acquisition and segmentation, so compare the predictions on unlabelled cells.
     *   Set **Training** to `Points only` or `Unlocked annotations` to match your labeling style, then click **Live update** for instant feedback.
 *   **Step 4: Refine**
     *   Continue correcting mistakes by adding more points/annotations as needed and keep Live update running.
 
-
-
-
 ## Part 5: The Result (5 Minutes)
 *   **Save** the classifier ("Apoptosis Finder" is a good name) so you can reuse it later.
-*   **Run** `02_report_cells.groovy`.
-*   **Read the popup:** QuPath reports something like *"Apoptotic Index: 12.5%"*—a reproducible biomarker instead of a guess.
+*   Check that QuPath has assigned both classes to detections and save the image data. Run `02_report_cells.groovy` after applying the classifier.
+*   The reported index is `Apoptotic ÷ (Normal + Apoptotic) × 100` on the current image. Other and unclassified detections are excluded from the denominator. Report the two counts and inspect a few predicted cells outside your training labels before interpreting the index.

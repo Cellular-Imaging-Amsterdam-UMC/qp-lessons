@@ -26,6 +26,11 @@ import javafx.scene.control.ButtonType
 // ---------------------------
 boolean showSettingsDialog = true
 
+if (getProject() == null) {
+    GuiDialogs.showErrorMessage("Cellpose", "Create or open a QuPath project and add the image before running Cellpose.")
+    return
+}
+
 // ---------------------------
 // Defaults (used when no dialog)
 // ---------------------------

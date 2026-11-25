@@ -12,28 +12,22 @@ import javafx.application.Platform
 import qupath.lib.objects.classes.PathClass
 import qupath.lib.common.ColorTools
 
+def classes = [
+    "Training": ColorTools.makeRGB(0, 0, 255),
+    "Validation": ColorTools.makeRGB(255, 165, 0)
+]
+
+// QuPath's class list is shared with the JavaFX UI. Read and update it on the same thread.
 def qupath = getQuPath()
-def classList = qupath.getAvailablePathClasses()
-
-def ensureClass = { String name, int color ->
-    def pathClass = PathClass.fromString(name, color)
-    def exists = classList.any { it.getName() == name }
-
-    if (!exists) {
-        Platform.runLater {
-            classList.add(pathClass)
-            println "Added class: $name"
+Platform.runLater {
+    def classList = qupath.getAvailablePathClasses()
+    classes.each { label, color ->
+        if (!classList.any { it?.getName() == label }) {
+            classList.add(PathClass.fromString(label, color))
+            println "Added class: $label"
         }
-    } else {
-        println "Class already exists: $name"
     }
-
-    return pathClass
 }
-
-// Add Training (blue) and Validation (orange) classes
-def trainingClass = ensureClass("Training", ColorTools.makeRGB(0, 0, 255))
-def validationClass = ensureClass("Validation", ColorTools.makeRGB(255, 165, 0))
 
 println ""
 println "Next steps:"

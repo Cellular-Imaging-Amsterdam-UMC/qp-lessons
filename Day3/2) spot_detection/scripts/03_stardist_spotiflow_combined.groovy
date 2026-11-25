@@ -45,7 +45,7 @@ def preferredModelName = 'dsb2018_heavy_augment.pb'
 // ---------------------------
 // Default parameters - StarDist
 // ---------------------------
-def    nucleusChannelDefault    = 'DAPI'
+def    nucleusChannelDefault    = null // Auto-select DAPI or the first channel
 double downscaleDefault         = 1.0
 double thresholdDefault         = 0.50
 int    meanfiltersizeDefault    = 0
@@ -56,7 +56,7 @@ def    annotationClassName      = 'Nuclei'
 // ---------------------------
 // Default parameters - Spotiflow
 // ---------------------------
-def    fociChannelDefault       = 'GFP'
+def    fociChannelDefault       = null // Auto-select the foci channel from the image metadata
 def    fociClassNameDefault     = 'Foci'
 def    fociDeviceDefault        = 'auto'
 def    spotiflowModelDefault    = 'general'
@@ -153,13 +153,15 @@ def pickDefaultFociChannel = { List<String> names ->
 // ---------------------------
 // Acquire parameters
 // ---------------------------
-def nucleusChannel    = nucleusChannelDefault
+def (channelNames, defaultNucleusChannel) = getChannelNamesAndDefault()
+def defaultFociChannel = pickDefaultFociChannel(channelNames)
+def nucleusChannel    = nucleusChannelDefault == null ? defaultNucleusChannel : nucleusChannelDefault
 double downscale      = downscaleDefault
 double threshold      = thresholdDefault
 int meanfiltersize    = meanfiltersizeDefault
 int gaussianfiltersize = gaussianfiltersizeDefault
 boolean excludeOnBorders = excludeOnBordersDefault
-def fociChannel       = fociChannelDefault
+def fociChannel       = fociChannelDefault ?: defaultFociChannel
 def fociClassName     = fociClassNameDefault
 def fociDevice        = fociDeviceDefault
 def spotiflowModel    = spotiflowModelDefault
@@ -167,9 +169,6 @@ Double spotiflowProbThresh = null
 String spotiflowPeakMode = spotiflowPeakModeDefault
 
 if (showSettingsDialog) {
-    def (channelNames, defaultNucleusChannel) = getChannelNamesAndDefault()
-    def defaultFociChannel = pickDefaultFociChannel(channelNames)
-
     def params = new ParameterList()
         // StarDist parameters
         .addTitleParameter("─────── StarDist (Nuclei) ───────")

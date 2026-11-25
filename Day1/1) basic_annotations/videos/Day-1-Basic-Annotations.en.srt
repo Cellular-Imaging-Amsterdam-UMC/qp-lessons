@@ -1,0 +1,106 @@
+1
+00:00:00,360 --> 00:00:05,464
+Open the skin example from the lesson and set
+the image type to Brightfield H and E.
+
+2
+00:00:05,704 --> 00:00:13,833
+Zoom into the dark purple band near the edge,
+the epidermis. We will use the same patch to
+compare the Brush and Wand.
+
+3
+00:00:14,073 --> 00:00:22,212
+The shapes in this video are practice regions.
+We'll refine one of them and see its area
+change in the QuPath measurement table.
+
+4
+00:00:23,402 --> 00:00:29,001
+Select Brush. Position the cursor inside the
+dark purple epidermis.
+
+5
+00:00:29,241 --> 00:00:37,050
+Press and drag a short stroke, then release.
+QuPath creates an annotation based on the path
+of the brush.
+
+6
+00:00:37,290 --> 00:00:44,389
+Zoom in to work on finer edges. The area
+covered by the brush changes with zoom at the
+default settings.
+
+7
+00:00:45,568 --> 00:00:52,068
+Switch to the Wand. Start with a clean copy of
+the same image so you can compare the tools.
+
+8
+00:00:52,308 --> 00:01:00,632
+Click at the starting point of the previous
+Brush stroke. The Wand grows a region around
+the click based on local image contrast.
+
+9
+00:01:00,872 --> 00:01:11,935
+The Brush follows the stroke. The Wand includes
+nearby pixels with a similar appearance.
+Inspect the Wand result along the tissue edge
+and wherever the stain fades.
+
+10
+00:01:13,110 --> 00:01:21,369
+Return to the Brush outline and select it. With
+the Brush, you can start the stroke inside the
+selected area to extend it.
+
+11
+00:01:21,609 --> 00:01:29,878
+Drag from inside the outline toward the edge.
+Hold Shift if you need to start adding from
+just outside the selected annotation.
+
+12
+00:01:30,118 --> 00:01:38,182
+Here the stroke crosses the tissue boundary.
+Keep the added tissue, then remove the part
+that extends onto the glass.
+
+13
+00:01:39,360 --> 00:01:45,904
+Keep the annotation selected. Hold Alt and
+brush along the part that spills onto the
+glass.
+
+14
+00:01:46,144 --> 00:01:53,723
+Start the eraser stroke on the glass side and
+follow the tissue edge. Release once the extra
+area is gone.
+
+15
+00:01:53,963 --> 00:02:00,722
+Check the corrected contour. Use small strokes
+and zoom in further if you need a more precise
+edge.
+
+16
+00:02:01,902 --> 00:02:09,606
+Open Measure, then Show annotation
+measurements. Find the row for the selected
+annotation and the Area column.
+
+17
+00:02:09,846 --> 00:02:18,955
+Here the three stages are saved as copies for
+comparison. The area increases after extending
+the stroke and drops after correcting the edge.
+
+18
+00:02:19,195 --> 00:02:28,724
+The unit is square micrometers because this
+slide is calibrated. Save the final annotation
+to your project once you're satisfied with its
+outline.

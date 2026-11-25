@@ -1,0 +1,154 @@
+1
+00:00:00,360 --> 00:00:08,089
+In this exercise, we train Cellpose to find
+small, dark nucleoli in the course phase
+contrast images.
+
+2
+00:00:08,329 --> 00:00:14,653
+This is an example target. Look for the small
+dark structures inside the larger nuclei.
+
+3
+00:00:14,893 --> 00:00:22,542
+We will label a training region, check its
+object hierarchy, and finish with a real
+prediction on a separate test image.
+
+4
+00:00:23,693 --> 00:00:32,727
+Add the thirty course images to a project. Run
+the calibration script and set the pixel size
+to zero point two micrometers per pixel.
+
+5
+00:00:32,967 --> 00:00:37,686
+Use the Image tab to verify the calibration
+after reopening the image.
+
+6
+00:00:37,926 --> 00:00:45,915
+Use images one through fourteen for training,
+fifteen through twenty for validation, and
+twenty-one through thirty for testing.
+
+7
+00:00:46,155 --> 00:00:53,329
+Keep every image in just one split. Leave the
+test images without training or validation
+annotations.
+
+8
+00:00:54,485 --> 00:01:01,524
+Run the class setup script, open image zero
+three, and center the viewer on the area you
+want to label.
+
+9
+00:01:01,764 --> 00:01:11,213
+Open Create region annotations from the
+Classify menu. Set both dimensions to two
+hundred and fifty-six, with Pixels as the unit.
+
+10
+00:01:11,453 --> 00:01:17,352
+Choose Training and Viewer center. Click Create
+region to add the outer rectangle.
+
+11
+00:01:17,592 --> 00:01:22,411
+Use the same size for Validation rectangles on
+the validation images.
+
+12
+00:01:23,568 --> 00:01:32,187
+Turn off Auto set so the object outlines can
+stay unclassified. Zoom in and use the Wand or
+Brush to outline a nucleolus.
+
+13
+00:01:32,427 --> 00:01:39,441
+Trace a second one as a separate object. Keep
+neighboring targets separate and check the
+boundary as you go.
+
+14
+00:01:39,681 --> 00:01:46,900
+Work across the entire rectangle. Unlabeled
+targets inside the region become background
+during training.
+
+15
+00:01:47,140 --> 00:01:56,509
+Use the illustrated labels to see the structure
+of the set. In your own project, review each
+outline and look for missed targets before
+saving.
+
+16
+00:01:57,693 --> 00:02:04,782
+Open the Hierarchy tab and expand Annotation,
+Training. The blue row is the outer rectangle.
+
+17
+00:02:05,022 --> 00:02:12,077
+Every indented row beneath it is a separate
+object outline. These red annotations are
+unclassified.
+
+18
+00:02:12,317 --> 00:02:18,396
+Repeat the same check for each Validation
+rectangle, then save your changes before
+training.
+
+19
+00:02:19,568 --> 00:02:26,337
+Run the training script. This demonstration
+starts from scratch and uses seventy-five
+epochs.
+
+20
+00:02:26,577 --> 00:02:36,801
+For these small nucleoli we used a diameter of
+two micrometers. For your own labels, measure
+several representative objects to estimate a
+diameter.
+
+21
+00:02:37,041 --> 00:02:43,840
+During training, review the log and validation
+loss. The weights are saved in the models
+folder.
+
+22
+00:02:44,080 --> 00:02:55,584
+Also read the validation report. This first run
+found no objects at the default prediction
+thresholds. We'll adjust inference and inspect
+the output on a separate image.
+
+23
+00:02:56,735 --> 00:03:02,409
+Open image twenty-one. This image was held out
+from training and validation.
+
+24
+00:03:02,649 --> 00:03:09,673
+Draw and select a parent annotation, run the
+custom model script, and choose the model you
+just saved.
+
+25
+00:03:09,913 --> 00:03:21,457
+Here we used a two micrometer diameter, a cell
+probability threshold of minus two, and a flow
+threshold of zero. A flow threshold of zero
+disables that filter.
+
+26
+00:03:21,697 --> 00:03:32,791
+The outlines on the right are the actual
+Cellpose predictions. Compare them with the raw
+image and look for misses, extra detections,
+and outlines that merge two targets.
