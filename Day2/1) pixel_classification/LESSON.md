@@ -7,7 +7,9 @@
 
 ## Instruction video
 
-[Watch or download the video (MP4, 3:49)](videos/Day-2-Pixel-Classification.mp4) · [English captions (SRT)](videos/Day-2-Pixel-Classification.en.srt)
+https://github.com/user-attachments/assets/08e2c46f-5052-4d4f-b05c-9a827593b60e
+
+[Download the original MP4 (3:49)](videos/Day-2-Pixel-Classification.mp4?raw=true) · [English captions (SRT)](videos/Day-2-Pixel-Classification.en.srt)
 
 The video starts with a three-class warm-up using Epidermis, Dermis, and Whitespace. It shows how to paint training examples, refine the live prediction, and turn predictions into measurable annotations. For the full exercise, use the class list in Part 2.
 

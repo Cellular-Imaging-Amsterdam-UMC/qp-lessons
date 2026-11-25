@@ -15,8 +15,6 @@ Run the setup script before drawing training strokes. If you make an optional tr
 
 [Start the lesson](LESSON.md).
 
-[Watch the instruction video](LESSON.md#instruction-video).
-
 ## The "Magic" Scripts
 *   **`assignment1_magic_setup.groovy`**: Run this *before* the lesson starts (or at the very beginning). It sets up the skin-layer classes (Stratum corneum, EPTZ, Stratum granulosum, Stratum spinosum, Stratum basale, Dermis + Whitespace) with high-contrast colors and clears any old annotations.
 *   **`assignment1_magic_report.groovy`**: Run this after the classifier has created prediction annotations on the reporting image. It summarizes the area and percentage for each tissue class, excluding Whitespace so they can compare layer proportions without digging through measurement tables.

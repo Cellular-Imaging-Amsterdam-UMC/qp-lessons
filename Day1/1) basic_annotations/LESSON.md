@@ -7,7 +7,9 @@
 
 ## Instruction video
 
-[Watch or download the video (MP4, 2:30)](videos/Day-1-Basic-Annotations.mp4) · [English captions (SRT)](videos/Day-1-Basic-Annotations.en.srt)
+https://github.com/user-attachments/assets/f13ed1de-327c-4435-9a85-0575596f7428
+
+[Download the original MP4 (2:30)](videos/Day-1-Basic-Annotations.mp4?raw=true) · [English captions (SRT)](videos/Day-1-Basic-Annotations.en.srt)
 
 Compare the Brush and Wand on the same H&E skin patch. Extend a Brush annotation, correct the edge, and see the change in the QuPath measurement table.
 

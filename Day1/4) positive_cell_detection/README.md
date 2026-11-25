@@ -13,7 +13,7 @@ Follow the [course setup steps](../../README.md#before-each-lesson) with `resour
 
 Use a fresh image entry for this lesson so the islet annotations from the thresholding exercise are easy to keep separate.
 
-[Start the lesson](LESSON.md). [Watch the instruction video](LESSON.md#instruction-video).
+[Start the lesson](LESSON.md).
 
 ## The Scripts
 *   **`01_setup_positive.groovy`**: Defines the "Positive" and "Negative" classes.

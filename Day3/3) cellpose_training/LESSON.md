@@ -7,7 +7,9 @@
 
 ## Instruction video
 
-[Watch or download the video (MP4, 3:34)](videos/Day-3-Cellpose-Training.mp4) · [English captions (SRT)](videos/Day-3-Cellpose-Training.en.srt)
+https://github.com/user-attachments/assets/d973b9df-daa9-4d15-b345-dd384d5dd56b
+
+[Download the original MP4 (3:34)](videos/Day-3-Cellpose-Training.mp4?raw=true) · [English captions (SRT)](videos/Day-3-Cellpose-Training.en.srt)
 
 Use the phase-contrast course images to set up a training region, label individual targets, check the object hierarchy, and run a custom model on held-out image `21.jpg`. The illustrated nucleolus labels are an example for practicing the workflow. Review each target and outline in your own training regions.
 

@@ -14,7 +14,7 @@ Follow the [course setup steps](../../README.md#before-each-lesson) with `resour
 
 The setup script is optional. It clears all objects on the open image, so use it only when starting over.
 
-[Start the lesson](LESSON.md). [Watch the instruction video](LESSON.md#instruction-video).
+[Start the lesson](LESSON.md).
 
 ## Color Deconvolution & Channels
 *   The `skin.ome.tif` image is a brightfield **H&E** stain, so QuPath automatically creates multiple display channels beyond the raw RGB view (e.g., Optical Density sum, Hematoxylin, Eosin, Residual, and individual Red/Green/Blue channels).

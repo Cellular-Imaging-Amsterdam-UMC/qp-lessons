@@ -12,7 +12,7 @@ This module teaches how to **Train a Custom Cellpose Model**. Sometimes pre-trai
 
 Follow the [course setup steps](../../README.md#before-each-lesson). Create a project containing only the 30 phase-contrast JPGs (`01.jpg`–`30.jpg`). Keep `21.jpg`–`30.jpg` for testing. The calibration script in the lesson updates all images in the current project.
 
-[Start the lesson](LESSON.md). [Watch the instruction video](LESSON.md#instruction-video).
+[Start the lesson](LESSON.md).
 
 ## Optional annotated example
 
