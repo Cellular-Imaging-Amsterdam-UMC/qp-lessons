@@ -4,7 +4,12 @@ This guide creates one Python environment for the Cellpose and Spotiflow QuPath 
 
 ## Course standalone installation
 
-With the supplied Windows standalone installation, start `RunQuPath7.0.cmd`. It loads the configured interpreter and model folders. The following setup is for a separate QuPath installation.
+The Windows and Mac ZIP download links are shared separately with course participants.
+
+- **Windows.** Extract the supplied portable ZIP and start `RunQuPath7.0.cmd`. It loads the configured interpreter and model folders.
+- **Mac with Apple silicon (macOS 15 or later).** Extract `QuPath7-StandAlone-Mac-Installer.zip` and double-click `Install.command`. Follow the [Mac installation guide](resources/Install.md).
+
+The following setup is for a separate QuPath installation.
 
 ## Part 1: Python environment
 
